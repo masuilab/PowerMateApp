@@ -7,66 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A63DC99B182E128700298C9A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
-		A63DC9A5182E128700298C9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9A3182E128700298C9A /* InfoPlist.strings */; };
-		A63DC9A7182E128700298C9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DC9A6182E128700298C9A /* main.m */; };
-		A63DC9AB182E128700298C9A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9A9182E128700298C9A /* Credits.rtf */; };
-		A63DC9AE182E128700298C9A /* PMAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DC9AD182E128700298C9A /* PMAAppDelegate.m */; };
-		A63DC9B1182E128700298C9A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9AF182E128700298C9A /* MainMenu.xib */; };
-		A63DC9B3182E128700298C9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9B2182E128700298C9A /* Images.xcassets */; };
-		A63DC9BA182E128700298C9A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC9B9182E128700298C9A /* XCTest.framework */; };
-		A63DC9BB182E128700298C9A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
-		A63DC9C3182E128700298C9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9C1182E128700298C9A /* InfoPlist.strings */; };
-		A63DC9C5182E128700298C9A /* PowerMateAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DC9C4182E128700298C9A /* PowerMateAppTests.m */; };
+		A63927E8182E17A000C2884C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63927E7182E17A000C2884C /* WebKit.framework */; };
+		A63927E9182E1C5E00C2884C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63927E7182E17A000C2884C /* WebKit.framework */; };
+		A63DC9D3182E12B600298C9A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
+		A63DC9D9182E12B600298C9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9D7182E12B600298C9A /* InfoPlist.strings */; };
+		A63DC9DB182E12B600298C9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DC9DA182E12B600298C9A /* main.m */; };
+		A63DC9DF182E12B600298C9A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9DD182E12B600298C9A /* Credits.rtf */; };
+		A63DC9E2182E12B600298C9A /* PMFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DC9E1182E12B600298C9A /* PMFAppDelegate.m */; };
+		A63DC9E5182E12B600298C9A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9E3182E12B600298C9A /* MainMenu.xib */; };
+		A63DC9E7182E12B600298C9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9E6182E12B600298C9A /* Images.xcassets */; };
+		A63DCA35182E12FF00298C9A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
+		A63DCA3B182E12FF00298C9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA39182E12FF00298C9A /* InfoPlist.strings */; };
+		A63DCA3D182E12FF00298C9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DCA3C182E12FF00298C9A /* main.m */; };
+		A63DCA41182E12FF00298C9A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA3F182E12FF00298C9A /* Credits.rtf */; };
+		A63DCA44182E12FF00298C9A /* PMTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DCA43182E12FF00298C9A /* PMTAppDelegate.m */; };
+		A63DCA47182E12FF00298C9A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA45182E12FF00298C9A /* MainMenu.xib */; };
+		A63DCA49182E12FF00298C9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA48182E12FF00298C9A /* Images.xcassets */; };
+		A63DCA62182E144A00298C9A /* facebook_logo_detail.icns in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA61182E144A00298C9A /* facebook_logo_detail.icns */; };
+		A63DCA6B182E151B00298C9A /* tumblr-logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA6A182E151B00298C9A /* tumblr-logo.icns */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A63DC9BC182E128700298C9A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A63DC98F182E128700298C9A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A63DC996182E128700298C9A;
-			remoteInfo = PowerMateApp;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		A63DC997182E128700298C9A /* PowerMateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerMateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A63927E7182E17A000C2884C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A63DC99A182E128700298C9A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A63DC99D182E128700298C9A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		A63DC99E182E128700298C9A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A63DC99F182E128700298C9A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A63DC9A2182E128700298C9A /* PowerMateApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateApp-Info.plist"; sourceTree = "<group>"; };
-		A63DC9A4182E128700298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A63DC9A6182E128700298C9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A63DC9A8182E128700298C9A /* PowerMateApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PowerMateApp-Prefix.pch"; sourceTree = "<group>"; };
-		A63DC9AA182E128700298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		A63DC9AC182E128700298C9A /* PMAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMAAppDelegate.h; sourceTree = "<group>"; };
-		A63DC9AD182E128700298C9A /* PMAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMAAppDelegate.m; sourceTree = "<group>"; };
-		A63DC9B0182E128700298C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		A63DC9B2182E128700298C9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A63DC9B8182E128700298C9A /* PowerMateAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerMateAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63DC9B9182E128700298C9A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		A63DC9C0182E128700298C9A /* PowerMateAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateAppTests-Info.plist"; sourceTree = "<group>"; };
-		A63DC9C2182E128700298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A63DC9C4182E128700298C9A /* PowerMateAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerMateAppTests.m; sourceTree = "<group>"; };
+		A63DC9D2182E12B600298C9A /* PMFacebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMFacebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A63DC9D6182E12B600298C9A /* PMFacebook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMFacebook-Info.plist"; sourceTree = "<group>"; };
+		A63DC9D8182E12B600298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A63DC9DA182E12B600298C9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A63DC9DC182E12B600298C9A /* PMFacebook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PMFacebook-Prefix.pch"; sourceTree = "<group>"; };
+		A63DC9DE182E12B600298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A63DC9E0182E12B600298C9A /* PMFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMFAppDelegate.h; sourceTree = "<group>"; };
+		A63DC9E1182E12B600298C9A /* PMFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMFAppDelegate.m; sourceTree = "<group>"; };
+		A63DC9E4182E12B600298C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A63DC9E6182E12B600298C9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A63DCA34182E12FF00298C9A /* PMTumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMTumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A63DCA38182E12FF00298C9A /* PMTumblr-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMTumblr-Info.plist"; sourceTree = "<group>"; };
+		A63DCA3A182E12FF00298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A63DCA3C182E12FF00298C9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A63DCA3E182E12FF00298C9A /* PMTumblr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PMTumblr-Prefix.pch"; sourceTree = "<group>"; };
+		A63DCA40182E12FF00298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A63DCA42182E12FF00298C9A /* PMTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMTAppDelegate.h; sourceTree = "<group>"; };
+		A63DCA43182E12FF00298C9A /* PMTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMTAppDelegate.m; sourceTree = "<group>"; };
+		A63DCA46182E12FF00298C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A63DCA48182E12FF00298C9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A63DCA61182E144A00298C9A /* facebook_logo_detail.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = facebook_logo_detail.icns; sourceTree = "<group>"; };
+		A63DCA6A182E151B00298C9A /* tumblr-logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "tumblr-logo.icns"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A63DC994182E128700298C9A /* Frameworks */ = {
+		A63DC9CF182E12B600298C9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A63DC99B182E128700298C9A /* Cocoa.framework in Frameworks */,
+				A63927E8182E17A000C2884C /* WebKit.framework in Frameworks */,
+				A63DC9D3182E12B600298C9A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A63DC9B5182E128700298C9A /* Frameworks */ = {
+		A63DCA31182E12FF00298C9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A63DC9BB182E128700298C9A /* Cocoa.framework in Frameworks */,
-				A63DC9BA182E128700298C9A /* XCTest.framework in Frameworks */,
+				A63927E9182E1C5E00C2884C /* WebKit.framework in Frameworks */,
+				A63DCA35182E12FF00298C9A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +83,8 @@
 		A63DC98E182E128700298C9A = {
 			isa = PBXGroup;
 			children = (
-				A63DC9A0182E128700298C9A /* PowerMateApp */,
-				A63DC9BE182E128700298C9A /* PowerMateAppTests */,
+				A63DC9D4182E12B600298C9A /* PMFacebook */,
+				A63DCA36182E12FF00298C9A /* PMTumblr */,
 				A63DC999182E128700298C9A /* Frameworks */,
 				A63DC998182E128700298C9A /* Products */,
 			);
@@ -86,8 +93,8 @@
 		A63DC998182E128700298C9A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A63DC997182E128700298C9A /* PowerMateApp.app */,
-				A63DC9B8182E128700298C9A /* PowerMateAppTests.xctest */,
+				A63DC9D2182E12B600298C9A /* PMFacebook.app */,
+				A63DCA34182E12FF00298C9A /* PMTumblr.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +102,7 @@
 		A63DC999182E128700298C9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A63927E7182E17A000C2884C /* WebKit.framework */,
 				A63DC99A182E128700298C9A /* Cocoa.framework */,
 				A63DC9B9182E128700298C9A /* XCTest.framework */,
 				A63DC99C182E128700298C9A /* Other Frameworks */,
@@ -112,44 +120,52 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		A63DC9A0182E128700298C9A /* PowerMateApp */ = {
+		A63DC9D4182E12B600298C9A /* PMFacebook */ = {
 			isa = PBXGroup;
 			children = (
-				A63DC9AC182E128700298C9A /* PMAAppDelegate.h */,
-				A63DC9AD182E128700298C9A /* PMAAppDelegate.m */,
-				A63DC9AF182E128700298C9A /* MainMenu.xib */,
-				A63DC9B2182E128700298C9A /* Images.xcassets */,
-				A63DC9A1182E128700298C9A /* Supporting Files */,
+				A63DC9E0182E12B600298C9A /* PMFAppDelegate.h */,
+				A63DC9E1182E12B600298C9A /* PMFAppDelegate.m */,
+				A63DC9E3182E12B600298C9A /* MainMenu.xib */,
+				A63DC9E6182E12B600298C9A /* Images.xcassets */,
+				A63DCA61182E144A00298C9A /* facebook_logo_detail.icns */,
+				A63DC9D5182E12B600298C9A /* Supporting Files */,
 			);
-			path = PowerMateApp;
+			path = PMFacebook;
 			sourceTree = "<group>";
 		};
-		A63DC9A1182E128700298C9A /* Supporting Files */ = {
+		A63DC9D5182E12B600298C9A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A63DC9A2182E128700298C9A /* PowerMateApp-Info.plist */,
-				A63DC9A3182E128700298C9A /* InfoPlist.strings */,
-				A63DC9A6182E128700298C9A /* main.m */,
-				A63DC9A8182E128700298C9A /* PowerMateApp-Prefix.pch */,
-				A63DC9A9182E128700298C9A /* Credits.rtf */,
+				A63DC9D6182E12B600298C9A /* PMFacebook-Info.plist */,
+				A63DC9D7182E12B600298C9A /* InfoPlist.strings */,
+				A63DC9DA182E12B600298C9A /* main.m */,
+				A63DC9DC182E12B600298C9A /* PMFacebook-Prefix.pch */,
+				A63DC9DD182E12B600298C9A /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A63DC9BE182E128700298C9A /* PowerMateAppTests */ = {
+		A63DCA36182E12FF00298C9A /* PMTumblr */ = {
 			isa = PBXGroup;
 			children = (
-				A63DC9C4182E128700298C9A /* PowerMateAppTests.m */,
-				A63DC9BF182E128700298C9A /* Supporting Files */,
+				A63DCA42182E12FF00298C9A /* PMTAppDelegate.h */,
+				A63DCA43182E12FF00298C9A /* PMTAppDelegate.m */,
+				A63DCA45182E12FF00298C9A /* MainMenu.xib */,
+				A63DCA48182E12FF00298C9A /* Images.xcassets */,
+				A63DCA6A182E151B00298C9A /* tumblr-logo.icns */,
+				A63DCA37182E12FF00298C9A /* Supporting Files */,
 			);
-			path = PowerMateAppTests;
+			path = PMTumblr;
 			sourceTree = "<group>";
 		};
-		A63DC9BF182E128700298C9A /* Supporting Files */ = {
+		A63DCA37182E12FF00298C9A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A63DC9C0182E128700298C9A /* PowerMateAppTests-Info.plist */,
-				A63DC9C1182E128700298C9A /* InfoPlist.strings */,
+				A63DCA38182E12FF00298C9A /* PMTumblr-Info.plist */,
+				A63DCA39182E12FF00298C9A /* InfoPlist.strings */,
+				A63DCA3C182E12FF00298C9A /* main.m */,
+				A63DCA3E182E12FF00298C9A /* PMTumblr-Prefix.pch */,
+				A63DCA3F182E12FF00298C9A /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -157,40 +173,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A63DC996182E128700298C9A /* PowerMateApp */ = {
+		A63DC9D1182E12B600298C9A /* PMFacebook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A63DC9C8182E128700298C9A /* Build configuration list for PBXNativeTarget "PowerMateApp" */;
+			buildConfigurationList = A63DC9F9182E12B600298C9A /* Build configuration list for PBXNativeTarget "PMFacebook" */;
 			buildPhases = (
-				A63DC993182E128700298C9A /* Sources */,
-				A63DC994182E128700298C9A /* Frameworks */,
-				A63DC995182E128700298C9A /* Resources */,
+				A63DC9CE182E12B600298C9A /* Sources */,
+				A63DC9CF182E12B600298C9A /* Frameworks */,
+				A63DC9D0182E12B600298C9A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PowerMateApp;
-			productName = PowerMateApp;
-			productReference = A63DC997182E128700298C9A /* PowerMateApp.app */;
+			name = PMFacebook;
+			productName = PMFacebook;
+			productReference = A63DC9D2182E12B600298C9A /* PMFacebook.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A63DC9B7182E128700298C9A /* PowerMateAppTests */ = {
+		A63DCA33182E12FF00298C9A /* PMTumblr */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A63DC9CB182E128700298C9A /* Build configuration list for PBXNativeTarget "PowerMateAppTests" */;
+			buildConfigurationList = A63DCA5B182E12FF00298C9A /* Build configuration list for PBXNativeTarget "PMTumblr" */;
 			buildPhases = (
-				A63DC9B4182E128700298C9A /* Sources */,
-				A63DC9B5182E128700298C9A /* Frameworks */,
-				A63DC9B6182E128700298C9A /* Resources */,
+				A63DCA30182E12FF00298C9A /* Sources */,
+				A63DCA31182E12FF00298C9A /* Frameworks */,
+				A63DCA32182E12FF00298C9A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A63DC9BD182E128700298C9A /* PBXTargetDependency */,
 			);
-			name = PowerMateAppTests;
-			productName = PowerMateAppTests;
-			productReference = A63DC9B8182E128700298C9A /* PowerMateAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = PMTumblr;
+			productName = PMTumblr;
+			productReference = A63DCA34182E12FF00298C9A /* PMTumblr.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -198,14 +213,9 @@
 		A63DC98F182E128700298C9A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = PMA;
+				CLASSPREFIX = PMF;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Yusuke Sakurai";
-				TargetAttributes = {
-					A63DC9B7182E128700298C9A = {
-						TestTargetID = A63DC996182E128700298C9A;
-					};
-				};
 			};
 			buildConfigurationList = A63DC992182E128700298C9A /* Build configuration list for PBXProject "PowerMateApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -220,93 +230,107 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A63DC996182E128700298C9A /* PowerMateApp */,
-				A63DC9B7182E128700298C9A /* PowerMateAppTests */,
+				A63DC9D1182E12B600298C9A /* PMFacebook */,
+				A63DCA33182E12FF00298C9A /* PMTumblr */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A63DC995182E128700298C9A /* Resources */ = {
+		A63DC9D0182E12B600298C9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A63DC9A5182E128700298C9A /* InfoPlist.strings in Resources */,
-				A63DC9B3182E128700298C9A /* Images.xcassets in Resources */,
-				A63DC9AB182E128700298C9A /* Credits.rtf in Resources */,
-				A63DC9B1182E128700298C9A /* MainMenu.xib in Resources */,
+				A63DC9D9182E12B600298C9A /* InfoPlist.strings in Resources */,
+				A63DC9E7182E12B600298C9A /* Images.xcassets in Resources */,
+				A63DC9DF182E12B600298C9A /* Credits.rtf in Resources */,
+				A63DCA62182E144A00298C9A /* facebook_logo_detail.icns in Resources */,
+				A63DC9E5182E12B600298C9A /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A63DC9B6182E128700298C9A /* Resources */ = {
+		A63DCA32182E12FF00298C9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A63DC9C3182E128700298C9A /* InfoPlist.strings in Resources */,
+				A63DCA3B182E12FF00298C9A /* InfoPlist.strings in Resources */,
+				A63DCA49182E12FF00298C9A /* Images.xcassets in Resources */,
+				A63DCA41182E12FF00298C9A /* Credits.rtf in Resources */,
+				A63DCA6B182E151B00298C9A /* tumblr-logo.icns in Resources */,
+				A63DCA47182E12FF00298C9A /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A63DC993182E128700298C9A /* Sources */ = {
+		A63DC9CE182E12B600298C9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A63DC9A7182E128700298C9A /* main.m in Sources */,
-				A63DC9AE182E128700298C9A /* PMAAppDelegate.m in Sources */,
+				A63DC9DB182E12B600298C9A /* main.m in Sources */,
+				A63DC9E2182E12B600298C9A /* PMFAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A63DC9B4182E128700298C9A /* Sources */ = {
+		A63DCA30182E12FF00298C9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A63DC9C5182E128700298C9A /* PowerMateAppTests.m in Sources */,
+				A63DCA44182E12FF00298C9A /* PMTAppDelegate.m in Sources */,
+				A63DCA3D182E12FF00298C9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		A63DC9BD182E128700298C9A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A63DC996182E128700298C9A /* PowerMateApp */;
-			targetProxy = A63DC9BC182E128700298C9A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		A63DC9A3182E128700298C9A /* InfoPlist.strings */ = {
+		A63DC9D7182E12B600298C9A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A63DC9A4182E128700298C9A /* en */,
+				A63DC9D8182E12B600298C9A /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		A63DC9A9182E128700298C9A /* Credits.rtf */ = {
+		A63DC9DD182E12B600298C9A /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A63DC9AA182E128700298C9A /* en */,
+				A63DC9DE182E12B600298C9A /* en */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		A63DC9AF182E128700298C9A /* MainMenu.xib */ = {
+		A63DC9E3182E12B600298C9A /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A63DC9B0182E128700298C9A /* Base */,
+				A63DC9E4182E12B600298C9A /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		A63DC9C1182E128700298C9A /* InfoPlist.strings */ = {
+		A63DCA39182E12FF00298C9A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A63DC9C2182E128700298C9A /* en */,
+				A63DCA3A182E12FF00298C9A /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A63DCA3F182E12FF00298C9A /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A63DCA40182E12FF00298C9A /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		A63DCA45182E12FF00298C9A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A63DCA46182E12FF00298C9A /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -380,69 +404,59 @@
 			};
 			name = Release;
 		};
-		A63DC9C9182E128700298C9A /* Debug */ = {
+		A63DC9FA182E12B600298C9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PowerMateApp/PowerMateApp-Prefix.pch";
-				INFOPLIST_FILE = "PowerMateApp/PowerMateApp-Info.plist";
+				GCC_PREFIX_HEADER = "PMFacebook/PMFacebook-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PMFacebook/PMFacebook-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		A63DC9CA182E128700298C9A /* Release */ = {
+		A63DC9FB182E12B600298C9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PowerMateApp/PowerMateApp-Prefix.pch";
-				INFOPLIST_FILE = "PowerMateApp/PowerMateApp-Info.plist";
+				GCC_PREFIX_HEADER = "PMFacebook/PMFacebook-Prefix.pch";
+				INFOPLIST_FILE = "PMFacebook/PMFacebook-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		A63DC9CC182E128700298C9A /* Debug */ = {
+		A63DCA5C182E12FF00298C9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PowerMateApp.app/Contents/MacOS/PowerMateApp";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PowerMateApp/PowerMateApp-Prefix.pch";
+				GCC_PREFIX_HEADER = "PMTumblr/PMTumblr-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "PowerMateAppTests/PowerMateAppTests-Info.plist";
+				INFOPLIST_FILE = "PMTumblr/PMTumblr-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		A63DC9CD182E128700298C9A /* Release */ = {
+		A63DCA5D182E12FF00298C9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PowerMateApp.app/Contents/MacOS/PowerMateApp";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PowerMateApp/PowerMateApp-Prefix.pch";
-				INFOPLIST_FILE = "PowerMateAppTests/PowerMateAppTests-Info.plist";
+				GCC_PREFIX_HEADER = "PMTumblr/PMTumblr-Prefix.pch";
+				INFOPLIST_FILE = "PMTumblr/PMTumblr-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -458,21 +472,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A63DC9C8182E128700298C9A /* Build configuration list for PBXNativeTarget "PowerMateApp" */ = {
+		A63DC9F9182E12B600298C9A /* Build configuration list for PBXNativeTarget "PMFacebook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A63DC9C9182E128700298C9A /* Debug */,
-				A63DC9CA182E128700298C9A /* Release */,
+				A63DC9FA182E12B600298C9A /* Debug */,
+				A63DC9FB182E12B600298C9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		A63DC9CB182E128700298C9A /* Build configuration list for PBXNativeTarget "PowerMateAppTests" */ = {
+		A63DCA5B182E12FF00298C9A /* Build configuration list for PBXNativeTarget "PMTumblr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A63DC9CC182E128700298C9A /* Debug */,
-				A63DC9CD182E128700298C9A /* Release */,
+				A63DCA5C182E12FF00298C9A /* Debug */,
+				A63DCA5D182E12FF00298C9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
