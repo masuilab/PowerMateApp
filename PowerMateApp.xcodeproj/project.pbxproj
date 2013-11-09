@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A63DC99B182E128700298C9A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
+		A63DC9A5182E128700298C9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9A3182E128700298C9A /* InfoPlist.strings */; };
+		A63DC9A7182E128700298C9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DC9A6182E128700298C9A /* main.m */; };
+		A63DC9AB182E128700298C9A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9A9182E128700298C9A /* Credits.rtf */; };
+		A63DC9AE182E128700298C9A /* PMAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DC9AD182E128700298C9A /* PMAAppDelegate.m */; };
+		A63DC9B1182E128700298C9A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9AF182E128700298C9A /* MainMenu.xib */; };
+		A63DC9B3182E128700298C9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9B2182E128700298C9A /* Images.xcassets */; };
+		A63DC9BA182E128700298C9A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC9B9182E128700298C9A /* XCTest.framework */; };
+		A63DC9BB182E128700298C9A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
+		A63DC9C3182E128700298C9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9C1182E128700298C9A /* InfoPlist.strings */; };
+		A63DC9C5182E128700298C9A /* PowerMateAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DC9C4182E128700298C9A /* PowerMateAppTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A63DC9BC182E128700298C9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A63DC98F182E128700298C9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A63DC996182E128700298C9A;
+			remoteInfo = PowerMateApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A63DC997182E128700298C9A /* PowerMateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerMateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A63DC99A182E128700298C9A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A63DC99D182E128700298C9A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A63DC99E182E128700298C9A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A63DC99F182E128700298C9A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A63DC9A2182E128700298C9A /* PowerMateApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateApp-Info.plist"; sourceTree = "<group>"; };
+		A63DC9A4182E128700298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A63DC9A6182E128700298C9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A63DC9A8182E128700298C9A /* PowerMateApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PowerMateApp-Prefix.pch"; sourceTree = "<group>"; };
+		A63DC9AA182E128700298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A63DC9AC182E128700298C9A /* PMAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMAAppDelegate.h; sourceTree = "<group>"; };
+		A63DC9AD182E128700298C9A /* PMAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMAAppDelegate.m; sourceTree = "<group>"; };
+		A63DC9B0182E128700298C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A63DC9B2182E128700298C9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A63DC9B8182E128700298C9A /* PowerMateAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerMateAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A63DC9B9182E128700298C9A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A63DC9C0182E128700298C9A /* PowerMateAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateAppTests-Info.plist"; sourceTree = "<group>"; };
+		A63DC9C2182E128700298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A63DC9C4182E128700298C9A /* PowerMateAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerMateAppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A63DC994182E128700298C9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A63DC99B182E128700298C9A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A63DC9B5182E128700298C9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A63DC9BB182E128700298C9A /* Cocoa.framework in Frameworks */,
+				A63DC9BA182E128700298C9A /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A63DC98E182E128700298C9A = {
+			isa = PBXGroup;
+			children = (
+				A63DC9A0182E128700298C9A /* PowerMateApp */,
+				A63DC9BE182E128700298C9A /* PowerMateAppTests */,
+				A63DC999182E128700298C9A /* Frameworks */,
+				A63DC998182E128700298C9A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A63DC998182E128700298C9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A63DC997182E128700298C9A /* PowerMateApp.app */,
+				A63DC9B8182E128700298C9A /* PowerMateAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A63DC999182E128700298C9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A63DC99A182E128700298C9A /* Cocoa.framework */,
+				A63DC9B9182E128700298C9A /* XCTest.framework */,
+				A63DC99C182E128700298C9A /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A63DC99C182E128700298C9A /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A63DC99D182E128700298C9A /* AppKit.framework */,
+				A63DC99E182E128700298C9A /* CoreData.framework */,
+				A63DC99F182E128700298C9A /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		A63DC9A0182E128700298C9A /* PowerMateApp */ = {
+			isa = PBXGroup;
+			children = (
+				A63DC9AC182E128700298C9A /* PMAAppDelegate.h */,
+				A63DC9AD182E128700298C9A /* PMAAppDelegate.m */,
+				A63DC9AF182E128700298C9A /* MainMenu.xib */,
+				A63DC9B2182E128700298C9A /* Images.xcassets */,
+				A63DC9A1182E128700298C9A /* Supporting Files */,
+			);
+			path = PowerMateApp;
+			sourceTree = "<group>";
+		};
+		A63DC9A1182E128700298C9A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A63DC9A2182E128700298C9A /* PowerMateApp-Info.plist */,
+				A63DC9A3182E128700298C9A /* InfoPlist.strings */,
+				A63DC9A6182E128700298C9A /* main.m */,
+				A63DC9A8182E128700298C9A /* PowerMateApp-Prefix.pch */,
+				A63DC9A9182E128700298C9A /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A63DC9BE182E128700298C9A /* PowerMateAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				A63DC9C4182E128700298C9A /* PowerMateAppTests.m */,
+				A63DC9BF182E128700298C9A /* Supporting Files */,
+			);
+			path = PowerMateAppTests;
+			sourceTree = "<group>";
+		};
+		A63DC9BF182E128700298C9A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A63DC9C0182E128700298C9A /* PowerMateAppTests-Info.plist */,
+				A63DC9C1182E128700298C9A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A63DC996182E128700298C9A /* PowerMateApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A63DC9C8182E128700298C9A /* Build configuration list for PBXNativeTarget "PowerMateApp" */;
+			buildPhases = (
+				A63DC993182E128700298C9A /* Sources */,
+				A63DC994182E128700298C9A /* Frameworks */,
+				A63DC995182E128700298C9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PowerMateApp;
+			productName = PowerMateApp;
+			productReference = A63DC997182E128700298C9A /* PowerMateApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A63DC9B7182E128700298C9A /* PowerMateAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A63DC9CB182E128700298C9A /* Build configuration list for PBXNativeTarget "PowerMateAppTests" */;
+			buildPhases = (
+				A63DC9B4182E128700298C9A /* Sources */,
+				A63DC9B5182E128700298C9A /* Frameworks */,
+				A63DC9B6182E128700298C9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A63DC9BD182E128700298C9A /* PBXTargetDependency */,
+			);
+			name = PowerMateAppTests;
+			productName = PowerMateAppTests;
+			productReference = A63DC9B8182E128700298C9A /* PowerMateAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A63DC98F182E128700298C9A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PMA;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Yusuke Sakurai";
+				TargetAttributes = {
+					A63DC9B7182E128700298C9A = {
+						TestTargetID = A63DC996182E128700298C9A;
+					};
+				};
+			};
+			buildConfigurationList = A63DC992182E128700298C9A /* Build configuration list for PBXProject "PowerMateApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A63DC98E182E128700298C9A;
+			productRefGroup = A63DC998182E128700298C9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A63DC996182E128700298C9A /* PowerMateApp */,
+				A63DC9B7182E128700298C9A /* PowerMateAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A63DC995182E128700298C9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A63DC9A5182E128700298C9A /* InfoPlist.strings in Resources */,
+				A63DC9B3182E128700298C9A /* Images.xcassets in Resources */,
+				A63DC9AB182E128700298C9A /* Credits.rtf in Resources */,
+				A63DC9B1182E128700298C9A /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A63DC9B6182E128700298C9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A63DC9C3182E128700298C9A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A63DC993182E128700298C9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A63DC9A7182E128700298C9A /* main.m in Sources */,
+				A63DC9AE182E128700298C9A /* PMAAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A63DC9B4182E128700298C9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A63DC9C5182E128700298C9A /* PowerMateAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A63DC9BD182E128700298C9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A63DC996182E128700298C9A /* PowerMateApp */;
+			targetProxy = A63DC9BC182E128700298C9A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A63DC9A3182E128700298C9A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A63DC9A4182E128700298C9A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A63DC9A9182E128700298C9A /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A63DC9AA182E128700298C9A /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		A63DC9AF182E128700298C9A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A63DC9B0182E128700298C9A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		A63DC9C1182E128700298C9A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A63DC9C2182E128700298C9A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A63DC9C6182E128700298C9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A63DC9C7182E128700298C9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A63DC9C9182E128700298C9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PowerMateApp/PowerMateApp-Prefix.pch";
+				INFOPLIST_FILE = "PowerMateApp/PowerMateApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A63DC9CA182E128700298C9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PowerMateApp/PowerMateApp-Prefix.pch";
+				INFOPLIST_FILE = "PowerMateApp/PowerMateApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A63DC9CC182E128700298C9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PowerMateApp.app/Contents/MacOS/PowerMateApp";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PowerMateApp/PowerMateApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PowerMateAppTests/PowerMateAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A63DC9CD182E128700298C9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PowerMateApp.app/Contents/MacOS/PowerMateApp";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PowerMateApp/PowerMateApp-Prefix.pch";
+				INFOPLIST_FILE = "PowerMateAppTests/PowerMateAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A63DC992182E128700298C9A /* Build configuration list for PBXProject "PowerMateApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A63DC9C6182E128700298C9A /* Debug */,
+				A63DC9C7182E128700298C9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A63DC9C8182E128700298C9A /* Build configuration list for PBXNativeTarget "PowerMateApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A63DC9C9182E128700298C9A /* Debug */,
+				A63DC9CA182E128700298C9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A63DC9CB182E128700298C9A /* Build configuration list for PBXNativeTarget "PowerMateAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A63DC9CC182E128700298C9A /* Debug */,
+				A63DC9CD182E128700298C9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A63DC98F182E128700298C9A /* Project object */;
+}
