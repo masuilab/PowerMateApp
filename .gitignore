@@ -24,9 +24,6 @@ build/
 *.dat
 *.dep
 
-<<<<<<< HEAD
 # Python file
-*.py
-=======
+Tree/*.py
 Pods
->>>>>>> 151733fa14fbf7a7b6491109313078a2fa1b4e1c
