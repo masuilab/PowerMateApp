@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>PowerMateDial.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -53,6 +58,16 @@
 			<true/>
 		</dict>
 		<key>A63DCA4D182E12FF00298C9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A64659931830C99600634936</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A64659AD1830C99600634936</key>
 		<dict>
 			<key>primary</key>
 			<true/>

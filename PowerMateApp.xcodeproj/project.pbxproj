@@ -41,6 +41,13 @@
 		A63DCA49182E12FF00298C9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA48182E12FF00298C9A /* Images.xcassets */; };
 		A63DCA62182E144A00298C9A /* facebook_logo_detail.icns in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA61182E144A00298C9A /* facebook_logo_detail.icns */; };
 		A63DCA6B182E151B00298C9A /* tumblr-logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA6A182E151B00298C9A /* tumblr-logo.icns */; };
+		A64659951830C99600634936 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
+		A646599B1830C99600634936 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A64659991830C99600634936 /* InfoPlist.strings */; };
+		A646599D1830C99600634936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A646599C1830C99600634936 /* main.m */; };
+		A64659A11830C99600634936 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A646599F1830C99600634936 /* Credits.rtf */; };
+		A64659A41830C99600634936 /* PMDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A64659A31830C99600634936 /* PMDAppDelegate.m */; };
+		A64659A71830C99600634936 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64659A51830C99600634936 /* MainMenu.xib */; };
+		A64659A91830C99600634936 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A64659A81830C99600634936 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +95,16 @@
 		A63DCA48182E12FF00298C9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A63DCA61182E144A00298C9A /* facebook_logo_detail.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = facebook_logo_detail.icns; sourceTree = "<group>"; };
 		A63DCA6A182E151B00298C9A /* tumblr-logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "tumblr-logo.icns"; sourceTree = "<group>"; };
+		A64659941830C99600634936 /* PowerMateDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerMateDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A64659981830C99600634936 /* PowerMateDial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateDial-Info.plist"; sourceTree = "<group>"; };
+		A646599A1830C99600634936 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A646599C1830C99600634936 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A646599E1830C99600634936 /* PowerMateDial-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PowerMateDial-Prefix.pch"; sourceTree = "<group>"; };
+		A64659A01830C99600634936 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A64659A21830C99600634936 /* PMDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMDAppDelegate.h; sourceTree = "<group>"; };
+		A64659A31830C99600634936 /* PMDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMDAppDelegate.m; sourceTree = "<group>"; };
+		A64659A61830C99600634936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A64659A81830C99600634936 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +123,14 @@
 			files = (
 				A63927E9182E1C5E00C2884C /* WebKit.framework in Frameworks */,
 				A63DCA35182E12FF00298C9A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A64659911830C99600634936 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A64659951830C99600634936 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +206,7 @@
 				A63927ED182E2EC400C2884C /* Configuration */,
 				A63DC9D4182E12B600298C9A /* PMFacebook */,
 				A63DCA36182E12FF00298C9A /* PMTumblr */,
+				A64659961830C99600634936 /* PowerMateDial */,
 				A63DC999182E128700298C9A /* Frameworks */,
 				A63DC998182E128700298C9A /* Products */,
 			);
@@ -191,6 +217,7 @@
 			children = (
 				A63DC9D2182E12B600298C9A /* PMFacebook.app */,
 				A63DCA34182E12FF00298C9A /* PMTumblr.app */,
+				A64659941830C99600634936 /* PowerMateDial.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,6 +293,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A64659961830C99600634936 /* PowerMateDial */ = {
+			isa = PBXGroup;
+			children = (
+				A64659A21830C99600634936 /* PMDAppDelegate.h */,
+				A64659A31830C99600634936 /* PMDAppDelegate.m */,
+				A64659A51830C99600634936 /* MainMenu.xib */,
+				A64659A81830C99600634936 /* Images.xcassets */,
+				A64659971830C99600634936 /* Supporting Files */,
+			);
+			path = PowerMateDial;
+			sourceTree = "<group>";
+		};
+		A64659971830C99600634936 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A64659981830C99600634936 /* PowerMateDial-Info.plist */,
+				A64659991830C99600634936 /* InfoPlist.strings */,
+				A646599C1830C99600634936 /* main.m */,
+				A646599E1830C99600634936 /* PowerMateDial-Prefix.pch */,
+				A646599F1830C99600634936 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -303,6 +354,23 @@
 			productReference = A63DCA34182E12FF00298C9A /* PMTumblr.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A64659931830C99600634936 /* PowerMateDial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A64659BF1830C99600634936 /* Build configuration list for PBXNativeTarget "PowerMateDial" */;
+			buildPhases = (
+				A64659901830C99600634936 /* Sources */,
+				A64659911830C99600634936 /* Frameworks */,
+				A64659921830C99600634936 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PowerMateDial;
+			productName = PowerMateDial;
+			productReference = A64659941830C99600634936 /* PowerMateDial.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -328,6 +396,7 @@
 			targets = (
 				A63DC9D1182E12B600298C9A /* PMFacebook */,
 				A63DCA33182E12FF00298C9A /* PMTumblr */,
+				A64659931830C99600634936 /* PowerMateDial */,
 			);
 		};
 /* End PBXProject section */
@@ -373,6 +442,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A64659921830C99600634936 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A646599B1830C99600634936 /* InfoPlist.strings in Resources */,
+				A64659A91830C99600634936 /* Images.xcassets in Resources */,
+				A64659A11830C99600634936 /* Credits.rtf in Resources */,
+				A64659A71830C99600634936 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -391,6 +471,15 @@
 			files = (
 				A63DCA44182E12FF00298C9A /* PMTAppDelegate.m in Sources */,
 				A63DCA3D182E12FF00298C9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A64659901830C99600634936 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A64659A41830C99600634936 /* PMDAppDelegate.m in Sources */,
+				A646599D1830C99600634936 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +530,30 @@
 			isa = PBXVariantGroup;
 			children = (
 				A63DCA46182E12FF00298C9A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		A64659991830C99600634936 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A646599A1830C99600634936 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A646599F1830C99600634936 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A64659A01830C99600634936 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		A64659A51830C99600634936 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A64659A61830C99600634936 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -578,6 +691,38 @@
 			};
 			name = Release;
 		};
+		A64659BB1830C99600634936 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PowerMateDial/PowerMateDial-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PowerMateDial/PowerMateDial-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A64659BC1830C99600634936 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PowerMateDial/PowerMateDial-Prefix.pch";
+				INFOPLIST_FILE = "PowerMateDial/PowerMateDial-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -607,6 +752,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A64659BF1830C99600634936 /* Build configuration list for PBXNativeTarget "PowerMateDial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A64659BB1830C99600634936 /* Debug */,
+				A64659BC1830C99600634936 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
