@@ -12,6 +12,9 @@
 		A64379D7183A2478005FE37C /* DebugWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379D5183A2478005FE37C /* DebugWindowController.m */; };
 		A64379D8183A2478005FE37C /* DebugWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64379D6183A2478005FE37C /* DebugWindow.xib */; };
 		A64379E3183A3E46005FE37C /* FileSystemItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379E0183A3E46005FE37C /* FileSystemItem.m */; };
+		A6437A06183A5D5E005FE37C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC9B9182E128700298C9A /* XCTest.framework */; };
+		A6437A0C183A5D5E005FE37C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6437A0A183A5D5E005FE37C /* InfoPlist.strings */; };
+		A6437A0E183A5D5E005FE37C /* PowerMateDialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6437A0D183A5D5E005FE37C /* PowerMateDialTests.m */; };
 		A64659951830C99600634936 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
 		A646599B1830C99600634936 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A64659991830C99600634936 /* InfoPlist.strings */; };
 		A646599D1830C99600634936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A646599C1830C99600634936 /* main.m */; };
@@ -21,6 +24,16 @@
 		A64659A91830C99600634936 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A64659A81830C99600634936 /* Images.xcassets */; };
 		D878DAF612BC4221BB6D1EA5 /* libPods-PowerMateDial.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F02673E35442D5A961117B /* libPods-PowerMateDial.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6437A10183A5D5E005FE37C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A63DC98F182E128700298C9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A64659931830C99600634936;
+			remoteInfo = PowerMateDial;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A5C6BC27FB6D42E5BC0C7A4D /* Pods-PowerMateDial.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerMateDial.xcconfig"; path = "Pods/Pods-PowerMateDial.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +67,11 @@
 		A64379D6183A2478005FE37C /* DebugWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DebugWindow.xib; sourceTree = "<group>"; };
 		A64379DF183A3E46005FE37C /* FileSystemItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemItem.h; sourceTree = "<group>"; };
 		A64379E0183A3E46005FE37C /* FileSystemItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemItem.m; sourceTree = "<group>"; };
+		A6437A05183A5D5E005FE37C /* PowerMateDialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerMateDialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6437A09183A5D5E005FE37C /* PowerMateDialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateDialTests-Info.plist"; sourceTree = "<group>"; };
+		A6437A0B183A5D5E005FE37C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A6437A0D183A5D5E005FE37C /* PowerMateDialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerMateDialTests.m; sourceTree = "<group>"; };
+		A6437A0F183A5D5E005FE37C /* PowerMateDialTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PowerMateDialTests-Prefix.pch"; sourceTree = "<group>"; };
 		A64659941830C99600634936 /* PowerMateDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerMateDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64659981830C99600634936 /* PowerMateDial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateDial-Info.plist"; sourceTree = "<group>"; };
 		A646599A1830C99600634936 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -68,6 +86,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A6437A02183A5D5E005FE37C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6437A06183A5D5E005FE37C /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A64659911830C99600634936 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,6 +174,7 @@
 			children = (
 				A63927ED182E2EC400C2884C /* Configuration */,
 				A64659961830C99600634936 /* PowerMateDial */,
+				A6437A07183A5D5E005FE37C /* PowerMateDialTests */,
 				A63DC999182E128700298C9A /* Frameworks */,
 				A63DC998182E128700298C9A /* Products */,
 				A5C6BC27FB6D42E5BC0C7A4D /* Pods-PowerMateDial.xcconfig */,
@@ -158,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				A64659941830C99600634936 /* PowerMateDial.app */,
+				A6437A05183A5D5E005FE37C /* PowerMateDialTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,6 +251,25 @@
 			name = "Tree Suport";
 			sourceTree = "<group>";
 		};
+		A6437A07183A5D5E005FE37C /* PowerMateDialTests */ = {
+			isa = PBXGroup;
+			children = (
+				A6437A0D183A5D5E005FE37C /* PowerMateDialTests.m */,
+				A6437A08183A5D5E005FE37C /* Supporting Files */,
+			);
+			path = PowerMateDialTests;
+			sourceTree = "<group>";
+		};
+		A6437A08183A5D5E005FE37C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6437A09183A5D5E005FE37C /* PowerMateDialTests-Info.plist */,
+				A6437A0A183A5D5E005FE37C /* InfoPlist.strings */,
+				A6437A0F183A5D5E005FE37C /* PowerMateDialTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		A64659961830C99600634936 /* PowerMateDial */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +298,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A6437A04183A5D5E005FE37C /* PowerMateDialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6437A14183A5D5E005FE37C /* Build configuration list for PBXNativeTarget "PowerMateDialTests" */;
+			buildPhases = (
+				A6437A01183A5D5E005FE37C /* Sources */,
+				A6437A02183A5D5E005FE37C /* Frameworks */,
+				A6437A03183A5D5E005FE37C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6437A11183A5D5E005FE37C /* PBXTargetDependency */,
+			);
+			name = PowerMateDialTests;
+			productName = PowerMateDialTests;
+			productReference = A6437A05183A5D5E005FE37C /* PowerMateDialTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A64659931830C99600634936 /* PowerMateDial */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A64659BF1830C99600634936 /* Build configuration list for PBXNativeTarget "PowerMateDial" */;
@@ -279,6 +344,11 @@
 				CLASSPREFIX = "";
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Yusuke Sakurai";
+				TargetAttributes = {
+					A6437A04183A5D5E005FE37C = {
+						TestTargetID = A64659931830C99600634936;
+					};
+				};
 			};
 			buildConfigurationList = A63DC992182E128700298C9A /* Build configuration list for PBXProject "PowerMateApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -294,11 +364,20 @@
 			projectRoot = "";
 			targets = (
 				A64659931830C99600634936 /* PowerMateDial */,
+				A6437A04183A5D5E005FE37C /* PowerMateDialTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A6437A03183A5D5E005FE37C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6437A0C183A5D5E005FE37C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A64659921830C99600634936 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,6 +427,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A6437A01183A5D5E005FE37C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6437A0E183A5D5E005FE37C /* PowerMateDialTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A64659901830C99600634936 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,6 +449,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A6437A11183A5D5E005FE37C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A64659931830C99600634936 /* PowerMateDial */;
+			targetProxy = A6437A10183A5D5E005FE37C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		A64379D1183A0463005FE37C /* MainWindow.xib */ = {
 			isa = PBXVariantGroup;
@@ -369,6 +464,14 @@
 				A64379D2183A0463005FE37C /* Base */,
 			);
 			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		A6437A0A183A5D5E005FE37C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6437A0B183A5D5E005FE37C /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		A64659991830C99600634936 /* InfoPlist.strings */ = {
@@ -468,6 +571,46 @@
 			};
 			name = Release;
 		};
+		A6437A12183A5D5E005FE37C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PowerMateDial.app/Contents/MacOS/PowerMateDial";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PowerMateDialTests/PowerMateDialTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PowerMateDialTests/PowerMateDialTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A6437A13183A5D5E005FE37C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PowerMateDial.app/Contents/MacOS/PowerMateDial";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PowerMateDialTests/PowerMateDialTests-Prefix.pch";
+				INFOPLIST_FILE = "PowerMateDialTests/PowerMateDialTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		A64659BB1830C99600634936 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A5C6BC27FB6D42E5BC0C7A4D /* Pods-PowerMateDial.xcconfig */;
@@ -513,6 +656,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A6437A14183A5D5E005FE37C /* Build configuration list for PBXNativeTarget "PowerMateDialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6437A12183A5D5E005FE37C /* Debug */,
+				A6437A13183A5D5E005FE37C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		A64659BF1830C99600634936 /* Build configuration list for PBXNativeTarget "PowerMateDial" */ = {
 			isa = XCConfigurationList;
