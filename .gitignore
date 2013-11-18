@@ -24,3 +24,5 @@ build/
 *.dat
 *.dep
 
+# Python file
+*.py
