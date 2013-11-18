@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "NodeItem.h"
 
 @interface PowerMateDialTests : XCTestCase
 
@@ -26,9 +27,50 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testTreeUrl
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSURL *url = [NodeItem contentTreeURL];
+    XCTAssertNotNil(url, );
+}
+
+- (void)testFileManager
+{
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSError *e = nil;
+    // pre-fetchするプロパティ一覧
+    NSArray *props = @[NSURLIsDirectoryKey,NSURLEffectiveIconKey,NSURLNameKey,NSURLPathKey];
+    NSArray *c = [fm contentsOfDirectoryAtURL:[NodeItem contentTreeURL] includingPropertiesForKeys:props options:NSDirectoryEnumerationSkipsHiddenFiles error:&e];
+    XCTAssertNil(e, );
+    XCTAssertNotNil(c, );
+    NSLog(@"%@",c);
+    for (NSURL *url in c) {
+        NSDictionary *prop = [url resourceValuesForKeys:props error:&e];
+        XCTAssertNil(e, );
+        NSLog(@"%@",prop);
+    }
+}
+
+- (void)testNodeItem
+{
+    NSURL *url = [NodeItem contentTreeURL];
+    NodeItem *root = [NodeItem rootNodeWithURL:url];
+    // 深さ優先探索で全部のノードをテスト
+    NSMutableArray *stack = @[].mutableCopy;
+    [stack addObject:root];
+    while (stack.count != 0) {
+        NodeItem *item = [stack lastObject];
+        [stack removeLastObject];
+        XCTAssertNotNil(item, );
+        XCTAssertNotNil(item.name, );
+        XCTAssertNotNil(item.url, );
+        XCTAssertNotNil(item.iconImage, );
+        if (item.isLeaf) {
+            XCTAssertNil(item.children, );
+        }else{
+            XCTAssertNotNil(root.children, );
+            [stack addObjectsFromArray:item.children];
+        }
+    }
 }
 
 @end

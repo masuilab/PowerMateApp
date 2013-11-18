@@ -11,10 +11,11 @@
 		A64379D3183A0463005FE37C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64379D1183A0463005FE37C /* MainWindow.xib */; };
 		A64379D7183A2478005FE37C /* DebugWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379D5183A2478005FE37C /* DebugWindowController.m */; };
 		A64379D8183A2478005FE37C /* DebugWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64379D6183A2478005FE37C /* DebugWindow.xib */; };
-		A64379E3183A3E46005FE37C /* FileSystemItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379E0183A3E46005FE37C /* FileSystemItem.m */; };
+		A64379E3183A3E46005FE37C /* NodeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379E0183A3E46005FE37C /* NodeItem.m */; };
 		A6437A06183A5D5E005FE37C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC9B9182E128700298C9A /* XCTest.framework */; };
 		A6437A0C183A5D5E005FE37C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6437A0A183A5D5E005FE37C /* InfoPlist.strings */; };
 		A6437A0E183A5D5E005FE37C /* PowerMateDialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6437A0D183A5D5E005FE37C /* PowerMateDialTests.m */; };
+		A6437A18183A60B3005FE37C /* Tree in Resources */ = {isa = PBXBuildFile; fileRef = A6437A17183A60B3005FE37C /* Tree */; };
 		A64659951830C99600634936 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
 		A646599B1830C99600634936 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A64659991830C99600634936 /* InfoPlist.strings */; };
 		A646599D1830C99600634936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A646599C1830C99600634936 /* main.m */; };
@@ -65,13 +66,14 @@
 		A64379D4183A2478005FE37C /* DebugWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugWindowController.h; sourceTree = "<group>"; };
 		A64379D5183A2478005FE37C /* DebugWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugWindowController.m; sourceTree = "<group>"; };
 		A64379D6183A2478005FE37C /* DebugWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DebugWindow.xib; sourceTree = "<group>"; };
-		A64379DF183A3E46005FE37C /* FileSystemItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemItem.h; sourceTree = "<group>"; };
-		A64379E0183A3E46005FE37C /* FileSystemItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemItem.m; sourceTree = "<group>"; };
+		A64379DF183A3E46005FE37C /* NodeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeItem.h; sourceTree = "<group>"; };
+		A64379E0183A3E46005FE37C /* NodeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeItem.m; sourceTree = "<group>"; };
 		A6437A05183A5D5E005FE37C /* PowerMateDialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerMateDialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6437A09183A5D5E005FE37C /* PowerMateDialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateDialTests-Info.plist"; sourceTree = "<group>"; };
 		A6437A0B183A5D5E005FE37C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A6437A0D183A5D5E005FE37C /* PowerMateDialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerMateDialTests.m; sourceTree = "<group>"; };
 		A6437A0F183A5D5E005FE37C /* PowerMateDialTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PowerMateDialTests-Prefix.pch"; sourceTree = "<group>"; };
+		A6437A17183A60B3005FE37C /* Tree */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tree; sourceTree = "<group>"; };
 		A64659941830C99600634936 /* PowerMateDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerMateDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64659981830C99600634936 /* PowerMateDial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateDial-Info.plist"; sourceTree = "<group>"; };
 		A646599A1830C99600634936 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		A63DC98E182E128700298C9A = {
 			isa = PBXGroup;
 			children = (
+				A6437A17183A60B3005FE37C /* Tree */,
 				A63927ED182E2EC400C2884C /* Configuration */,
 				A64659961830C99600634936 /* PowerMateDial */,
 				A6437A07183A5D5E005FE37C /* PowerMateDialTests */,
@@ -245,8 +248,8 @@
 		A64379E5183A3E4E005FE37C /* Tree Suport */ = {
 			isa = PBXGroup;
 			children = (
-				A64379DF183A3E46005FE37C /* FileSystemItem.h */,
-				A64379E0183A3E46005FE37C /* FileSystemItem.m */,
+				A64379DF183A3E46005FE37C /* NodeItem.h */,
+				A64379E0183A3E46005FE37C /* NodeItem.m */,
 			);
 			name = "Tree Suport";
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				A64659A91830C99600634936 /* Images.xcassets in Resources */,
 				A64659A11830C99600634936 /* Credits.rtf in Resources */,
 				A64659A71830C99600634936 /* MainMenu.xib in Resources */,
+				A6437A18183A60B3005FE37C /* Tree in Resources */,
 				A64379D8183A2478005FE37C /* DebugWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,7 +445,7 @@
 			files = (
 				A64659A41830C99600634936 /* AppDelegate.m in Sources */,
 				A64379D7183A2478005FE37C /* DebugWindowController.m in Sources */,
-				A64379E3183A3E46005FE37C /* FileSystemItem.m in Sources */,
+				A64379E3183A3E46005FE37C /* NodeItem.m in Sources */,
 				A646599D1830C99600634936 /* main.m in Sources */,
 				A64379D0183A034A005FE37C /* MainWindowController.m in Sources */,
 			);
@@ -573,6 +577,7 @@
 		};
 		A6437A12183A5D5E005FE37C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A63927FD182E2EC400C2884C /* Mac-Application.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PowerMateDial.app/Contents/MacOS/PowerMateDial";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -595,6 +600,7 @@
 		};
 		A6437A13183A5D5E005FE37C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A63927FD182E2EC400C2884C /* Mac-Application.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PowerMateDial.app/Contents/MacOS/PowerMateDial";
 				FRAMEWORK_SEARCH_PATHS = (
