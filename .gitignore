@@ -26,4 +26,5 @@ build/
 
 # Python file
 Tree/*.py
+Tree/Recipe/*.py
 Pods
