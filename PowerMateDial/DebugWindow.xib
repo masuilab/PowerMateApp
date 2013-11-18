@@ -15,15 +15,15 @@
         <customObject id="-3" userLabel="Application"/>
         <window title="Debug" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="cKr-l4-hl5" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES" HUD="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="83" y="97" width="479" height="352"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="809" y="532" width="281" height="177"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
             <view key="contentView" id="MN6-N5-NEy">
-                <rect key="frame" x="0.0" y="0.0" width="479" height="352"/>
+                <rect key="frame" x="0.0" y="0.0" width="281" height="177"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jOO-IV-2Ip">
-                        <rect key="frame" x="40" y="291" width="130" height="26"/>
+                        <rect key="frame" x="40" y="116" width="130" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="cpS-RV-yfQ">
                             <font key="font" metaFont="system" size="15"/>

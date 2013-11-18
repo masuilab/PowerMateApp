@@ -9,6 +9,7 @@
 #import "PMDMainWindowController.h"
 
 @interface PMDMainWindowController ()
+
 @property (weak) IBOutlet NSSplitView *splitView;
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (strong) IBOutlet NSTreeController *treeController;
@@ -46,7 +47,7 @@
     //->(124) -> right
     // k(37) -> press
     // r(15) -> long press
-    NSLog(@"%@",theEvent);
+//    NSLog(@"%@",theEvent);
 }
 
 @end
