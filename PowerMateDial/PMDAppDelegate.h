@@ -10,6 +10,4 @@
 
 @interface PMDAppDelegate : NSResponder <NSApplicationDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
-
 @end

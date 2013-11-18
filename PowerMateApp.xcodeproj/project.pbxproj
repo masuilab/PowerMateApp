@@ -7,40 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A63927E8182E17A000C2884C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63927E7182E17A000C2884C /* WebKit.framework */; };
-		A63927E9182E1C5E00C2884C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63927E7182E17A000C2884C /* WebKit.framework */; };
-		A6392803182E2EC400C2884C /* Common.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927EF182E2EC400C2884C /* Common.xcconfig */; };
-		A6392804182E2EC400C2884C /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927F1182E2EC400C2884C /* Debug.xcconfig */; };
-		A6392805182E2EC400C2884C /* Profile.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927F2182E2EC400C2884C /* Profile.xcconfig */; };
-		A6392806182E2EC400C2884C /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927F3182E2EC400C2884C /* Release.xcconfig */; };
-		A6392807182E2EC400C2884C /* Test.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927F4182E2EC400C2884C /* Test.xcconfig */; };
-		A6392808182E2EC400C2884C /* Application.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927F6182E2EC400C2884C /* Application.xcconfig */; };
-		A6392809182E2EC400C2884C /* StaticLibrary.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927F7182E2EC400C2884C /* StaticLibrary.xcconfig */; };
-		A639280A182E2EC400C2884C /* iOS-Application.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927F9182E2EC400C2884C /* iOS-Application.xcconfig */; };
-		A639280B182E2EC400C2884C /* iOS-Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927FA182E2EC400C2884C /* iOS-Base.xcconfig */; };
-		A639280C182E2EC400C2884C /* iOS-StaticLibrary.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927FB182E2EC400C2884C /* iOS-StaticLibrary.xcconfig */; };
-		A639280D182E2EC400C2884C /* Mac-Application.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927FD182E2EC400C2884C /* Mac-Application.xcconfig */; };
-		A639280E182E2EC400C2884C /* Mac-Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927FE182E2EC400C2884C /* Mac-Base.xcconfig */; };
-		A639280F182E2EC400C2884C /* Mac-DynamicLibrary.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A63927FF182E2EC400C2884C /* Mac-DynamicLibrary.xcconfig */; };
-		A6392810182E2EC400C2884C /* Mac-Framework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A6392800182E2EC400C2884C /* Mac-Framework.xcconfig */; };
-		A6392811182E2EC400C2884C /* Mac-StaticLibrary.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A6392801182E2EC400C2884C /* Mac-StaticLibrary.xcconfig */; };
-		A6392812182E2EC400C2884C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A6392802182E2EC400C2884C /* README.md */; };
-		A63DC9D3182E12B600298C9A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
-		A63DC9D9182E12B600298C9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9D7182E12B600298C9A /* InfoPlist.strings */; };
-		A63DC9DB182E12B600298C9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DC9DA182E12B600298C9A /* main.m */; };
-		A63DC9DF182E12B600298C9A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9DD182E12B600298C9A /* Credits.rtf */; };
-		A63DC9E2182E12B600298C9A /* PMFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DC9E1182E12B600298C9A /* PMFAppDelegate.m */; };
-		A63DC9E5182E12B600298C9A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9E3182E12B600298C9A /* MainMenu.xib */; };
-		A63DC9E7182E12B600298C9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63DC9E6182E12B600298C9A /* Images.xcassets */; };
-		A63DCA35182E12FF00298C9A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
-		A63DCA3B182E12FF00298C9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA39182E12FF00298C9A /* InfoPlist.strings */; };
-		A63DCA3D182E12FF00298C9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DCA3C182E12FF00298C9A /* main.m */; };
-		A63DCA41182E12FF00298C9A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA3F182E12FF00298C9A /* Credits.rtf */; };
-		A63DCA44182E12FF00298C9A /* PMTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DCA43182E12FF00298C9A /* PMTAppDelegate.m */; };
-		A63DCA47182E12FF00298C9A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA45182E12FF00298C9A /* MainMenu.xib */; };
-		A63DCA49182E12FF00298C9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA48182E12FF00298C9A /* Images.xcassets */; };
-		A63DCA62182E144A00298C9A /* facebook_logo_detail.icns in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA61182E144A00298C9A /* facebook_logo_detail.icns */; };
-		A63DCA6B182E151B00298C9A /* tumblr-logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = A63DCA6A182E151B00298C9A /* tumblr-logo.icns */; };
+		A64379D0183A034A005FE37C /* PMDMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379CF183A034A005FE37C /* PMDMainWindowController.m */; };
+		A64379D3183A0463005FE37C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64379D1183A0463005FE37C /* MainWindow.xib */; };
 		A64659951830C99600634936 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
 		A646599B1830C99600634936 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A64659991830C99600634936 /* InfoPlist.strings */; };
 		A646599D1830C99600634936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A646599C1830C99600634936 /* main.m */; };
@@ -73,28 +41,9 @@
 		A63DC99E182E128700298C9A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A63DC99F182E128700298C9A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A63DC9B9182E128700298C9A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		A63DC9D2182E12B600298C9A /* PMFacebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMFacebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A63DC9D6182E12B600298C9A /* PMFacebook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMFacebook-Info.plist"; sourceTree = "<group>"; };
-		A63DC9D8182E12B600298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A63DC9DA182E12B600298C9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A63DC9DC182E12B600298C9A /* PMFacebook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PMFacebook-Prefix.pch"; sourceTree = "<group>"; };
-		A63DC9DE182E12B600298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		A63DC9E0182E12B600298C9A /* PMFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMFAppDelegate.h; sourceTree = "<group>"; };
-		A63DC9E1182E12B600298C9A /* PMFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMFAppDelegate.m; sourceTree = "<group>"; };
-		A63DC9E4182E12B600298C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		A63DC9E6182E12B600298C9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A63DCA34182E12FF00298C9A /* PMTumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMTumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A63DCA38182E12FF00298C9A /* PMTumblr-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMTumblr-Info.plist"; sourceTree = "<group>"; };
-		A63DCA3A182E12FF00298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A63DCA3C182E12FF00298C9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A63DCA3E182E12FF00298C9A /* PMTumblr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PMTumblr-Prefix.pch"; sourceTree = "<group>"; };
-		A63DCA40182E12FF00298C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		A63DCA42182E12FF00298C9A /* PMTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMTAppDelegate.h; sourceTree = "<group>"; };
-		A63DCA43182E12FF00298C9A /* PMTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMTAppDelegate.m; sourceTree = "<group>"; };
-		A63DCA46182E12FF00298C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		A63DCA48182E12FF00298C9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A63DCA61182E144A00298C9A /* facebook_logo_detail.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = facebook_logo_detail.icns; sourceTree = "<group>"; };
-		A63DCA6A182E151B00298C9A /* tumblr-logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "tumblr-logo.icns"; sourceTree = "<group>"; };
+		A64379CE183A034A005FE37C /* PMDMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDMainWindowController.h; sourceTree = "<group>"; };
+		A64379CF183A034A005FE37C /* PMDMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDMainWindowController.m; sourceTree = "<group>"; };
+		A64379D2183A0463005FE37C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		A64659941830C99600634936 /* PowerMateDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerMateDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64659981830C99600634936 /* PowerMateDial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateDial-Info.plist"; sourceTree = "<group>"; };
 		A646599A1830C99600634936 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -108,24 +57,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A63DC9CF182E12B600298C9A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A63927E8182E17A000C2884C /* WebKit.framework in Frameworks */,
-				A63DC9D3182E12B600298C9A /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A63DCA31182E12FF00298C9A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A63927E9182E1C5E00C2884C /* WebKit.framework in Frameworks */,
-				A63DCA35182E12FF00298C9A /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A64659911830C99600634936 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,8 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				A63927ED182E2EC400C2884C /* Configuration */,
-				A63DC9D4182E12B600298C9A /* PMFacebook */,
-				A63DCA36182E12FF00298C9A /* PMTumblr */,
 				A64659961830C99600634936 /* PowerMateDial */,
 				A63DC999182E128700298C9A /* Frameworks */,
 				A63DC998182E128700298C9A /* Products */,
@@ -215,8 +144,6 @@
 		A63DC998182E128700298C9A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A63DC9D2182E12B600298C9A /* PMFacebook.app */,
-				A63DCA34182E12FF00298C9A /* PMTumblr.app */,
 				A64659941830C99600634936 /* PowerMateDial.app */,
 			);
 			name = Products;
@@ -243,62 +170,15 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		A63DC9D4182E12B600298C9A /* PMFacebook */ = {
-			isa = PBXGroup;
-			children = (
-				A63DC9E0182E12B600298C9A /* PMFAppDelegate.h */,
-				A63DC9E1182E12B600298C9A /* PMFAppDelegate.m */,
-				A63DC9E3182E12B600298C9A /* MainMenu.xib */,
-				A63DC9E6182E12B600298C9A /* Images.xcassets */,
-				A63DCA61182E144A00298C9A /* facebook_logo_detail.icns */,
-				A63DC9D5182E12B600298C9A /* Supporting Files */,
-			);
-			path = PMFacebook;
-			sourceTree = "<group>";
-		};
-		A63DC9D5182E12B600298C9A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A63DC9D6182E12B600298C9A /* PMFacebook-Info.plist */,
-				A63DC9D7182E12B600298C9A /* InfoPlist.strings */,
-				A63DC9DA182E12B600298C9A /* main.m */,
-				A63DC9DC182E12B600298C9A /* PMFacebook-Prefix.pch */,
-				A63DC9DD182E12B600298C9A /* Credits.rtf */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A63DCA36182E12FF00298C9A /* PMTumblr */ = {
-			isa = PBXGroup;
-			children = (
-				A63DCA42182E12FF00298C9A /* PMTAppDelegate.h */,
-				A63DCA43182E12FF00298C9A /* PMTAppDelegate.m */,
-				A63DCA45182E12FF00298C9A /* MainMenu.xib */,
-				A63DCA48182E12FF00298C9A /* Images.xcassets */,
-				A63DCA6A182E151B00298C9A /* tumblr-logo.icns */,
-				A63DCA37182E12FF00298C9A /* Supporting Files */,
-			);
-			path = PMTumblr;
-			sourceTree = "<group>";
-		};
-		A63DCA37182E12FF00298C9A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A63DCA38182E12FF00298C9A /* PMTumblr-Info.plist */,
-				A63DCA39182E12FF00298C9A /* InfoPlist.strings */,
-				A63DCA3C182E12FF00298C9A /* main.m */,
-				A63DCA3E182E12FF00298C9A /* PMTumblr-Prefix.pch */,
-				A63DCA3F182E12FF00298C9A /* Credits.rtf */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		A64659961830C99600634936 /* PowerMateDial */ = {
 			isa = PBXGroup;
 			children = (
 				A64659A21830C99600634936 /* PMDAppDelegate.h */,
 				A64659A31830C99600634936 /* PMDAppDelegate.m */,
+				A64379CE183A034A005FE37C /* PMDMainWindowController.h */,
+				A64379CF183A034A005FE37C /* PMDMainWindowController.m */,
 				A64659A51830C99600634936 /* MainMenu.xib */,
+				A64379D1183A0463005FE37C /* MainWindow.xib */,
 				A64659A81830C99600634936 /* Images.xcassets */,
 				A64659971830C99600634936 /* Supporting Files */,
 			);
@@ -320,40 +200,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A63DC9D1182E12B600298C9A /* PMFacebook */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A63DC9F9182E12B600298C9A /* Build configuration list for PBXNativeTarget "PMFacebook" */;
-			buildPhases = (
-				A63DC9CE182E12B600298C9A /* Sources */,
-				A63DC9CF182E12B600298C9A /* Frameworks */,
-				A63DC9D0182E12B600298C9A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PMFacebook;
-			productName = PMFacebook;
-			productReference = A63DC9D2182E12B600298C9A /* PMFacebook.app */;
-			productType = "com.apple.product-type.application";
-		};
-		A63DCA33182E12FF00298C9A /* PMTumblr */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A63DCA5B182E12FF00298C9A /* Build configuration list for PBXNativeTarget "PMTumblr" */;
-			buildPhases = (
-				A63DCA30182E12FF00298C9A /* Sources */,
-				A63DCA31182E12FF00298C9A /* Frameworks */,
-				A63DCA32182E12FF00298C9A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PMTumblr;
-			productName = PMTumblr;
-			productReference = A63DCA34182E12FF00298C9A /* PMTumblr.app */;
-			productType = "com.apple.product-type.application";
-		};
 		A64659931830C99600634936 /* PowerMateDial */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A64659BF1830C99600634936 /* Build configuration list for PBXNativeTarget "PowerMateDial" */;
@@ -394,59 +240,18 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A63DC9D1182E12B600298C9A /* PMFacebook */,
-				A63DCA33182E12FF00298C9A /* PMTumblr */,
 				A64659931830C99600634936 /* PowerMateDial */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A63DC9D0182E12B600298C9A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A639280F182E2EC400C2884C /* Mac-DynamicLibrary.xcconfig in Resources */,
-				A6392805182E2EC400C2884C /* Profile.xcconfig in Resources */,
-				A63DC9D9182E12B600298C9A /* InfoPlist.strings in Resources */,
-				A6392812182E2EC400C2884C /* README.md in Resources */,
-				A639280A182E2EC400C2884C /* iOS-Application.xcconfig in Resources */,
-				A6392806182E2EC400C2884C /* Release.xcconfig in Resources */,
-				A6392808182E2EC400C2884C /* Application.xcconfig in Resources */,
-				A63DC9E7182E12B600298C9A /* Images.xcassets in Resources */,
-				A6392807182E2EC400C2884C /* Test.xcconfig in Resources */,
-				A6392811182E2EC400C2884C /* Mac-StaticLibrary.xcconfig in Resources */,
-				A6392810182E2EC400C2884C /* Mac-Framework.xcconfig in Resources */,
-				A6392804182E2EC400C2884C /* Debug.xcconfig in Resources */,
-				A63DC9DF182E12B600298C9A /* Credits.rtf in Resources */,
-				A639280D182E2EC400C2884C /* Mac-Application.xcconfig in Resources */,
-				A63DCA62182E144A00298C9A /* facebook_logo_detail.icns in Resources */,
-				A639280E182E2EC400C2884C /* Mac-Base.xcconfig in Resources */,
-				A63DC9E5182E12B600298C9A /* MainMenu.xib in Resources */,
-				A639280C182E2EC400C2884C /* iOS-StaticLibrary.xcconfig in Resources */,
-				A6392809182E2EC400C2884C /* StaticLibrary.xcconfig in Resources */,
-				A6392803182E2EC400C2884C /* Common.xcconfig in Resources */,
-				A639280B182E2EC400C2884C /* iOS-Base.xcconfig in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A63DCA32182E12FF00298C9A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A63DCA3B182E12FF00298C9A /* InfoPlist.strings in Resources */,
-				A63DCA49182E12FF00298C9A /* Images.xcassets in Resources */,
-				A63DCA41182E12FF00298C9A /* Credits.rtf in Resources */,
-				A63DCA6B182E151B00298C9A /* tumblr-logo.icns in Resources */,
-				A63DCA47182E12FF00298C9A /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A64659921830C99600634936 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A646599B1830C99600634936 /* InfoPlist.strings in Resources */,
+				A64379D3183A0463005FE37C /* MainWindow.xib in Resources */,
 				A64659A91830C99600634936 /* Images.xcassets in Resources */,
 				A64659A11830C99600634936 /* Credits.rtf in Resources */,
 				A64659A71830C99600634936 /* MainMenu.xib in Resources */,
@@ -456,82 +261,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A63DC9CE182E12B600298C9A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A63DC9DB182E12B600298C9A /* main.m in Sources */,
-				A63DC9E2182E12B600298C9A /* PMFAppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A63DCA30182E12FF00298C9A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A63DCA44182E12FF00298C9A /* PMTAppDelegate.m in Sources */,
-				A63DCA3D182E12FF00298C9A /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A64659901830C99600634936 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A64659A41830C99600634936 /* PMDAppDelegate.m in Sources */,
 				A646599D1830C99600634936 /* main.m in Sources */,
+				A64379D0183A034A005FE37C /* PMDMainWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A63DC9D7182E12B600298C9A /* InfoPlist.strings */ = {
+		A64379D1183A0463005FE37C /* MainWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A63DC9D8182E12B600298C9A /* en */,
+				A64379D2183A0463005FE37C /* Base */,
 			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A63DC9DD182E12B600298C9A /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A63DC9DE182E12B600298C9A /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		A63DC9E3182E12B600298C9A /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A63DC9E4182E12B600298C9A /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		A63DCA39182E12FF00298C9A /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A63DCA3A182E12FF00298C9A /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A63DCA3F182E12FF00298C9A /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A63DCA40182E12FF00298C9A /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		A63DCA45182E12FF00298C9A /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A63DCA46182E12FF00298C9A /* Base */,
-			);
-			name = MainMenu.xib;
+			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
 		A64659991830C99600634936 /* InfoPlist.strings */ = {
@@ -631,66 +379,6 @@
 			};
 			name = Release;
 		};
-		A63DC9FA182E12B600298C9A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A63927FD182E2EC400C2884C /* Mac-Application.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PMFacebook/PMFacebook-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "PMFacebook/PMFacebook-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		A63DC9FB182E12B600298C9A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A63927FD182E2EC400C2884C /* Mac-Application.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PMFacebook/PMFacebook-Prefix.pch";
-				INFOPLIST_FILE = "PMFacebook/PMFacebook-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		A63DCA5C182E12FF00298C9A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A63927FD182E2EC400C2884C /* Mac-Application.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PMTumblr/PMTumblr-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "PMTumblr/PMTumblr-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		A63DCA5D182E12FF00298C9A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A63927FD182E2EC400C2884C /* Mac-Application.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PMTumblr/PMTumblr-Prefix.pch";
-				INFOPLIST_FILE = "PMTumblr/PMTumblr-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 		A64659BB1830C99600634936 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -735,24 +423,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A63DC9F9182E12B600298C9A /* Build configuration list for PBXNativeTarget "PMFacebook" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A63DC9FA182E12B600298C9A /* Debug */,
-				A63DC9FB182E12B600298C9A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A63DCA5B182E12FF00298C9A /* Build configuration list for PBXNativeTarget "PMTumblr" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A63DCA5C182E12FF00298C9A /* Debug */,
-				A63DCA5D182E12FF00298C9A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A64659BF1830C99600634936 /* Build configuration list for PBXNativeTarget "PowerMateDial" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -760,6 +430,7 @@
 				A64659BC1830C99600634936 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

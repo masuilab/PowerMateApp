@@ -7,6 +7,7 @@
 //
 
 #import "PMDAppDelegate.h"
+#import "PMDMainWindowController.h"
 
 @interface PMDAppDelegate ()
 {
@@ -14,7 +15,7 @@
     NSMutableArray *_stack;
 }
 
-@property (weak) IBOutlet NSTextField *_textField;
+@property PMDMainWindowController *mainWindowContorller;
 
 @end
 
@@ -23,8 +24,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    _stack = [NSMutableArray new];
-    [self.window makeFirstResponder:self];
+    self.mainWindowContorller = [[PMDMainWindowController alloc] initWithWindowNibName:@"MainWindow"];
+    [self.mainWindowContorller showWindow:self];
 }
 
 - (void)keyUp:(NSEvent *)theEvent
@@ -43,16 +44,6 @@
     }
     [_stack insertObject:@(diff) atIndex:0];
     _previous = timestamp;
-    if (diff < 0.01) {
-        // 高速
-        [self._textField setStringValue:@"Fast"];
-    }else if (0.01 <= diff && diff <= 0.1) {
-        // 中速
-        [self._textField setStringValue:@"Normal"];
-    }else if (0.1 < diff){
-        // 低速
-        [self._textField setStringValue:@"Slow"];
-    }
     NSLog(@"%@",_stack);
 }
 
