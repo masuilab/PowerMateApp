@@ -7,16 +7,30 @@
 //
 
 #import "MainWindowController.h"
+#import "NodeItem.h"
+
+// 回転が止まってから何秒後に終了検知するか
+#define FINISH_TIMER_VALUE 0.8
+
+typedef enum NSUInteger{
+    RotationDirectionLeft = 123,
+    RotationDirectionRight = 124
+}RotationDirection;
 
 @interface MainWindowController ()
 {
     NSImage *folderImage;
+    NodeItem *rootNode;
+    NSInteger rotationCount;
+    NSTimer *timer;
 }
 
 @property (weak) IBOutlet NSSplitView *splitView;
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (strong) IBOutlet NSTreeController *treeController;
 @property (weak) IBOutlet NSTableColumn *tableColumn;
+@property (strong) IBOutlet NSPanel *debugWindow;
+@property (weak) IBOutlet NSTextField *label;
 
 @end
 
@@ -34,50 +48,63 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    
     [self.outlineView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
-    NSFileManager *fm = [NSFileManager defaultManager];
-    NSError *e = nil;
-    NSArray *contents = [fm contentsOfDirectoryAtPath:@"/Users/keroxp" error:&e];
-    if (e) {
-        NSLog(@"%@",e);
-    }
-    NSLog(@"%@",contents);
+    // Content Treeを読み込み
+    NSURL *treeURL = [NodeItem contentTreeURL];
+    rootNode = [NodeItem rootNodeWithURL:treeURL];
+    self.contents = rootNode.children;
 }
 
 - (void)windowDidLoad
 {
     [super windowDidLoad];
-    NSLog(@"windowDidLoad");
-    // KeyEventをこのクラスでキャッチする
-    [self.window makeFirstResponder:self];
 }
 
-- (void)windowWillLoad
+- (void)finishRotation
 {
-    [super windowWillLoad];
-    NSLog(@"windowWillLoad");
+    NSLog(@"rotation finished direction:times: %li",(long)rotationCount);
+    rotationCount = 0;
+    [self.label setTextColor:[NSColor redColor]];
 }
 
-- (void)keyUp:(NSEvent *)theEvent
+-(void)keyDown:(NSEvent *)theEvent
 {
-    // <-(123) -> left
-    //->(124) -> right
-    // k(37) -> press
-    // r(15) -> long press
-//    NSLog(@"%@",theEvent);
+    NSLog(@"%@",theEvent);
+    // 文字色を戻す
+    if (rotationCount == 0) {
+        [self.label setTextColor:[NSColor whiteColor]];
+    }
+    // 回転終了のチェック
+    [timer invalidate];
+    timer = [NSTimer scheduledTimerWithTimeInterval:FINISH_TIMER_VALUE target:self selector:@selector(finishRotation) userInfo:nil repeats:NO];
+    
+    // 方向によって回転数を上げ下げ
+    switch (theEvent.keyCode) {
+        case RotationDirectionLeft:
+            // left
+            rotationCount--;
+            break;
+        case RotationDirectionRight:
+            // right
+            rotationCount++;
+            break;
+        case 37: {
+            NSTreeNode *treenode = [self.treeController.selectedNodes objectAtIndex:0];
+            NodeItem *item = [treenode representedObject];
+            NSLog(@"%@",item.url.path);
+        }
+            break;
+        default:
+            break;
+    }
+    [self.label setIntegerValue:rotationCount];
 }
-
-#pragma mark - NSOutlineView Datasource
 
 #pragma mark - NSOutlineView delegate
 
-// ------------------------------------------------------------------------------
-
-// ----------------------------------------------------------------------------------------
-// outlineView:isGroupItem:item
-// ----------------------------------------------------------------------------------------
-
-#pragma mark - NSOutlineView Delegate
+- (void)outlineViewSelectionDidChange:(NSNotification *)notification
+{
+    
+}
 
 @end

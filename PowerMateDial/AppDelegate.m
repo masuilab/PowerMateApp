@@ -24,8 +24,6 @@
     // Insert code here to initialize your application
     self.mainWindowContorller = [[MainWindowController alloc] initWithWindowNibName:@"MainWindow"];
     [self.mainWindowContorller showWindow:self];
-    self.debugWindowController = [[DebugWindowController alloc] initWithWindowNibName:@"DebugWindow"];
-    [self.debugWindowController showWindow:self];
 }
 
 @end

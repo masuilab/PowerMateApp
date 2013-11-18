@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @interface MainWindowController : NSWindowController
-<NSOutlineViewDataSource,NSOutlineViewDelegate>
+<NSOutlineViewDelegate>
 
 @property (assign) NSArray *contents;
 

@@ -8,13 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MainWindowController.h"
-#import "DebugWindowController.h"
 
 @interface AppDelegate : NSResponder <NSApplicationDelegate>
 
 + (AppDelegate*)sharedDelegate;
 
 @property MainWindowController *mainWindowContorller;
-@property DebugWindowController *debugWindowController;
 
 @end

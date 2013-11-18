@@ -27,6 +27,9 @@
 // ルートオブジェクトを生成する
 + (instancetype)rootNodeWithURL:(NSURL*)url;
 
+// KVO用の子要素のカウントプロパティ
+- (NSUInteger)numberOfChildren;
+
 - (NSComparisonResult)compare:(NodeItem *)aNode;
 
 - (NSArray *)descendants;

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		A64379D0183A034A005FE37C /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379CF183A034A005FE37C /* MainWindowController.m */; };
 		A64379D3183A0463005FE37C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64379D1183A0463005FE37C /* MainWindow.xib */; };
-		A64379D7183A2478005FE37C /* DebugWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379D5183A2478005FE37C /* DebugWindowController.m */; };
-		A64379D8183A2478005FE37C /* DebugWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64379D6183A2478005FE37C /* DebugWindow.xib */; };
 		A64379E3183A3E46005FE37C /* NodeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379E0183A3E46005FE37C /* NodeItem.m */; };
 		A6437A06183A5D5E005FE37C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC9B9182E128700298C9A /* XCTest.framework */; };
 		A6437A0C183A5D5E005FE37C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6437A0A183A5D5E005FE37C /* InfoPlist.strings */; };
@@ -61,9 +59,6 @@
 		A64379CE183A034A005FE37C /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		A64379CF183A034A005FE37C /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		A64379D2183A0463005FE37C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		A64379D4183A2478005FE37C /* DebugWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugWindowController.h; sourceTree = "<group>"; };
-		A64379D5183A2478005FE37C /* DebugWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugWindowController.m; sourceTree = "<group>"; };
-		A64379D6183A2478005FE37C /* DebugWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DebugWindow.xib; sourceTree = "<group>"; };
 		A64379DF183A3E46005FE37C /* NodeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeItem.h; sourceTree = "<group>"; };
 		A64379E0183A3E46005FE37C /* NodeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeItem.m; sourceTree = "<group>"; };
 		A6437A05183A5D5E005FE37C /* PowerMateDialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerMateDialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,16 +206,6 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		A64379D9183A24C9005FE37C /* DebugWindow */ = {
-			isa = PBXGroup;
-			children = (
-				A64379D4183A2478005FE37C /* DebugWindowController.h */,
-				A64379D5183A2478005FE37C /* DebugWindowController.m */,
-				A64379D6183A2478005FE37C /* DebugWindow.xib */,
-			);
-			name = DebugWindow;
-			sourceTree = "<group>";
-		};
 		A64379DA183A24D3005FE37C /* MainWindow */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,7 +260,6 @@
 				A64379E5183A3E4E005FE37C /* Tree Suport */,
 				A64379DB183A24DC005FE37C /* AppDelegate */,
 				A64379DA183A24D3005FE37C /* MainWindow */,
-				A64379D9183A24C9005FE37C /* DebugWindow */,
 				A64659A81830C99600634936 /* Images.xcassets */,
 				A64659971830C99600634936 /* Supporting Files */,
 			);
@@ -385,7 +369,6 @@
 				A64659A11830C99600634936 /* Credits.rtf in Resources */,
 				A64659A71830C99600634936 /* MainMenu.xib in Resources */,
 				A6437A18183A60B3005FE37C /* Tree in Resources */,
-				A64379D8183A2478005FE37C /* DebugWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +388,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A64659A41830C99600634936 /* AppDelegate.m in Sources */,
-				A64379D7183A2478005FE37C /* DebugWindowController.m in Sources */,
 				A64379E3183A3E46005FE37C /* NodeItem.m in Sources */,
 				A646599D1830C99600634936 /* main.m in Sources */,
 				A64379D0183A034A005FE37C /* MainWindowController.m in Sources */,

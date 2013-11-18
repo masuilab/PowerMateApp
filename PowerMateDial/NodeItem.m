@@ -8,7 +8,10 @@
 
 #import "NodeItem.h"
 
-#define kFetchProperties @[NSURLIsDirectoryKey,NSURLEffectiveIconKey,NSURLNameKey,NSURLPathKey]
+#define kFetchProperties @[NSURLIsDirectoryKey,NSURLNameKey,NSURLPathKey]
+
+static NSMutableDictionary *iconImageCache;
+
 @interface NodeItem()
 // コンストラクタ
 - (instancetype)initWithURL:(NSURL*)url parent:(NodeItem*)parent;
@@ -16,6 +19,12 @@
 @end
 
 @implementation NodeItem
+
++ (void)load
+{
+    [super load];
+    iconImageCache = @{}.mutableCopy;
+}
 
 + (NSURL *)contentTreeURL
 {
@@ -41,7 +50,7 @@
     NSError *e = nil;
     NSDictionary *prop = [url resourceValuesForKeys:kFetchProperties error:&e];
     if (self = [super init]) {
-        _iconImage = prop[NSURLEffectiveIconKey];
+        _iconImage = [[NSWorkspace sharedWorkspace] iconForFile:url.path];
         _name = prop[NSURLNameKey];
         _url = url;
         _parent = parent;
@@ -55,7 +64,7 @@
                 [children addObject:newNode];
             }
             _children = children;
-        }
+        }        
     }
     return self;
 }
@@ -68,6 +77,10 @@
 	return [[[self name] lowercaseString] compare:[[aNode name] lowercaseString]];
 }
 
+- (NSUInteger)numberOfChildren
+{
+    return self.children.count;
+}
 
 #pragma mark - Drag and Drop
 
