@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PMDMainWindowController : NSWindowController
+@interface MainWindowController : NSWindowController
+<NSOutlineViewDataSource,NSOutlineViewDelegate>
+
+@property (assign) NSArray *contents;
 
 @end

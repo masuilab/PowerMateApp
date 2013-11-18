@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 Yusuke Sakurai. All rights reserved.
 //
 
-#import "PMDDebugWindowController.h"
+#import "DebugWindowController.h"
 
 // 回転が止まってから何秒後に終了検知するか
 #define FINISH_TIMER_VALUE 0.8
@@ -16,7 +16,7 @@ typedef enum NSUInteger{
     RotationDirectionRight = 124
 }RotationDirection;
 
-@interface PMDDebugWindowController ()
+@interface DebugWindowController ()
 {
     NSInteger rotationCount;
     NSTimer *timer;
@@ -26,7 +26,7 @@ typedef enum NSUInteger{
 
 @end
 
-@implementation PMDDebugWindowController
+@implementation DebugWindowController
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -54,7 +54,7 @@ typedef enum NSUInteger{
 
 -(void)keyDown:(NSEvent *)theEvent
 {
-    NSLog(@"%@",theEvent);
+//    NSLog(@"%@",theEvent);
     // 文字色を戻す
     if (rotationCount == 0) {
         [self.label setTextColor:[NSColor whiteColor]];

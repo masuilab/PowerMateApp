@@ -626,6 +626,6 @@
                 </menuItem>
             </items>
         </menu>
-        <customObject id="494" customClass="PMDAppDelegate"/>
+        <customObject id="494" customClass="AppDelegate"/>
     </objects>
 </document>

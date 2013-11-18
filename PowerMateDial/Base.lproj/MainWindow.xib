@@ -5,10 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="PMDMainWindowController">
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
             <connections>
                 <outlet property="outlineView" destination="Kae-bj-wCR" id="dgb-1I-bzV"/>
                 <outlet property="splitView" destination="gxQ-xd-Fxp" id="1xQ-lj-J7k"/>
+                <outlet property="tableColumn" destination="yP2-F4-Kwk" id="iBR-VR-6Jt"/>
                 <outlet property="treeController" destination="jwp-TC-PI6" id="kET-pk-4Zb"/>
                 <outlet property="window" destination="1" id="hVG-Mu-4FS"/>
             </connections>
@@ -19,7 +20,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="522" height="373"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="522" height="373"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -102,8 +103,21 @@
                                                                     </connections>
                                                                 </tableCellView>
                                                             </prototypeCellViews>
+                                                            <connections>
+                                                                <binding destination="jwp-TC-PI6" name="value" keyPath="arrangedObjects.self" id="f0X-BN-zGs">
+                                                                    <dictionary key="options">
+                                                                        <bool key="NSConditionallySetsEditable" value="NO"/>
+                                                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                    </dictionary>
+                                                                </binding>
+                                                            </connections>
                                                         </tableColumn>
                                                     </tableColumns>
+                                                    <connections>
+                                                        <binding destination="jwp-TC-PI6" name="content" keyPath="arrangedObjects.self" id="lX9-Re-qv5"/>
+                                                        <outlet property="dataSource" destination="-2" id="4zO-oI-htl"/>
+                                                        <outlet property="delegate" destination="-2" id="OZ3-7h-4fZ"/>
+                                                    </connections>
                                                 </outlineView>
                                             </subviews>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -132,7 +146,11 @@
                 </subviews>
             </view>
         </window>
-        <treeController id="jwp-TC-PI6"/>
+        <treeController editable="NO" childrenKeyPath="children" countKeyPath="children.count" leafKeyPath="isLeaf" id="jwp-TC-PI6">
+            <connections>
+                <binding destination="-2" name="contentArray" keyPath="contents" id="O9e-qT-ApV"/>
+            </connections>
+        </treeController>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>

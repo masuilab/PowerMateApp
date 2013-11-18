@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="PMDDebugWindowController">
+        <customObject id="-2" userLabel="File's Owner" customClass="DebugWindowController">
             <connections>
                 <outlet property="label" destination="jOO-IV-2Ip" id="dZ4-HI-JFv"/>
                 <outlet property="window" destination="cKr-l4-hl5" id="UEW-dS-a09"/>

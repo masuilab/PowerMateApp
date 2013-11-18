@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PMDDebugWindowController : NSWindowController
+@interface DebugWindowController : NSWindowController
 
 @end
