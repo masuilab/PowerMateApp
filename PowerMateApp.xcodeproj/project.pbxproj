@@ -23,7 +23,6 @@
 		A64659A41830C99600634936 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A64659A31830C99600634936 /* AppDelegate.m */; };
 		A64659A71830C99600634936 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64659A51830C99600634936 /* MainMenu.xib */; };
 		A64659A91830C99600634936 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A64659A81830C99600634936 /* Images.xcassets */; };
-		D878DAF612BC4221BB6D1EA5 /* libPods-PowerMateDial.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F02673E35442D5A961117B /* libPods-PowerMateDial.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A5C6BC27FB6D42E5BC0C7A4D /* Pods-PowerMateDial.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerMateDial.xcconfig"; path = "Pods/Pods-PowerMateDial.xcconfig"; sourceTree = "<group>"; };
 		A63927E7182E17A000C2884C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A63927EF182E2EC400C2884C /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		A63927F1182E2EC400C2884C /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A64659951830C99600634936 /* Cocoa.framework in Frameworks */,
-				D878DAF612BC4221BB6D1EA5 /* libPods-PowerMateDial.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +177,6 @@
 				A6437A07183A5D5E005FE37C /* PowerMateDialTests */,
 				A63DC999182E128700298C9A /* Frameworks */,
 				A63DC998182E128700298C9A /* Products */,
-				A5C6BC27FB6D42E5BC0C7A4D /* Pods-PowerMateDial.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -323,11 +319,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A64659BF1830C99600634936 /* Build configuration list for PBXNativeTarget "PowerMateDial" */;
 			buildPhases = (
-				E4C3B17D3644495D99ED3EE2 /* Check Pods Manifest.lock */,
 				A64659901830C99600634936 /* Sources */,
 				A64659911830C99600634936 /* Frameworks */,
 				A64659921830C99600634936 /* Resources */,
-				8316E81D74A640C2ABA3E7EF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -396,39 +390,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		8316E81D74A640C2ABA3E7EF /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-PowerMateDial-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E4C3B17D3644495D99ED3EE2 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A6437A01183A5D5E005FE37C /* Sources */ = {
@@ -619,7 +580,6 @@
 		};
 		A64659BB1830C99600634936 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5C6BC27FB6D42E5BC0C7A4D /* Pods-PowerMateDial.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -638,7 +598,6 @@
 		};
 		A64659BC1830C99600634936 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5C6BC27FB6D42E5BC0C7A4D /* Pods-PowerMateDial.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -670,6 +629,7 @@
 				A6437A13183A5D5E005FE37C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A64659BF1830C99600634936 /* Build configuration list for PBXNativeTarget "PowerMateDial" */ = {
 			isa = XCConfigurationList;
