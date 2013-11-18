@@ -7,7 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PMDMainWindowController.h"
+#import "PMDDebugWindowController.h"
 
 @interface PMDAppDelegate : NSResponder <NSApplicationDelegate>
+
++ (PMDAppDelegate*)sharedDelegate;
+
+@property PMDMainWindowController *mainWindowContorller;
+@property PMDDebugWindowController *debugWindowController;
 
 @end

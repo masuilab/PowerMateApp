@@ -7,21 +7,17 @@
 //
 
 #import "PMDAppDelegate.h"
-#import "PMDMainWindowController.h"
-#import "PMDDebugWindowController.h"
 
 @interface PMDAppDelegate ()
-{
-    NSTimeInterval _previous;
-    NSMutableArray *_stack;
-}
-
-@property PMDMainWindowController *mainWindowContorller;
-@property PMDDebugWindowController *debugWindowController;
 
 @end
 
 @implementation PMDAppDelegate
+
++ (PMDAppDelegate *)sharedDelegate
+{
+    return (PMDAppDelegate*)[[NSApplication sharedApplication] delegate];
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
