@@ -8,6 +8,7 @@
 
 #import "PMDAppDelegate.h"
 #import "PMDMainWindowController.h"
+#import "PMDDebugWindowController.h"
 
 @interface PMDAppDelegate ()
 {
@@ -16,6 +17,7 @@
 }
 
 @property PMDMainWindowController *mainWindowContorller;
+@property PMDDebugWindowController *debugWindowController;
 
 @end
 
@@ -26,25 +28,8 @@
     // Insert code here to initialize your application
     self.mainWindowContorller = [[PMDMainWindowController alloc] initWithWindowNibName:@"MainWindow"];
     [self.mainWindowContorller showWindow:self];
-}
-
-- (void)keyUp:(NSEvent *)theEvent
-{
-    // j(40) -> left
-    // k(38) -> right
-    // k(37) -> press
-    // r(15) -> long press
-//    NSLog(@"%@",theEvent);
-    NSTimeInterval timestamp = [theEvent timestamp];
-    unsigned short keyCode = [theEvent keyCode];
-    NSTimeInterval diff = timestamp - _previous;
-    NSLog(@"%u, %f",keyCode,diff);
-    if (_stack.count > 5) {
-        [_stack removeLastObject];
-    }
-    [_stack insertObject:@(diff) atIndex:0];
-    _previous = timestamp;
-    NSLog(@"%@",_stack);
+    self.debugWindowController = [[PMDDebugWindowController alloc] initWithWindowNibName:@"DebugWindow"];
+    [self.debugWindowController showWindow:self];
 }
 
 @end

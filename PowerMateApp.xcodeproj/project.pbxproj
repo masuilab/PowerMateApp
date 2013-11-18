@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A64379D0183A034A005FE37C /* PMDMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379CF183A034A005FE37C /* PMDMainWindowController.m */; };
 		A64379D3183A0463005FE37C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64379D1183A0463005FE37C /* MainWindow.xib */; };
+		A64379D7183A2478005FE37C /* PMDDebugWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379D5183A2478005FE37C /* PMDDebugWindowController.m */; };
+		A64379D8183A2478005FE37C /* DebugWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64379D6183A2478005FE37C /* DebugWindow.xib */; };
 		A64659951830C99600634936 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
 		A646599B1830C99600634936 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A64659991830C99600634936 /* InfoPlist.strings */; };
 		A646599D1830C99600634936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A646599C1830C99600634936 /* main.m */; };
@@ -44,6 +46,9 @@
 		A64379CE183A034A005FE37C /* PMDMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDMainWindowController.h; sourceTree = "<group>"; };
 		A64379CF183A034A005FE37C /* PMDMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDMainWindowController.m; sourceTree = "<group>"; };
 		A64379D2183A0463005FE37C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		A64379D4183A2478005FE37C /* PMDDebugWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDDebugWindowController.h; sourceTree = "<group>"; };
+		A64379D5183A2478005FE37C /* PMDDebugWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDDebugWindowController.m; sourceTree = "<group>"; };
+		A64379D6183A2478005FE37C /* DebugWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DebugWindow.xib; sourceTree = "<group>"; };
 		A64659941830C99600634936 /* PowerMateDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerMateDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64659981830C99600634936 /* PowerMateDial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateDial-Info.plist"; sourceTree = "<group>"; };
 		A646599A1830C99600634936 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -170,15 +175,42 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		A64659961830C99600634936 /* PowerMateDial */ = {
+		A64379D9183A24C9005FE37C /* DebugWindow */ = {
+			isa = PBXGroup;
+			children = (
+				A64379D4183A2478005FE37C /* PMDDebugWindowController.h */,
+				A64379D5183A2478005FE37C /* PMDDebugWindowController.m */,
+				A64379D6183A2478005FE37C /* DebugWindow.xib */,
+			);
+			name = DebugWindow;
+			sourceTree = "<group>";
+		};
+		A64379DA183A24D3005FE37C /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				A64379CE183A034A005FE37C /* PMDMainWindowController.h */,
+				A64379CF183A034A005FE37C /* PMDMainWindowController.m */,
+				A64379D1183A0463005FE37C /* MainWindow.xib */,
+			);
+			name = MainWindow;
+			sourceTree = "<group>";
+		};
+		A64379DB183A24DC005FE37C /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
 				A64659A21830C99600634936 /* PMDAppDelegate.h */,
 				A64659A31830C99600634936 /* PMDAppDelegate.m */,
-				A64379CE183A034A005FE37C /* PMDMainWindowController.h */,
-				A64379CF183A034A005FE37C /* PMDMainWindowController.m */,
 				A64659A51830C99600634936 /* MainMenu.xib */,
-				A64379D1183A0463005FE37C /* MainWindow.xib */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A64659961830C99600634936 /* PowerMateDial */ = {
+			isa = PBXGroup;
+			children = (
+				A64379DB183A24DC005FE37C /* AppDelegate */,
+				A64379DA183A24D3005FE37C /* MainWindow */,
+				A64379D9183A24C9005FE37C /* DebugWindow */,
 				A64659A81830C99600634936 /* Images.xcassets */,
 				A64659971830C99600634936 /* Supporting Files */,
 			);
@@ -255,6 +287,7 @@
 				A64659A91830C99600634936 /* Images.xcassets in Resources */,
 				A64659A11830C99600634936 /* Credits.rtf in Resources */,
 				A64659A71830C99600634936 /* MainMenu.xib in Resources */,
+				A64379D8183A2478005FE37C /* DebugWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A64659A41830C99600634936 /* PMDAppDelegate.m in Sources */,
+				A64379D7183A2478005FE37C /* PMDDebugWindowController.m in Sources */,
 				A646599D1830C99600634936 /* main.m in Sources */,
 				A64379D0183A034A005FE37C /* PMDMainWindowController.m in Sources */,
 			);
