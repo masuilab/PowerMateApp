@@ -8,6 +8,7 @@
 
 #import "NodeItem.h"
 
+#define kFetchProperties @[NSURLIsDirectoryKey,NSURLEffectiveIconKey,NSURLNameKey,NSURLPathKey]
 @interface NodeItem()
 // コンストラクタ
 - (instancetype)initWithURL:(NSURL*)url parent:(NodeItem*)parent;
@@ -19,9 +20,15 @@
 + (NSURL *)contentTreeURL
 {
     // リソースのTreeディレクトリを取得
-    NSString *treePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Tree"];
-    NSURL *url = [NSURL URLWithString:treePath];
-    return url;
+    NSError *e = nil;
+    NSArray *resources = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:[[NSBundle mainBundle] resourceURL]  includingPropertiesForKeys:kFetchProperties options:NSDirectoryEnumerationSkipsHiddenFiles error:&e];
+    for (NSURL *url in resources) {
+        if ([url.path rangeOfString:@"Tree"].location != NSNotFound) {
+            return url;
+        }
+    }
+    // 来ない
+    return nil;
 }
 
 + (instancetype)rootNodeWithURL:(NSURL *)url
@@ -31,9 +38,8 @@
 
 - (instancetype)initWithURL:(NSURL *)url parent:(NodeItem *)parent
 {
-    NSArray *props = @[NSURLIsDirectoryKey,NSURLEffectiveIconKey,NSURLNameKey,NSURLPathKey];
     NSError *e = nil;
-    NSDictionary *prop = [url resourceValuesForKeys:props error:&e];
+    NSDictionary *prop = [url resourceValuesForKeys:kFetchProperties error:&e];
     if (self = [super init]) {
         _iconImage = prop[NSURLEffectiveIconKey];
         _name = prop[NSURLNameKey];
@@ -43,7 +49,7 @@
         NSMutableArray *children = @[].mutableCopy;
         // 子供をインスタンス化
         if (!_isLeaf) {
-            NSArray *childNodes = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:url includingPropertiesForKeys:props options:NSDirectoryEnumerationSkipsHiddenFiles error:&e];
+            NSArray *childNodes = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:url includingPropertiesForKeys:kFetchProperties options:NSDirectoryEnumerationSkipsHiddenFiles error:&e];
             for (NSURL *childURL in childNodes) {
                 NodeItem *newNode = [[NodeItem alloc] initWithURL:childURL parent:self];
                 [children addObject:newNode];
