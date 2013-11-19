@@ -8,11 +8,12 @@ data = json.load(fp)
 i = 1
 
 for key in data:
+    print key
     os.mkdir(key)
     for key2 in data[key]:
-        os.mkdir(key+"/"+key2['title'])
+        os.makedirs(key+"/"+key2['title'])
         path = key+"/"+key2['title']+"/recipe"+str(i)
-        link = "レシピのリンク先はこちら -> "+key2['link']+"\n"+"画像のリンク先はこちら -> "+key2['iamge_path']
+        link = u"レシピのリンク先はこちら -> "+key2['link']+"\n"+u"画像のリンク先はこちら -> "+key2['iamge_path']
         f=open(path,"w")
-        f.write(link)
+        f.write(link.encode('utf-8'))
         f.close()
