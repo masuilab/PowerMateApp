@@ -12,5 +12,7 @@
 <NSOutlineViewDelegate>
 
 @property (assign) NSArray *contents;
+@property (readonly) NSArray *selectedIndexPaths;
+@property (readonly) NSArray *sortDescriptors;
 
 @end

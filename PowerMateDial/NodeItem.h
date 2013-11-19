@@ -22,21 +22,22 @@
 @property (readonly) BOOL isLeaf;
 // あれば親
 @property (readonly) NodeItem *parent;
+// グラフの中でのindex path
+@property (readonly) NSIndexPath *indexPath;
+// 同階層の中での順番
+@property (readonly) NSUInteger index;
 
 + (NSURL*)contentTreeURL;
 // ルートオブジェクトを生成する
 + (instancetype)rootNodeWithURL:(NSURL*)url;
 
+// 同階層の次のノード
+- (NodeItem*)nextNode;
+// 同階層の前のノード
+- (NodeItem*)previousNode;
 // KVO用の子要素のカウントプロパティ
 - (NSUInteger)numberOfChildren;
-
+// compare
 - (NSComparisonResult)compare:(NodeItem *)aNode;
-
-- (NSArray *)descendants;
-- (NSArray *)allChildLeafs;
-- (NSArray *)groupChildren;
-- (BOOL)isDescendantOfOrOneOfNodes:(NSArray *)nodes;
-- (BOOL)isDescendantOfNodes:(NSArray *)nodes;
-- (NSIndexPath *)indexPathInArray:(NSArray *)array;
 
 @end

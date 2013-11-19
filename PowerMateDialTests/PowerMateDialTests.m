@@ -10,6 +10,9 @@
 #import "NodeItem.h"
 
 @interface PowerMateDialTests : XCTestCase
+{
+    NSUInteger nodeCount;
+}
 
 @end
 
@@ -57,8 +60,10 @@
     // 深さ優先探索で全部のノードをテスト
     NSMutableArray *stack = @[].mutableCopy;
     [stack addObject:root];
+    nodeCount = 0;
+    NodeItem *item = nil;
     while (stack.count != 0) {
-        NodeItem *item = [stack lastObject];
+        item = [stack lastObject];
         [stack removeLastObject];
         XCTAssertNotNil(item, );
         XCTAssertNotNil(item.name, );
@@ -67,10 +72,32 @@
         if (item.isLeaf) {
             XCTAssertNil(item.children, );
         }else{
-            XCTAssertNotNil(root.children, );
+            XCTAssertNotNil(item.children, );
             [stack addObjectsFromArray:item.children];
         }
+        if (item != root) {
+            XCTAssert(item.parent, );
+            XCTAssert(item.indexPath, );
+        }
+        nodeCount++;
     }
+    NSLog(@"%@",item.indexPath);
+}
+
+- (void)testNodeLink
+{
+    NodeItem *root = [NodeItem rootNodeWithURL:[NodeItem contentTreeURL]];
+    NodeItem *item = root;
+    NSUInteger _nodeCount = 0;
+    do {
+        if (item.children) {
+            item = [[item children] firstObject];
+        }else{
+            item = [item nextNode];
+        }
+        _nodeCount++;
+    } while (item.nextNode);
+    XCTAssert(nodeCount == _nodeCount,);
 }
 
 @end

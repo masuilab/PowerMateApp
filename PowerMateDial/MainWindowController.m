@@ -32,6 +32,8 @@ typedef enum NSUInteger{
 @property (strong) IBOutlet NSPanel *debugWindow;
 @property (weak) IBOutlet NSTextField *label;
 
+@property (nonatomic) NodeItem *selectedNode;
+
 @end
 
 @implementation MainWindowController
@@ -52,12 +54,14 @@ typedef enum NSUInteger{
     // Content Treeを読み込み
     NSURL *treeURL = [NodeItem contentTreeURL];
     rootNode = [NodeItem rootNodeWithURL:treeURL];
-    self.contents = rootNode.children;
+    self.contents = @[rootNode];
+    _sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO]];
 }
 
 - (void)windowDidLoad
 {
     [super windowDidLoad];
+    self.selectedNode = rootNode.children.firstObject;
 }
 
 - (void)finishRotation
@@ -67,9 +71,18 @@ typedef enum NSUInteger{
     [self.label setTextColor:[NSColor redColor]];
 }
 
+- (void)setSelectedNode:(NodeItem *)selectedNode
+{
+    if (selectedNode != _selectedNode) {
+        _selectedNode = selectedNode;
+        [self.treeController setSelectionIndexPath:selectedNode.indexPath];
+        _selectedIndexPaths = @[selectedNode.indexPath];
+    }
+}
+
 -(void)keyDown:(NSEvent *)theEvent
 {
-    NSLog(@"%@",theEvent);
+//    NSLog(@"%@",theEvent);
     // 文字色を戻す
     if (rotationCount == 0) {
         [self.label setTextColor:[NSColor whiteColor]];
@@ -83,20 +96,33 @@ typedef enum NSUInteger{
         case RotationDirectionLeft:
             // left
             rotationCount--;
+            if (self.selectedNode.children) {
+                self.selectedNode = self.selectedNode.children.lastObject;
+            }else{
+                if (self.selectedNode.previousNode) {
+                    self.selectedNode = self.selectedNode.previousNode;
+                }
+            }
             break;
         case RotationDirectionRight:
             // right
             rotationCount++;
+            if (self.selectedNode.children) {
+                self.selectedNode = self.selectedNode.children.firstObject;
+            }else{
+                if (self.selectedNode.nextNode) {
+                    self.selectedNode = self.selectedNode.nextNode;
+                }
+            }
             break;
         case 37: {
-            NSTreeNode *treenode = [self.treeController.selectedNodes objectAtIndex:0];
-            NodeItem *item = [treenode representedObject];
-            NSLog(@"%@",item.url.path);
+            NSLog(@"%@",self.treeController.selectedObjects);
         }
             break;
         default:
             break;
     }
+    NSLog(@"%@ was selected",self.selectedNode);
     [self.label setIntegerValue:rotationCount];
 }
 
