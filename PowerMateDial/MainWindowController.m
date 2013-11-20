@@ -19,8 +19,6 @@ typedef enum NSUInteger{
 
 @interface MainWindowController ()
 {
-    // ルートになるノード
-    NodeItem *rootNode;
     // シークエンスの回転数。正負は左右と対応
     NSInteger rotationCount;
     // シークエンス終了検知のためのタイマー
@@ -51,16 +49,15 @@ typedef enum NSUInteger{
     [super awakeFromNib];
     // Content Treeを読み込み
 //    NSURL *treeURL = [NodeItem contentTreeURL];
-    NSURL *treeURL = [NodeItem homeURL];
-    rootNode = [NodeItem rootNodeWithURL:treeURL];
-    self.contents = @[rootNode];
     self.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    NSURL *treeURL = [NodeItem homeURL];
+    NodeItem *rootNode = [NodeItem rootNodeWithURL:treeURL];
+    [self setRootNode:rootNode];
 }
 
 - (void)windowDidLoad
 {
     [super windowDidLoad];
-    self.selectedNode = rootNode.children.firstObject;
 }
 
 - (void)finishRotation
@@ -68,6 +65,15 @@ typedef enum NSUInteger{
     NSLog(@"rotation finished direction:times: %li",(long)rotationCount);
     rotationCount = 0;
     [self.label setTextColor:[NSColor redColor]];
+}
+
+- (void)setRootNode:(NodeItem *)rootNode
+{
+    if (rootNode != _rootNode) {
+        _rootNode = rootNode;
+        self.contents = @[rootNode];
+        self.selectedNode = rootNode.children.firstObject;
+    }
 }
 
 - (void)setSelectedNode:(NodeItem *)selectedNode
@@ -121,8 +127,8 @@ typedef enum NSUInteger{
     switch (theEvent.keyCode) {
         case RotationDirectionLeft:
             // left
-            rotationCount--;
             if (self.selectedNode.previousNode){
+                rotationCount--;
                 NodeItem *previous = self.selectedNode.previousNode;
                 if (self.selectedNode.parent == previous) {
                     // 親への移動なら現在のexpandを閉じる
@@ -144,22 +150,24 @@ typedef enum NSUInteger{
             break;
         case RotationDirectionRight:
             // right
-            rotationCount++;
-            if (self.selectedNode.children) {
-                // 現在が内部ノードなら子の最初
-                selectedNode = self.selectedNode.children.firstObject;
-            }else{
-                // 次のノードがあれば
-                if (self.selectedNode.nextNode) {
-                    // 次
-                    NodeItem *next =  self.selectedNode.nextNode;
-                    // 別階層への移動なら現在のexpandを閉じる
-                    if (self.selectedNode.parent != next.parent) {
-                        [self changeSelectionProgramatically:^{
-                            [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
-                        }];
+            if (self.selectedNode.nextNode || self.selectedNode.children) {
+                rotationCount++;
+                if (self.selectedNode.children) {
+                    // 現在が内部ノードなら子の最初
+                    selectedNode = self.selectedNode.children.firstObject;
+                }else{
+                    // 次のノードがあれば
+                    if (self.selectedNode.nextNode) {
+                        // 次
+                        NodeItem *next =  self.selectedNode.nextNode;
+                        // 別階層への移動なら現在のexpandを閉じる
+                        if (self.selectedNode.parent != next.parent) {
+                            [self changeSelectionProgramatically:^{
+                                [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
+                            }];
+                        }
+                        selectedNode = next;
                     }
-                    selectedNode = next;
                 }
             }
             break;
@@ -184,14 +192,13 @@ typedef enum NSUInteger{
     NSInteger row = [self.outlineView selectedRow];
     self.selectedTreeNode = [self.outlineView itemAtRow:row];
     // プログラム上での選択変更でない <=> クリックでの操作変更の場合
-//    if (!selectionChangedBySelf) {
-//        NodeItem *item = self.selectedTreeNode.representedObject;
-//        if (!item) {
-//            
-//        }
-//        [self setSelectedNode:item];
-//        NSLog(@"%@",item);
-//    }
+    if (!selectionChangedBySelf) {
+        NodeItem *item = self.selectedTreeNode.representedObject;
+        if (item) {
+            [self setSelectedNode:item];
+        }
+        NSLog(@"%@",item);
+    }
 }
 
 @end

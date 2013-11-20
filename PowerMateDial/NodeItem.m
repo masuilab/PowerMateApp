@@ -8,8 +8,6 @@
 
 #import "NodeItem.h"
 
-#define kFetchProperties @[NSURLIsDirectoryKey,NSURLNameKey,NSURLPathKey]
-
 static NSMutableDictionary *iconImageCache;
 
 @interface NodeItem()
