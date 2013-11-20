@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require "nokogiri"
 require "open-uri"
 require "json"
@@ -74,6 +75,7 @@ class GetRecepies
 end
 
 gr = GetRecepies.new
-# gr.loadAll
+gr.loadAll
+
 # gr.loadRecepies
 # gr.merge_jsons
