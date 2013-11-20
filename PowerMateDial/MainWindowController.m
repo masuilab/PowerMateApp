@@ -49,9 +49,9 @@ typedef enum NSUInteger{
     [super awakeFromNib];
     // Content Treeを読み込み
 //    NSURL *treeURL = [NodeItem contentTreeURL];
-    self.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-    NSURL *treeURL = [NodeItem homeURL];
-    NodeItem *rootNode = [NodeItem rootNodeWithURL:treeURL];
+//    self.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
+//    NSURL *treeURL = [NodeItem homeURL];
+    NodeItem *rootNode = [NodeItem rootNodeWithJSON];
     [self setRootNode:rootNode];
 }
 
@@ -96,10 +96,12 @@ typedef enum NSUInteger{
     NSError *e = nil;
     NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"(png|jpg|gif)" options:NSRegularExpressionCaseInsensitive error:&e];
     NSString *ext = url.pathExtension;
-    NSRange result = [regexp rangeOfFirstMatchInString:ext options:0 range:NSMakeRange(0, ext.length)];
-    if (result.location != NSNotFound){
-        NSImage *image = [[NSImage alloc] initWithContentsOfFile:url.path];
-        self.imageView.image = image;
+    if (ext) {
+        NSRange result = [regexp rangeOfFirstMatchInString:ext options:0 range:NSMakeRange(0, ext.length)];
+        if (result.location != NSNotFound){
+            NSImage *image = [[NSImage alloc] initWithContentsOfFile:url.path];
+            self.imageView.image = image;
+        }
     }
 }
 

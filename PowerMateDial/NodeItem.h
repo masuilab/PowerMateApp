@@ -11,7 +11,7 @@
 @interface NodeItem : NSObject
 
 // ノードの名前。ファイル名orディレクトリ名
-@property (readonly) NSString *name;
+@property (readonly) NSString *title;
 // アイコンの画像
 @property (readonly) NSImage *iconImage;
 // 子ノード
@@ -27,11 +27,12 @@
 // 同階層の中での順番
 @property (readonly) NSUInteger index;
 
-+ (NSURL*)contentTreeURL;
+//+ (NSURL*)contentTreeURL;
 + (NSURL*)homeURL;
 
 // ルートオブジェクトを生成する
 + (instancetype)rootNodeWithURL:(NSURL*)url;
++ (instancetype)rootNodeWithJSON;
 
 // 同階層の次のノード
 - (NodeItem*)nextNode;

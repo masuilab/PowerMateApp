@@ -13,7 +13,6 @@
 		A6437A06183A5D5E005FE37C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC9B9182E128700298C9A /* XCTest.framework */; };
 		A6437A0C183A5D5E005FE37C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6437A0A183A5D5E005FE37C /* InfoPlist.strings */; };
 		A6437A0E183A5D5E005FE37C /* PowerMateDialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6437A0D183A5D5E005FE37C /* PowerMateDialTests.m */; };
-		A6437A18183A60B3005FE37C /* Tree in Resources */ = {isa = PBXBuildFile; fileRef = A6437A17183A60B3005FE37C /* Tree */; };
 		A64659951830C99600634936 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
 		A646599B1830C99600634936 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A64659991830C99600634936 /* InfoPlist.strings */; };
 		A646599D1830C99600634936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A646599C1830C99600634936 /* main.m */; };
@@ -21,6 +20,7 @@
 		A64659A41830C99600634936 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A64659A31830C99600634936 /* AppDelegate.m */; };
 		A64659A71830C99600634936 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64659A51830C99600634936 /* MainMenu.xib */; };
 		A64659A91830C99600634936 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A64659A81830C99600634936 /* Images.xcassets */; };
+		A6EA7732183CFCD700AA0EBF /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = A6EA7731183CFCD600AA0EBF /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +66,6 @@
 		A6437A0B183A5D5E005FE37C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A6437A0D183A5D5E005FE37C /* PowerMateDialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerMateDialTests.m; sourceTree = "<group>"; };
 		A6437A0F183A5D5E005FE37C /* PowerMateDialTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PowerMateDialTests-Prefix.pch"; sourceTree = "<group>"; };
-		A6437A17183A60B3005FE37C /* Tree */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tree; sourceTree = "<group>"; };
 		A64659941830C99600634936 /* PowerMateDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerMateDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64659981830C99600634936 /* PowerMateDial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateDial-Info.plist"; sourceTree = "<group>"; };
 		A646599A1830C99600634936 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		A64659A31830C99600634936 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A64659A61830C99600634936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A64659A81830C99600634936 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A6EA7731183CFCD600AA0EBF /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../Data/data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +165,6 @@
 		A63DC98E182E128700298C9A = {
 			isa = PBXGroup;
 			children = (
-				A6437A17183A60B3005FE37C /* Tree */,
 				A63927ED182E2EC400C2884C /* Configuration */,
 				A64659961830C99600634936 /* PowerMateDial */,
 				A6437A07183A5D5E005FE37C /* PowerMateDialTests */,
@@ -245,6 +244,7 @@
 		A6437A08183A5D5E005FE37C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A6EA7731183CFCD600AA0EBF /* data.json */,
 				A6437A09183A5D5E005FE37C /* PowerMateDialTests-Info.plist */,
 				A6437A0A183A5D5E005FE37C /* InfoPlist.strings */,
 				A6437A0F183A5D5E005FE37C /* PowerMateDialTests-Prefix.pch */,
@@ -362,11 +362,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A646599B1830C99600634936 /* InfoPlist.strings in Resources */,
+				A6EA7732183CFCD700AA0EBF /* data.json in Resources */,
 				A64379D3183A0463005FE37C /* MainWindow.xib in Resources */,
 				A64659A91830C99600634936 /* Images.xcassets in Resources */,
 				A64659A11830C99600634936 /* Credits.rtf in Resources */,
 				A64659A71830C99600634936 /* MainMenu.xib in Resources */,
-				A6437A18183A60B3005FE37C /* Tree in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
