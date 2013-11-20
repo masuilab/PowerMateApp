@@ -188,7 +188,7 @@ static NSMutableDictionary *iconImageCache;
         return [self.parent.children objectAtIndex:self.index+1];
     }else{
         // 階層で最後のオブジェクトならば親のnextNode
-        return self.parent.nextNode;
+        return nil;
     }
 }
 
@@ -199,7 +199,7 @@ static NSMutableDictionary *iconImageCache;
         return [self.parent.children objectAtIndex:self.index-1];
     }else{
         // 最初の子なら親
-        return self.parent;
+        return nil;
     }
 }
 
