@@ -22,8 +22,7 @@
             <declaredKeys>
                 <string>children</string>
                 <string>iconImage</string>
-                <string>name</string>
-                <string>self</string>
+                <string>title</string>
             </declaredKeys>
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="contents" id="O9e-qT-ApV"/>
@@ -76,7 +75,7 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <connections>
-                                                                <binding destination="jwp-TC-PI6" name="value" keyPath="arrangedObjects.name" id="WE8-Zg-fVp"/>
+                                                                <binding destination="jwp-TC-PI6" name="value" keyPath="arrangedObjects.title" id="7us-Kf-eSW"/>
                                                             </connections>
                                                         </tableColumn>
                                                     </tableColumns>

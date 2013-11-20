@@ -13,6 +13,7 @@ static NSMutableDictionary *iconImageCache;
 @interface NodeItem()
 // コンストラクタ
 - (instancetype)initWithURL:(NSURL*)url parent:(NodeItem*)parent index:(NSUInteger)index;
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary parent:(NodeItem *)parent index:(NSUInteger)index;
 
 @end
 
@@ -62,13 +63,59 @@ static NSMutableDictionary *iconImageCache;
     return [[self alloc] initWithURL:url parent:nil index:0];
 }
 
++ (instancetype)rootNodeWithJSON
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    NSError *e = nil;
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&e];
+    NSMutableDictionary *root = @{@"title": @"root"}.mutableCopy;
+    [root setObject:json forKey:@"children"];
+    return [[self alloc] initWithDictionary:root parent:nil index:0];
+}
+
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary parent:(NodeItem *)parent index:(NSUInteger)index
+{
+    if (self = [super init]) {
+        _title = dictionary[@"title"];
+        if (dictionary[@"url"]) {
+            _url = [NSURL URLWithString:dictionary[@"url"]];
+        }
+        _parent = parent;
+        _index = index;
+        if (parent) {
+            // 階層なら
+            _indexPath = [self.parent.indexPath indexPathByAddingIndex:index];
+        }else{
+            // トップディレクトリなら
+            _indexPath = [NSIndexPath indexPathWithIndex:0];
+        }
+        if (dictionary[@"children"]) {
+            _isLeaf = NO;
+        }else{
+            _isLeaf = YES;
+        }
+        NSMutableArray *children = @[].mutableCopy;
+        // 子供をインスタンス化
+        if (!_isLeaf) {
+            NSArray *childNodes = dictionary[@"children"];
+            [childNodes enumerateObjectsUsingBlock:^(NSDictionary *childDict, NSUInteger idx, BOOL *stop) {
+                NodeItem *newNode = [[NodeItem alloc] initWithDictionary:childDict parent:self index:idx];
+                [children addObject:newNode];
+            }];
+            _children = children;
+        }
+    }
+    return self;
+}
+
 - (instancetype)initWithURL:(NSURL *)url parent:(NodeItem *)parent index:(NSUInteger)index
 {
     NSError *e = nil;
     NSDictionary *prop = [url resourceValuesForKeys:kFetchProperties error:&e];
     if (self = [super init]) {
         _iconImage = [[NSWorkspace sharedWorkspace] iconForFile:url.path];
-        _name = prop[NSURLNameKey];
+        _title = prop[NSURLNameKey];
         _url = url;
         _parent = parent;
         _index = index;
@@ -110,7 +157,7 @@ static NSMutableDictionary *iconImageCache;
 
 - (NSComparisonResult)compare:(NodeItem *)aNode
 {
-	return [[[self name] lowercaseString] compare:[[aNode name] lowercaseString]];
+	return [[[self title] lowercaseString] compare:[[aNode title] lowercaseString]];
 }
 
 - (NodeItem *)nextNode
@@ -156,7 +203,7 @@ static NSMutableDictionary *iconImageCache;
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<NodeItem: %@>",self.name];
+    return [NSString stringWithFormat:@"<NodeItem: %@>",self.title];
 }
 
 @end
