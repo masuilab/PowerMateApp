@@ -77,7 +77,6 @@
 		A64659A31830C99600634936 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A64659A61830C99600634936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A64659A81830C99600634936 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C0F02673E35442D5A961117B /* libPods-PowerMateDial.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PowerMateDial.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +190,6 @@
 				A63DC99A182E128700298C9A /* Cocoa.framework */,
 				A63DC9B9182E128700298C9A /* XCTest.framework */,
 				A63DC99C182E128700298C9A /* Other Frameworks */,
-				C0F02673E35442D5A961117B /* libPods-PowerMateDial.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
