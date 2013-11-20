@@ -3,7 +3,7 @@
 #
 #
 
-default: clean json jq
+default: clean jsonall jq
 
 clean:
 	echo "### Removing data.json... ###"
@@ -19,9 +19,8 @@ json:
 
 jsonall:
 	ruby ltsv2json */*.ltsv > .data.json
-	cat .data.json | jq '.'
-	mv .data.json data.json
-
+	cat .data.json | jq '.' > data.json
+	rm .data.json
 
 jq:
 	echo "### Validating data.json..."
