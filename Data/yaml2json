@@ -4,8 +4,6 @@
 # yamlデータをJSONに変換
 # shokai氏がやってくれるのだろうか
 #
-files = [
-         "Aozora/aozora.yaml"
-         ]
+
 
 
