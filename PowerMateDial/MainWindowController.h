@@ -16,7 +16,7 @@
 // 全ノードが入っているグラフ
 @property (assign) NSArray *contents;
 // 現在選択中のノードへのIndexPath
-@property (assign) NSArray *selectedIndexPaths;
+@property (nonatomic, assign) NSArray *selectedIndexPaths;
 // ノードの同階層での並び順のデスクリプタ
 @property (assign) NSArray *sortDescriptors;
 

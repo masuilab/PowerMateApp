@@ -82,7 +82,7 @@
                                                     </tableColumns>
                                                     <connections>
                                                         <binding destination="jwp-TC-PI6" name="content" keyPath="arrangedObjects" id="JSL-6I-z7v"/>
-                                                        <binding destination="jwp-TC-PI6" name="selectionIndexPaths" keyPath="selectedObjects.indexPath" previousBinding="JSL-6I-z7v" id="Q1T-zY-kkw"/>
+                                                        <binding destination="jwp-TC-PI6" name="selectionIndexPaths" keyPath="selectionIndexPaths" previousBinding="JSL-6I-z7v" id="McT-lN-24k"/>
                                                         <outlet property="dataSource" destination="-2" id="k0X-ap-Ulv"/>
                                                         <outlet property="delegate" destination="-2" id="OZ3-7h-4fZ"/>
                                                     </connections>

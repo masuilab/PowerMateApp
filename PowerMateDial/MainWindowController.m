@@ -23,10 +23,6 @@ typedef enum NSUInteger{
     NodeItem *rootNode;
     // シークエンスの回転数。正負は左右と対応
     NSInteger rotationCount;
-    // シークエンスの右への合計回転数
-    NSUInteger rotationToRight;
-    // シークエンスの左への合計回転数
-    NSUInteger rotationToLeft;
     // シークエンス終了検知のためのタイマー
     NSTimer *timer;
     // ノードの選択がプログラム中で行われたか
@@ -39,12 +35,12 @@ typedef enum NSUInteger{
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (strong) IBOutlet NSTreeController *treeController;
 @property (weak) IBOutlet NSTableColumn *tableColumn;
-@property (strong) IBOutlet NSPanel *debugWindow;
 @property (weak) IBOutlet NSTextField *label;
 @property (weak) IBOutlet NSImageView *imageView;
 
 // 現在選択中のノード
 @property (nonatomic) NodeItem *selectedNode;
+@property (nonatomic) NSTreeNode *selectedTreeNode;
 
 @end
 
@@ -77,22 +73,36 @@ typedef enum NSUInteger{
 - (void)setSelectedNode:(NodeItem *)selectedNode
 {
     if (selectedNode != _selectedNode) {
-        selectionChangedBySelf = YES;
-        _selectedNode = selectedNode;
-        [self.treeController setSelectionIndexPath:selectedNode.indexPath];
-        self.selectedIndexPaths = @[selectedNode.indexPath];
-        if (selectedNode.isLeaf) {
-            NSError *e = nil;
-            NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"(png|jpg|gif)" options:NSRegularExpressionCaseInsensitive error:&e];
-            NSString *ext = selectedNode.url.pathExtension;
-            NSRange result = [regexp rangeOfFirstMatchInString:ext options:0 range:NSMakeRange(0, ext.length)];
-            if (result.location != NSNotFound){
-                NSImage *image = [[NSImage alloc] initWithContentsOfFile:selectedNode.url.path];
-                self.imageView.image = image;
+        [self changeSelectionProgramatically:^{
+            _selectedNode = selectedNode;
+            [self.treeController setSelectionIndexPath:selectedNode.indexPath];
+            self.selectedIndexPaths = @[selectedNode.indexPath];
+            // 葉ならファイルを表示
+            if (selectedNode.isLeaf) {
+                [self showFile:selectedNode.url];
             }
-        }
-        selectionChangedBySelf = NO;
+        }];
     }
+}
+
+- (void)showFile:(NSURL*)url
+{
+    NSError *e = nil;
+    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"(png|jpg|gif)" options:NSRegularExpressionCaseInsensitive error:&e];
+    NSString *ext = url.pathExtension;
+    NSRange result = [regexp rangeOfFirstMatchInString:ext options:0 range:NSMakeRange(0, ext.length)];
+    if (result.location != NSNotFound){
+        NSImage *image = [[NSImage alloc] initWithContentsOfFile:url.path];
+        self.imageView.image = image;
+    }
+}
+
+- (void)changeSelectionProgramatically:(void (^)())block{
+    selectionChangedBySelf = YES;
+    if (block) {
+        block();
+    }
+    selectionChangedBySelf = NO;
 }
 
 -(void)keyDown:(NSEvent *)theEvent
@@ -106,16 +116,29 @@ typedef enum NSUInteger{
     [timer invalidate];
     timer = [NSTimer scheduledTimerWithTimeInterval:FINISH_TIMER_VALUE target:self selector:@selector(finishRotation) userInfo:nil repeats:NO];
     
+    NodeItem *selectedNode = nil;
     // 方向によって回転数を上げ下げ
     switch (theEvent.keyCode) {
         case RotationDirectionLeft:
             // left
             rotationCount--;
-            if (self.selectedNode.children) {
-                self.selectedNode = self.selectedNode.children.lastObject;
-            }else{
-                if (self.selectedNode.previousNode) {
-                    self.selectedNode = self.selectedNode.previousNode;
+            if (self.selectedNode.previousNode){
+                NodeItem *previous = self.selectedNode.previousNode;
+                if (self.selectedNode.parent == previous) {
+                    // 親への移動なら現在のexpandを閉じる
+                    [self changeSelectionProgramatically:^{
+                        [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
+                    }];
+                    selectedNode = previous;
+                }else{
+                    // バックワードの移動なら
+                    if (previous.children) {
+                        //次の要素に子どもが居たら末子
+                        selectedNode = previous.children.lastObject;
+                    }else{
+                        // 居なければ前
+                        selectedNode = previous;
+                    }
                 }
             }
             break;
@@ -123,10 +146,20 @@ typedef enum NSUInteger{
             // right
             rotationCount++;
             if (self.selectedNode.children) {
-                self.selectedNode = self.selectedNode.children.firstObject;
+                // 現在が内部ノードなら子の最初
+                selectedNode = self.selectedNode.children.firstObject;
             }else{
+                // 次のノードがあれば
                 if (self.selectedNode.nextNode) {
-                    self.selectedNode = self.selectedNode.nextNode;
+                    // 次
+                    NodeItem *next =  self.selectedNode.nextNode;
+                    // 別階層への移動なら現在のexpandを閉じる
+                    if (self.selectedNode.parent != next.parent) {
+                        [self changeSelectionProgramatically:^{
+                            [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
+                        }];
+                    }
+                    selectedNode = next;
                 }
             }
             break;
@@ -137,7 +170,10 @@ typedef enum NSUInteger{
         default:
             break;
     }
-    NSLog(@"%@ was selected",self.selectedNode);
+    NSLog(@"%@ was selected",selectedNode);
+    if (selectedNode) {
+        [self setSelectedNode:selectedNode];
+    }
     [self.label setIntegerValue:rotationCount];
 }
 
@@ -145,13 +181,17 @@ typedef enum NSUInteger{
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification
 {
+    NSInteger row = [self.outlineView selectedRow];
+    self.selectedTreeNode = [self.outlineView itemAtRow:row];
     // プログラム上での選択変更でない <=> クリックでの操作変更の場合
-    if (!selectionChangedBySelf) {
-        NSInteger row = [self.outlineView selectedRow];
-        NodeItem *item = [[self.outlineView itemAtRow:row] representedObject];
-        [self setSelectedNode:item];
-        NSLog(@"%@",item);
-    }
+//    if (!selectionChangedBySelf) {
+//        NodeItem *item = self.selectedTreeNode.representedObject;
+//        if (!item) {
+//            
+//        }
+//        [self setSelectedNode:item];
+//        NSLog(@"%@",item);
+//    }
 }
 
 @end
