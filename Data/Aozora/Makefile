@@ -9,4 +9,6 @@ get:
 # yamlに変換する。読みは手作業で追加する...
 list:
 	ruby aozora2yaml > aozora.list
+ltsv:
+	ruby yaml2ltsv aozora.yaml > aozora.ltsv
 
