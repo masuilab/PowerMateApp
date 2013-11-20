@@ -1,6 +1,7 @@
-stations.yaml:
+all: yaml ltsv
+yaml: clean
 	ruby stations2yaml > stations.yaml
-stations.ltsv:
+ltsv: clean
 	ruby stations2ltsv > stations.ltsv
 clean:
 	/bin/rm -f stations.yaml stations.ltsv
