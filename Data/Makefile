@@ -10,10 +10,9 @@ clean:
 	rm data.json
 
 json:
-	echo "### Merge all ltsv file into data.json..."
+	echo "### Merge all ltsv files into data.json..."
 	ruby ltsv2json Photos/photos.ltsv Aozora/aozora.ltsv Stations/stations.ltsv > data.json
 #	ruby ltsv2json */*.ltsv > data.json
-#	ruby yaml2json */*.yaml
 
 jq:
 	echo "### Validating data.json..."
