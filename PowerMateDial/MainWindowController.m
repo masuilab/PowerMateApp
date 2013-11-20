@@ -11,21 +11,32 @@
 
 // 回転が止まってから何秒後に終了検知するか
 #define FINISH_TIMER_VALUE 0.8
+#define SNAP_THRESHOLD 10
+#define SnapDepthNone NSUIntegerMax
 
 typedef enum NSUInteger{
-    RotationDirectionLeft = 123,
-    RotationDirectionRight = 124
-}RotationDirection;
+    PowerMateActionRotationLeft = 123,
+    PowerMateActionRotationRight = 124
+}PowerMateAction;
+
 
 @interface MainWindowController ()
 {
     // シークエンスの回転数。正負は左右と対応
     NSInteger rotationCount;
+    //
+    NSUInteger rotationToLeft;
+    //
+    NSUInteger rotationToRight;
     // シークエンス終了検知のためのタイマー
     NSTimer *timer;
     // ノードの選択がプログラム中で行われたか
     // <=> PowerMate経由での選択かを判別するためのフラグ
     BOOL selectionChangedBySelf;
+    // 次のスナップの単位が変わるとき
+    NSUInteger nextThreshold;
+    // 現在スナップしている階層
+    NSUInteger snapDepth;
 }
 
 /* View Outlets */
@@ -52,7 +63,10 @@ typedef enum NSUInteger{
 //    self.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
 //    NSURL *treeURL = [NodeItem homeURL];
     NodeItem *rootNode = [NodeItem rootNodeWithJSON];
+    //    NSURL *treeURL = [NodeItem contentTreeURL];
     [self setRootNode:rootNode];
+    nextThreshold = SNAP_THRESHOLD;
+    snapDepth = SnapDepthNone;
 }
 
 - (void)windowDidLoad
@@ -64,6 +78,10 @@ typedef enum NSUInteger{
 {
     NSLog(@"rotation finished direction:times: %li",(long)rotationCount);
     rotationCount = 0;
+    rotationToRight = 0;
+    rotationToLeft = 0;
+    nextThreshold = SNAP_THRESHOLD;
+    snapDepth = SnapDepthNone;
     [self.label setTextColor:[NSColor redColor]];
 }
 
@@ -115,7 +133,7 @@ typedef enum NSUInteger{
 
 -(void)keyDown:(NSEvent *)theEvent
 {
-//    NSLog(@"%@",theEvent);
+    //    NSLog(@"%@",theEvent);
     // 文字色を戻す
     if (rotationCount == 0) {
         [self.label setTextColor:[NSColor blackColor]];
@@ -124,67 +142,117 @@ typedef enum NSUInteger{
     [timer invalidate];
     timer = [NSTimer scheduledTimerWithTimeInterval:FINISH_TIMER_VALUE target:self selector:@selector(finishRotation) userInfo:nil repeats:NO];
     
-    NodeItem *selectedNode = nil;
-    // 方向によって回転数を上げ下げ
-    switch (theEvent.keyCode) {
-        case RotationDirectionLeft:
-            // left
-            if (self.selectedNode.previousNode){
-                rotationCount--;
-                NodeItem *previous = self.selectedNode.previousNode;
-                if (self.selectedNode.parent == previous) {
-                    // 親への移動なら現在のexpandを閉じる
-                    [self changeSelectionProgramatically:^{
-                        [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
-                    }];
-                    selectedNode = previous;
-                }else{
-                    // バックワードの移動なら
-                    if (previous.children) {
-                        //次の要素に子どもが居たら末子
-                        selectedNode = previous.children.lastObject;
-                    }else{
-                        // 居なければ前
-                        selectedNode = previous;
-                    }
-                }
-            }
+    // アクションによって
+    PowerMateAction action = theEvent.keyCode;
+    switch (action) {
+        case PowerMateActionRotationLeft:
+            rotationCount--;
+            rotationToLeft++;
             break;
-        case RotationDirectionRight:
-            // right
-            if (self.selectedNode.nextNode || self.selectedNode.children) {
-                rotationCount++;
-                if (self.selectedNode.children) {
-                    // 現在が内部ノードなら子の最初
-                    selectedNode = self.selectedNode.children.firstObject;
-                }else{
-                    // 次のノードがあれば
-                    if (self.selectedNode.nextNode) {
-                        // 次
-                        NodeItem *next =  self.selectedNode.nextNode;
-                        // 別階層への移動なら現在のexpandを閉じる
-                        if (self.selectedNode.parent != next.parent) {
-                            [self changeSelectionProgramatically:^{
-                                [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
-                            }];
-                        }
-                        selectedNode = next;
-                    }
-                }
-            }
-            break;
-        case 37: {
-            NSLog(@"%@",self.treeController.selectedObjects);
-        }
+        case PowerMateActionRotationRight:
+            rotationCount++;
+            rotationToLeft++;
             break;
         default:
             break;
     }
+    // 回転が閾値を超えたら
+    if ((NSUInteger)ABS(rotationCount) > nextThreshold) {
+        // スナップする深さを固定
+        nextThreshold += SNAP_THRESHOLD;
+        snapDepth = self.selectedNode.parent.indexPath.length;
+        // 今の階層を一旦閉じて
+        [self changeSelectionProgramatically:^{
+            [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
+        }];
+        // 親の次に移動
+        [self setSelectedNode:self.selectedNode.parent.nextNode];
+    }
+    // ノードの移動
+    NodeItem *selectedNode = [self nodeItemWithAction:action];
     NSLog(@"%@ was selected",selectedNode);
     if (selectedNode) {
         [self setSelectedNode:selectedNode];
     }
     [self.label setIntegerValue:rotationCount];
+}
+
+- (NodeItem*)nodeItemWithAction:(PowerMateAction)action
+{
+    switch (action) {
+        case PowerMateActionRotationLeft:
+            // left
+            if (snapDepth == SnapDepthNone) {
+                // スナップ中でないなら
+                NodeItem *previous = self.selectedNode.previousNode;
+                if(!previous) return nil;
+                
+                if (self.selectedNode.parent == previous) {
+                    // 親への移動なら現在のexpandを閉じる
+                    [self changeSelectionProgramatically:^{
+                        [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
+                    }];
+                    return previous;
+                }else{
+                    // バックワードの移動なら
+                    if (previous.children) {
+                        //次の要素に子どもが居たら末子
+                        return previous.children.lastObject;
+                    }else{
+                        // 居なければ前
+                        return previous;
+                    }
+                }
+            }else{
+                // スナップ中なら
+                
+            }
+            break;
+        case PowerMateActionRotationRight:
+            // right
+            if (snapDepth == SnapDepthNone) {
+                // スナップ中でないなら
+                if (self.selectedNode.children) {
+                    // 子供がいるなら
+                    // 最初の子
+                    return self.selectedNode.children.firstObject;
+                }else{
+                    // 居ないなら
+                    if (self.selectedNode.nextNode) {
+                        // 次があれば
+                        NodeItem *next =  self.selectedNode.nextNode;
+                        // 別階層への移動なら現在のexpandを閉じる
+                        if (self.selectedNode.parent != next.parent) {
+                            // スナップを一つ上に
+                            snapDepth--;
+                            nextThreshold -= nextThreshold%SNAP_THRESHOLD;
+                            [self changeSelectionProgramatically:^{
+                                [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
+                            }];
+                        }
+                        return next;
+                    }
+                }
+            }else{
+                // スナップ中なら
+                if (self.selectedNode.nextNode) {
+                    NodeItem *next = self.selectedNode.nextNode;
+                    // 次は同階層か？
+                    // 別階層への移動なら現在のexpandを閉じる
+                    if (self.selectedNode.parent != next.parent) {
+                        // スナップを一つ上に
+                        snapDepth--;
+                        nextThreshold -= nextThreshold%SNAP_THRESHOLD;
+                        [self changeSelectionProgramatically:^{
+                            [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
+                        }];
+                    }
+                    return next;
+                }
+            }
+            
+    }
+    return nil;
 }
 
 #pragma mark - NSOutlineView delegate
