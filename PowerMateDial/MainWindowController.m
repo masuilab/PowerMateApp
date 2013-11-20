@@ -19,43 +19,46 @@ typedef enum NSUInteger{
 
 @interface MainWindowController ()
 {
-    NSImage *folderImage;
+    // ルートになるノード
     NodeItem *rootNode;
+    // シークエンスの回転数。正負は左右と対応
     NSInteger rotationCount;
+    // シークエンスの右への合計回転数
+    NSUInteger rotationToRight;
+    // シークエンスの左への合計回転数
+    NSUInteger rotationToLeft;
+    // シークエンス終了検知のためのタイマー
     NSTimer *timer;
+    // ノードの選択がプログラム中で行われたか
+    // <=> PowerMate経由での選択かを判別するためのフラグ
+    BOOL selectionChangedBySelf;
 }
 
+/* View Outlets */
 @property (weak) IBOutlet NSSplitView *splitView;
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (strong) IBOutlet NSTreeController *treeController;
 @property (weak) IBOutlet NSTableColumn *tableColumn;
 @property (strong) IBOutlet NSPanel *debugWindow;
 @property (weak) IBOutlet NSTextField *label;
+@property (weak) IBOutlet NSImageView *imageView;
 
+// 現在選択中のノード
 @property (nonatomic) NodeItem *selectedNode;
 
 @end
 
 @implementation MainWindowController
 
-- (id)initWithWindow:(NSWindow *)window
-{
-    self = [super initWithWindow:window];
-    if (self) {
-        // Initialization code here.
-    }
-    return self;
-}
-
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    [self.outlineView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
     // Content Treeを読み込み
-    NSURL *treeURL = [NodeItem contentTreeURL];
+//    NSURL *treeURL = [NodeItem contentTreeURL];
+    NSURL *treeURL = [NodeItem homeURL];
     rootNode = [NodeItem rootNodeWithURL:treeURL];
     self.contents = @[rootNode];
-    _sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO]];
+    self.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
 }
 
 - (void)windowDidLoad
@@ -74,9 +77,21 @@ typedef enum NSUInteger{
 - (void)setSelectedNode:(NodeItem *)selectedNode
 {
     if (selectedNode != _selectedNode) {
+        selectionChangedBySelf = YES;
         _selectedNode = selectedNode;
         [self.treeController setSelectionIndexPath:selectedNode.indexPath];
-        _selectedIndexPaths = @[selectedNode.indexPath];
+        self.selectedIndexPaths = @[selectedNode.indexPath];
+        if (selectedNode.isLeaf) {
+            NSError *e = nil;
+            NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"(png|jpg|gif)" options:NSRegularExpressionCaseInsensitive error:&e];
+            NSString *ext = selectedNode.url.pathExtension;
+            NSRange result = [regexp rangeOfFirstMatchInString:ext options:0 range:NSMakeRange(0, ext.length)];
+            if (result.location != NSNotFound){
+                NSImage *image = [[NSImage alloc] initWithContentsOfFile:selectedNode.url.path];
+                self.imageView.image = image;
+            }
+        }
+        selectionChangedBySelf = NO;
     }
 }
 
@@ -85,7 +100,7 @@ typedef enum NSUInteger{
 //    NSLog(@"%@",theEvent);
     // 文字色を戻す
     if (rotationCount == 0) {
-        [self.label setTextColor:[NSColor whiteColor]];
+        [self.label setTextColor:[NSColor blackColor]];
     }
     // 回転終了のチェック
     [timer invalidate];
@@ -130,7 +145,13 @@ typedef enum NSUInteger{
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification
 {
-    
+    // プログラム上での選択変更でない <=> クリックでの操作変更の場合
+    if (!selectionChangedBySelf) {
+        NSInteger row = [self.outlineView selectedRow];
+        NodeItem *item = [[self.outlineView itemAtRow:row] representedObject];
+        [self setSelectedNode:item];
+        NSLog(@"%@",item);
+    }
 }
 
 @end

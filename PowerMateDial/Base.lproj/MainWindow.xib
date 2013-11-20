@@ -7,8 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
             <connections>
-                <outlet property="debugWindow" destination="uOi-lz-IUN" id="pX5-Lf-3sG"/>
-                <outlet property="label" destination="FuS-7m-8bV" id="wuy-A1-3gV"/>
+                <outlet property="imageView" destination="yft-Pt-2qa" id="fJw-SQ-tMA"/>
+                <outlet property="label" destination="23Z-sj-0bm" id="Uj4-kI-jgH"/>
                 <outlet property="outlineView" destination="Kae-bj-wCR" id="dgb-1I-bzV"/>
                 <outlet property="splitView" destination="gxQ-xd-Fxp" id="1xQ-lj-J7k"/>
                 <outlet property="tableColumn" destination="yP2-F4-Kwk" id="iBR-VR-6Jt"/>
@@ -35,35 +35,35 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="522" height="373"/>
+            <rect key="contentRect" x="196" y="240" width="678" height="454"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="522" height="373"/>
+                <rect key="frame" x="0.0" y="0.0" width="678" height="454"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxQ-xd-Fxp">
-                        <rect key="frame" x="0.0" y="0.0" width="522" height="373"/>
+                        <rect key="frame" x="0.0" y="0.0" width="678" height="454"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <customView id="wfu-0Z-jqM">
-                                <rect key="frame" x="0.0" y="0.0" width="357" height="373"/>
+                                <rect key="frame" x="0.0" y="0.0" width="303" height="454"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUH-jT-yqd">
-                                        <rect key="frame" x="0.0" y="0.0" width="357" height="373"/>
+                                    <scrollView misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUH-jT-yqd">
+                                        <rect key="frame" x="0.0" y="0.0" width="466" height="454"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <clipView key="contentView" id="kUC-rq-6tq">
-                                            <rect key="frame" x="0.0" y="0.0" width="357" height="373"/>
+                                        <clipView key="contentView" misplaced="YES" id="kUC-rq-6tq">
+                                            <rect key="frame" x="0.0" y="0.0" width="466" height="454"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" indentationPerLevel="16" outlineTableColumn="yP2-F4-Kwk" id="Kae-bj-wCR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="357" height="373"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="466" height="454"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="0.0"/>
                                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="354" minWidth="16" maxWidth="1000" id="yP2-F4-Kwk">
+                                                        <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="463" minWidth="16" maxWidth="1000" id="yP2-F4-Kwk">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -112,8 +112,24 @@
                                 </constraints>
                             </customView>
                             <customView fixedFrame="YES" id="LIk-VO-Biw">
-                                <rect key="frame" x="367" y="0.0" width="155" height="373"/>
+                                <rect key="frame" x="313" y="0.0" width="365" height="454"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yft-Pt-2qa">
+                                        <rect key="frame" x="0.0" y="0.0" width="365" height="454"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="8YH-wv-9F6"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-sj-0bm">
+                                        <rect key="frame" x="-2" y="408" width="94" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="27v-vx-gFV">
+                                            <font key="font" metaFont="system" size="15"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
                             </customView>
                         </subviews>
                         <holdingPriorities>
@@ -128,27 +144,6 @@
                     <constraint firstAttribute="trailing" secondItem="gxQ-xd-Fxp" secondAttribute="trailing" id="dYD-BZ-o9I"/>
                     <constraint firstItem="gxQ-xd-Fxp" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="jN5-mx-BbB"/>
                 </constraints>
-            </view>
-        </window>
-        <window title="Debug" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="uOi-lz-IUN" customClass="NSPanel">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES" HUD="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="809" y="532" width="281" height="177"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
-            <view key="contentView" id="A02-zG-fIY">
-                <rect key="frame" x="0.0" y="0.0" width="281" height="177"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FuS-7m-8bV">
-                        <rect key="frame" x="40" y="116" width="130" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="ek2-QI-gkn">
-                            <font key="font" metaFont="system" size="15"/>
-                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                </subviews>
             </view>
         </window>
     </objects>
