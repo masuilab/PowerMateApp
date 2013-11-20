@@ -13,7 +13,7 @@ ARGF.each { |line|
   indent = $&.length
   if indent > curindent then
     puts "," if ret_required
-    print indent == 0 ? "" : (sp * indent + "children: ")
+    print indent == 0 ? "" : (sp * indent + "\"children\": ")
     puts "[\n" + sp * indent + "{"
     curindent = indent
   elsif indent < curindent then
