@@ -23,6 +23,7 @@
                 <string>children</string>
                 <string>iconImage</string>
                 <string>title</string>
+                <string>path</string>
             </declaredKeys>
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="contents" id="O9e-qT-ApV"/>
@@ -144,6 +145,9 @@
                     <constraint firstItem="gxQ-xd-Fxp" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="jN5-mx-BbB"/>
                 </constraints>
             </view>
+            <connections>
+                <binding destination="jwp-TC-PI6" name="title" keyPath="selection.path" id="1Vt-YZ-xmA"/>
+            </connections>
         </window>
     </objects>
 </document>

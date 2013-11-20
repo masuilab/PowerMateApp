@@ -160,6 +160,14 @@ static NSMutableDictionary *iconImageCache;
     return self.numberOfChildren+sum;
 }
 
+- (NSString *)path
+{
+    if (self.parent) {
+        return [NSString stringWithFormat:@"%@/%@",self.parent.path,self.title];
+    }
+    return @"";
+}
+
 - (NSString *)title
 {
     if (!_title) {

@@ -46,6 +46,8 @@
 - (NSUInteger)numberOfChildren;
 // 子孫の数
 - (NSUInteger)numberOfDescendant;
+// パス
+- (NSString*)path;
 // compare
 - (NSComparisonResult)compare:(NodeItem *)aNode;
 
