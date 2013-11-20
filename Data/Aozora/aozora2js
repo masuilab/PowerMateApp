@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # -*- coding: utf-8 -*-
 #
 # 青空文庫のCSVをFlatindex用テキストに変換
