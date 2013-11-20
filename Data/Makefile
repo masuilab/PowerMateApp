@@ -11,10 +11,11 @@ clean:
 
 json:
 	echo "### Merge all ltsv file into data.json..."
-	ruby ltsv2json */*.ltsv > data.json
+	ruby ltsv2json Photos/photos.ltsv Aozora/aozora.ltsv Stations/stations.ltsv > data.json
+#	ruby ltsv2json */*.ltsv > data.json
 #	ruby yaml2json */*.yaml
 
 jq:
-	echo "### Validate data.json"
+	echo "### Validating data.json..."
 	cat data.json | jq '.'
-	echo ### Sweet! Make is successfully finished!"
+	echo "### Sweet! data.json is VALID!"
