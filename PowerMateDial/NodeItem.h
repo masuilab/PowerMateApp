@@ -28,6 +28,8 @@
 @property (readonly) NSUInteger index;
 
 + (NSURL*)contentTreeURL;
++ (NSURL*)homeURL;
+
 // ルートオブジェクトを生成する
 + (instancetype)rootNodeWithURL:(NSURL*)url;
 

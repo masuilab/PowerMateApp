@@ -40,6 +40,25 @@ static NSMutableDictionary *iconImageCache;
     return nil;
 }
 
++ (NSURL*)homeURL
+{
+    NSString *un = NSUserName();
+    NSError *e = nil;
+    NSURL *url = [NSURL fileURLWithPath:[@"/Users/" stringByAppendingPathComponent:un]];
+    NSArray *resources = [[NSFileManager defaultManager]
+                          contentsOfDirectoryAtURL:url
+                          includingPropertiesForKeys:kFetchProperties
+                          options:NSDirectoryEnumerationSkipsHiddenFiles
+                          error:&e];
+    for (NSURL *url in resources) {
+        if ([url.path rangeOfString:@"Pictures"].location != NSNotFound) {
+            return url;
+        }
+    }
+    // 来ない
+    return nil;
+}
+
 + (instancetype)rootNodeWithURL:(NSURL *)url
 {
     return [[self alloc] initWithURL:url parent:nil index:0];
