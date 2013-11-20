@@ -30,17 +30,10 @@ ARGF.each { |line|
     entry =~ /^([a-zA-Z_]+):(\s*)(.*)$/
     key = $1
     value = $3
-    "'#{key}': '#{value}'"
+    "\"#{key}\": \"#{value}\""
   }
   print sp * (curindent+1) + out.join(",\n" + sp * (curindent+1))
   ret_required = true
-
-#  line.split(/\t/).each { |entry|
-#    entry =~ /^([a-zA-Z_]+):(\s*)(.*)$/
-#    key = $1
-#    value = $3
-#    puts sp * (curindent+1) + "#{key}: '#{value}',"
-#  }
 }
 puts if ret_required
 while 0 <= curindent do
