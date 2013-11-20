@@ -3,5 +3,5 @@
 #
 #
 json:
-	ruby ltsv2json */*.ltsv
+	ruby ltsv2json */*.ltsv > data.json
 #	ruby yaml2json */*.yaml
