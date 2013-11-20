@@ -30,7 +30,7 @@ ARGF.each { |line|
     entry =~ /^([a-zA-Z_]+):(\s*)(.*)$/
     key = $1
     value = $3
-    "#{key}: '#{value}'"
+    "'#{key}': '#{value}'"
   }
   print sp * (curindent+1) + out.join(",\n" + sp * (curindent+1))
   ret_required = true
