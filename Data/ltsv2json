@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+#
+# ltsvデータをJSONに変換
+#
+curindent = -1
+sp = "    "
+ARGF.each { |line|
+  line.chomp!
+  next if line == ''
+  line.sub!(/^(\s*)/,'')
+  indent = $&.length
+  if indent > curindent then
+    print indent == 0 ? "" : (sp * indent + "children: ")
+    puts "[\n" + sp * indent + "{"
+    curindent = indent
+  elsif indent < curindent then
+    while indent < curindent do
+      puts sp * (indent+1) + "}]\n" + sp * indent + "},\n" + sp * indent + "{"
+      curindent -= 1
+    end
+  else
+    puts sp * indent + "},\n" + sp * indent + "{"
+  end
+  line.split(/\t/).each { |entry|
+    entry =~ /^([a-zA-Z_]+):(\s*)(.*)$/
+    key = $1
+    value = $3
+    puts sp * (curindent+1) + "#{key}: '#{value}',"
+  }
+}
+while 0 <= curindent do
+  puts sp * curindent + "}]\n"
+  curindent -= 1
+end
+
+

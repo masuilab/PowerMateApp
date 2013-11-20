@@ -28,6 +28,8 @@
 @property (readonly) NSUInteger index;
 
 + (NSURL*)contentTreeURL;
++ (NSURL*)homeURL;
+
 // ルートオブジェクトを生成する
 + (instancetype)rootNodeWithURL:(NSURL*)url;
 
@@ -35,8 +37,14 @@
 - (NodeItem*)nextNode;
 // 同階層の前のノード
 - (NodeItem*)previousNode;
+// 最も近い子孫の葉
+- (NodeItem*)closestDescendantLeaf;
+// 最も遠い子孫の葉
+- (NodeItem*)farestDescendantLeaf;
 // KVO用の子要素のカウントプロパティ
 - (NSUInteger)numberOfChildren;
+// 子孫の数
+- (NSUInteger)numberOfDescendant;
 // compare
 - (NSComparisonResult)compare:(NodeItem *)aNode;
 

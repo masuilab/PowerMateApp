@@ -8,11 +8,19 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class NodeItem;
 @interface MainWindowController : NSWindowController
 <NSOutlineViewDelegate>
 
+/* 以下NSTreeControllerへのバインディングプロパティ　*/
+
+//
+@property (nonatomic,assign) NodeItem *rootNode;
+// 全ノードが入っているグラフ
 @property (assign) NSArray *contents;
-@property (readonly) NSArray *selectedIndexPaths;
-@property (readonly) NSArray *sortDescriptors;
+// 現在選択中のノードへのIndexPath
+@property (assign) NSArray *selectedIndexPaths;
+// ノードの同階層での並び順のデスクリプタ
+@property (assign) NSArray *sortDescriptors;
 
 @end

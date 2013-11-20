@@ -8,8 +8,6 @@
 
 #import "NodeItem.h"
 
-#define kFetchProperties @[NSURLIsDirectoryKey,NSURLNameKey,NSURLPathKey]
-
 static NSMutableDictionary *iconImageCache;
 
 @interface NodeItem()
@@ -33,6 +31,25 @@ static NSMutableDictionary *iconImageCache;
     NSArray *resources = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:[[NSBundle mainBundle] resourceURL]  includingPropertiesForKeys:kFetchProperties options:NSDirectoryEnumerationSkipsHiddenFiles error:&e];
     for (NSURL *url in resources) {
         if ([url.path rangeOfString:@"Tree"].location != NSNotFound) {
+            return url;
+        }
+    }
+    // 来ない
+    return nil;
+}
+
++ (NSURL*)homeURL
+{
+    NSString *un = NSUserName();
+    NSError *e = nil;
+    NSURL *url = [NSURL fileURLWithPath:[@"/Users/" stringByAppendingPathComponent:un]];
+    NSArray *resources = [[NSFileManager defaultManager]
+                          contentsOfDirectoryAtURL:url
+                          includingPropertiesForKeys:kFetchProperties
+                          options:NSDirectoryEnumerationSkipsHiddenFiles
+                          error:&e];
+    for (NSURL *url in resources) {
+        if ([url.path rangeOfString:@"Pictures"].location != NSNotFound) {
             return url;
         }
     }
@@ -82,6 +99,15 @@ static NSMutableDictionary *iconImageCache;
     return self.children.count;
 }
 
+- (NSUInteger)numberOfDescendant
+{
+    NSUInteger sum = 0;
+    for (NodeItem *i in self.children) {
+        sum += i.numberOfDescendant;
+    }
+    return self.numberOfChildren+sum;
+}
+
 - (NSComparisonResult)compare:(NodeItem *)aNode
 {
 	return [[[self name] lowercaseString] compare:[[aNode name] lowercaseString]];
@@ -101,10 +127,31 @@ static NSMutableDictionary *iconImageCache;
 - (NodeItem *)previousNode
 {
     if ([self.parent.children firstObject] != self) {
+        // 階層で最初のオブジェクトでなければひとつindexが前
         return [self.parent.children objectAtIndex:self.index-1];
     }else{
-        return self.parent.previousNode;
+        // 最初の子なら親
+        return self.parent;
     }
+}
+
+- (NodeItem *)closestDescendantLeaf
+{
+    return [self _decsendantLeaf:YES];
+}
+
+- (NodeItem *)farestDescendantLeaf
+{
+    return [self _decsendantLeaf:NO];
+}
+
+- (NodeItem*)_decsendantLeaf:(BOOL)closest
+{
+    NodeItem *item = self;
+    while (!item.isLeaf) {
+        item = (closest) ? item.children.firstObject : item.children.lastObject;
+    }
+    return item;
 }
 
 - (NSString *)description

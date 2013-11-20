@@ -12,6 +12,7 @@
 @interface PowerMateDialTests : XCTestCase
 {
     NSUInteger nodeCount;
+    NodeItem *root;
 }
 
 @end
@@ -22,6 +23,10 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    if (!root) {
+        NSURL *url = [NodeItem contentTreeURL];
+        root = [NodeItem rootNodeWithURL:url];
+    }
 }
 
 - (void)tearDown
@@ -55,8 +60,6 @@
 
 - (void)testNodeItem
 {
-    NSURL *url = [NodeItem contentTreeURL];
-    NodeItem *root = [NodeItem rootNodeWithURL:url];
     // 深さ優先探索で全部のノードをテスト
     NSMutableArray *stack = @[].mutableCopy;
     [stack addObject:root];
@@ -78,6 +81,7 @@
         if (item != root) {
             XCTAssert(item.parent, );
             XCTAssert(item.indexPath, );
+            XCTAssert([item.indexPath isKindOfClass:[NSIndexPath class]], );
         }
         nodeCount++;
     }
@@ -86,7 +90,6 @@
 
 - (void)testNodeLink
 {
-    NodeItem *root = [NodeItem rootNodeWithURL:[NodeItem contentTreeURL]];
     NodeItem *item = root;
     NSUInteger _nodeCount = 0;
     do {
@@ -97,7 +100,21 @@
         }
         _nodeCount++;
     } while (item.nextNode);
-    XCTAssert(nodeCount == _nodeCount,);
+//    XCTAssert(nodeCount == _nodeCount,);
+}
+
+- (void)testDescendant
+{
+    NodeItem *cdl = [root closestDescendantLeaf];
+    XCTAssert([cdl.name isEqualToString:@"add_file.py"], );
+    NodeItem *fdl = [root farestDescendantLeaf];
+    XCTAssert([fdl.name isEqualToString:@"tree.md"], );
+}
+
+- (void)testNumberOfDecsendant
+{
+    NSUInteger nod = [root numberOfDescendant];
+    XCTAssert(nod > 9700, );
 }
 
 @end
