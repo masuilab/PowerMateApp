@@ -1,7 +1,7 @@
 #
-# */*.yaml を統合して JSONファイルを作る
+# */*.ltsv からjson生成
 #
 #
 json:
-	ruby yaml2json */*.yaml
-
+	ruby ltsv2json */*.ltsv
+#	ruby yaml2json */*.yaml
