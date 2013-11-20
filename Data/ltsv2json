@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # ltsvデータをJSONに変換
+# issue #21 対応
 #
 curindent = -1
 sp = "    "
