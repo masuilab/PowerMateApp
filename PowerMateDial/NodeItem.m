@@ -19,6 +19,8 @@ static NSMutableDictionary *iconImageCache;
 
 @implementation NodeItem
 
+@synthesize title = _title;
+
 + (void)load
 {
     [super load];
@@ -100,8 +102,11 @@ static NSMutableDictionary *iconImageCache;
         if (!_isLeaf) {
             NSArray *childNodes = dictionary[@"children"];
             [childNodes enumerateObjectsUsingBlock:^(NSDictionary *childDict, NSUInteger idx, BOOL *stop) {
-                NodeItem *newNode = [[NodeItem alloc] initWithDictionary:childDict parent:self index:idx];
-                [children addObject:newNode];
+                // からオブジェクトが混ざってることがある
+                if (childDict.keyEnumerator.allObjects.count != 0) {
+                    NodeItem *newNode = [[NodeItem alloc] initWithDictionary:childDict parent:self index:idx];
+                    [children addObject:newNode];
+                }
             }];
             _children = children;
         }
@@ -155,6 +160,14 @@ static NSMutableDictionary *iconImageCache;
     return self.numberOfChildren+sum;
 }
 
+- (NSString *)title
+{
+    if (!_title) {
+        return self.url.lastPathComponent;
+    }
+    return _title;
+}
+
 - (NSComparisonResult)compare:(NodeItem *)aNode
 {
 	return [[[self title] lowercaseString] compare:[[aNode title] lowercaseString]];
@@ -203,7 +216,7 @@ static NSMutableDictionary *iconImageCache;
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<NodeItem: %@>",self.title];
+    return [NSString stringWithFormat:@"%@",self.title];
 }
 
 @end
