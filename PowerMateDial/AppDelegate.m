@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NodeItem.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,29 @@
     // Insert code here to initialize your application
     self.mainWindowContorller = [[MainWindowController alloc] initWithWindowNibName:@"MainWindow"];
     [self.mainWindowContorller showWindow:self];
+}
+
+- (IBAction)onFileOpen:(id)sender {
+    NSLog(@"file open");
+    NSOpenPanel *op = [NSOpenPanel openPanel];
+    [op setCanChooseDirectories:YES];
+    [op setCanChooseFiles:NO];
+    [op setAllowsMultipleSelection:NO];
+    [op setTitle:NSLocalizedString(@"ブラウズするフォルダを選択", )];
+    switch ([op runModal]) {
+        case NSFileHandlingPanelOKButton: {
+            NSURL *url = [[op URLs] firstObject];
+            NSLog(@"%@",url);
+            // 新しいフォルダを設定
+            NodeItem *newRoot = [NodeItem rootNodeWithURL:url];
+            [self.mainWindowContorller setRootNode:newRoot];
+        }
+            break;
+        case NSFileHandlingPanelCancelButton:
+            NSLog(@"canceled");
+        default:
+            break;
+    }
 }
 
 @end
