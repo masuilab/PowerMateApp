@@ -3,7 +3,7 @@ ARGF.each { |line|
   line.sub!(/^(\s*)/,'')
   prefix =  $&
   puts prefix + line.split(/\t/).collect { |s|
-    s =~ /^http/ ? "url:#{s}" : "name:#{s}"
+    s =~ /^http/ ? "url:#{s}" : "title:#{s}"
   }.join("\t")
 }
 
