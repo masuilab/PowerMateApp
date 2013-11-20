@@ -1,6 +1,10 @@
-以下のようなフォーマットでお願いします。 
+* 以下のようなフォーマットでお願いします。 
+* ノードの情報
+ - URL
+ - URL + 付加情報
+ - 単なるテキスト
 
-e.g. aozora.yaml
+例: aozora.yaml
 
 青空文庫
  あ
@@ -10,8 +14,8 @@ e.g. aozora.yaml
  な
   な
    夏目漱石
-    我輩は猫である
-    坊っちゃん
+    http://www.aozora.gr.jp/cards/000148/card789.html 吾輩は猫である
+    http://www.aozora.gr.jp/cards/000148/card752.html 坊っちゃん
  は
  ま
   ま
@@ -20,4 +24,4 @@ e.g. aozora.yaml
   め
   も
    森鴎外
-    舞姫
+    http://www.aozora.gr.jp/cards/000129/card682.html 舞姫
