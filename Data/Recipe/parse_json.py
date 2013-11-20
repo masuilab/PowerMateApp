@@ -6,7 +6,7 @@ import sys
 fp = open('allrecipe.json','rb')
 data = json.load(fp)
 
-ft = open('allrecipe.ltsv','wb')
+ft = open('allrecipe2.ltsv','wb')
 ft.write('title:料理\n') # カレント
 
 for key in data:
