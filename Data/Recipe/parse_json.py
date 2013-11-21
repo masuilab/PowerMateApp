@@ -21,4 +21,4 @@ for key in data:
         title = title.replace('\n','')
 
         # ファイルに書き込み
-        ft.write('  title:'+title+'\turl:'+'link'+'\text:html\timage_path:'+image_path+'\n')
+        ft.write('  title:'+title+'\turl:'+url+'\text:html\timage_path:'+image_path+'\n')
