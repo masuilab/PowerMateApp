@@ -49,6 +49,8 @@ typedef enum NSUInteger{
 @property (weak) IBOutlet WebView *webView;
 @property (weak) IBOutlet NSPathControl *pathControl;
 @property (weak) IBOutlet NSProgressIndicator *indicator;
+@property (weak) IBOutlet NSClipView *leftClipView;
+@property (weak) IBOutlet NSScrollView *scrollView;
 
 // 現在選択中のノード
 @property (nonatomic) NodeItem *selectedNode;
@@ -162,6 +164,14 @@ typedef enum NSUInteger{
                 [self showFile:selectedNode.url];
                 NSLog(@"%@",selectedNode.url);
             }
+            // スクロールビューを移動する
+//            NSView *contentView = self.scrollView.contentView;
+//            NSPoint p = contentView.bounds.origin;
+//            NSLog(@"%@",NSStringFromPoint(p));
+////            p.y = CGRectGetHeight(contentView.bounds)/2 - self.leftClipView.documentVisibleRect.size.height/2;
+//            [self.leftClipView scrollToPoint:p];
+            NSInteger row = [self.outlineView rowForItem:self.selectedTreeNode];
+            [self.outlineView scrollRowToVisible:row];
         };
         if (silent) {
             block();
@@ -170,10 +180,6 @@ typedef enum NSUInteger{
                 block();
             }];
         }
-        // request
-        NSURLRequest *req = [NSURLRequest requestWithURL:self.selectedNode.url];
-        [self.webView.mainFrame stopLoading];
-        [self.webView.mainFrame loadRequest:req];
         // PathControlを設定
         [self.pathControl setPathComponentCells:[self pathComponentArray]];
     }
@@ -200,16 +206,21 @@ typedef enum NSUInteger{
 
 - (void)showFile:(NSURL*)url
 {
-    NSError *e = nil;
-    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"(png|jpg|gif)" options:NSRegularExpressionCaseInsensitive error:&e];
-    NSString *ext = url.pathExtension;
-    if (ext) {
-        NSRange result = [regexp rangeOfFirstMatchInString:ext options:0 range:NSMakeRange(0, ext.length)];
-        if (result.location != NSNotFound){
-            NSImage *image = [[NSImage alloc] initWithContentsOfFile:url.path];
-            self.imageView.image = image;
-        }
-    }
+//    NSError *e = nil;
+//    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"(png|jpg|gif)" options:NSRegularExpressionCaseInsensitive error:&e];
+//    NSString *ext = url.pathExtension;
+//    if (ext) {
+//        NSRange result = [regexp rangeOfFirstMatchInString:ext options:0 range:NSMakeRange(0, ext.length)];
+//        if (result.location != NSNotFound){
+//            NSImage *image = [[NSImage alloc] initWithContentsOfFile:url.path];
+//            self.imageView.image = image;
+//        }
+//    }
+    
+    // request
+    NSURLRequest *req = [NSURLRequest requestWithURL:self.selectedNode.url];
+    [self.webView.mainFrame stopLoading];
+    [self.webView.mainFrame loadRequest:req];
 }
 
 - (void)changeSelectionProgramatically:(void (^)())block{

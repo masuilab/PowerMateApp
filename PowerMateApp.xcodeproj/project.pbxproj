@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A601A7E5183DEF94003B7480 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63927E7182E17A000C2884C /* WebKit.framework */; };
+		A601A7EE183E13BF003B7480 /* BrowserOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A601A7ED183E13BF003B7480 /* BrowserOutlineView.m */; };
+		A601A7F1183E1695003B7480 /* VerticalAlignCel.m in Sources */ = {isa = PBXBuildFile; fileRef = A601A7F0183E1695003B7480 /* VerticalAlignCel.m */; };
 		A64379D0183A034A005FE37C /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379CF183A034A005FE37C /* MainWindowController.m */; };
 		A64379D3183A0463005FE37C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64379D1183A0463005FE37C /* MainWindow.xib */; };
 		A64379E3183A3E46005FE37C /* NodeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379E0183A3E46005FE37C /* NodeItem.m */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A601A7EC183E13BF003B7480 /* BrowserOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserOutlineView.h; sourceTree = "<group>"; };
+		A601A7ED183E13BF003B7480 /* BrowserOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserOutlineView.m; sourceTree = "<group>"; };
+		A601A7EF183E1695003B7480 /* VerticalAlignCel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalAlignCel.h; sourceTree = "<group>"; };
+		A601A7F0183E1695003B7480 /* VerticalAlignCel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalAlignCel.m; sourceTree = "<group>"; };
 		A63927E7182E17A000C2884C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A63927EF182E2EC400C2884C /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		A63927F1182E2EC400C2884C /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -208,9 +214,13 @@
 		A64379DA183A24D3005FE37C /* MainWindow */ = {
 			isa = PBXGroup;
 			children = (
+				A601A7EC183E13BF003B7480 /* BrowserOutlineView.h */,
+				A601A7ED183E13BF003B7480 /* BrowserOutlineView.m */,
 				A64379CE183A034A005FE37C /* MainWindowController.h */,
 				A64379CF183A034A005FE37C /* MainWindowController.m */,
 				A64379D1183A0463005FE37C /* MainWindow.xib */,
+				A601A7EF183E1695003B7480 /* VerticalAlignCel.h */,
+				A601A7F0183E1695003B7480 /* VerticalAlignCel.m */,
 			);
 			name = MainWindow;
 			sourceTree = "<group>";
@@ -387,6 +397,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A601A7F1183E1695003B7480 /* VerticalAlignCel.m in Sources */,
+				A601A7EE183E13BF003B7480 /* BrowserOutlineView.m in Sources */,
 				A64659A41830C99600634936 /* AppDelegate.m in Sources */,
 				A64379E3183A3E46005FE37C /* NodeItem.m in Sources */,
 				A646599D1830C99600634936 /* main.m in Sources */,
