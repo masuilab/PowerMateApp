@@ -3,16 +3,18 @@
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="3338"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
             <connections>
-                <outlet property="imageView" destination="yft-Pt-2qa" id="fJw-SQ-tMA"/>
                 <outlet property="label" destination="23Z-sj-0bm" id="Uj4-kI-jgH"/>
                 <outlet property="outlineView" destination="Kae-bj-wCR" id="dgb-1I-bzV"/>
+                <outlet property="pathControl" destination="O41-4x-Er0" id="wDr-Bp-ZYH"/>
                 <outlet property="splitView" destination="gxQ-xd-Fxp" id="1xQ-lj-J7k"/>
                 <outlet property="tableColumn" destination="yP2-F4-Kwk" id="iBR-VR-6Jt"/>
                 <outlet property="treeController" destination="jwp-TC-PI6" id="kET-pk-4Zb"/>
+                <outlet property="webView" destination="LeX-I1-MuO" id="Y0C-mS-sQh"/>
                 <outlet property="window" destination="1" id="hVG-Mu-4FS"/>
             </connections>
         </customObject>
@@ -32,24 +34,24 @@
             </connections>
         </treeController>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="678" height="454"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="678" height="454"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <splitView dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxQ-xd-Fxp">
+                    <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxQ-xd-Fxp">
                         <rect key="frame" x="0.0" y="0.0" width="678" height="454"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <customView id="wfu-0Z-jqM">
-                                <rect key="frame" x="0.0" y="0.0" width="303" height="454"/>
+                                <rect key="frame" x="0.0" y="0.0" width="307" height="454"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <scrollView misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUH-jT-yqd">
+                                    <scrollView misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="tUH-jT-yqd">
                                         <rect key="frame" x="0.0" y="0.0" width="466" height="454"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <clipView key="contentView" misplaced="YES" id="kUC-rq-6tq">
@@ -111,17 +113,21 @@
                                     <constraint firstAttribute="bottom" secondItem="tUH-jT-yqd" secondAttribute="bottom" id="nTb-qz-ZV5"/>
                                 </constraints>
                             </customView>
-                            <customView fixedFrame="YES" id="LIk-VO-Biw">
-                                <rect key="frame" x="313" y="0.0" width="365" height="454"/>
+                            <customView id="LIk-VO-Biw">
+                                <rect key="frame" x="308" y="0.0" width="370" height="454"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yft-Pt-2qa">
-                                        <rect key="frame" x="0.0" y="0.0" width="365" height="454"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="8YH-wv-9F6"/>
-                                    </imageView>
+                                    <webView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LeX-I1-MuO">
+                                        <rect key="frame" x="0.0" y="0.0" width="365" height="354"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
+                                        <connections>
+                                            <outlet property="downloadDelegate" destination="-2" id="GPW-G5-9up"/>
+                                            <outlet property="frameLoadDelegate" destination="-2" id="yTK-xy-cwA"/>
+                                        </connections>
+                                    </webView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-sj-0bm">
-                                        <rect key="frame" x="-2" y="408" width="94" height="26"/>
+                                        <rect key="frame" x="-14" y="5" width="94" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="27v-vx-gFV">
                                             <font key="font" metaFont="system" size="15"/>
@@ -129,7 +135,46 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
+                                    <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O41-4x-Er0">
+                                        <rect key="frame" x="12" y="366" width="346" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" id="fdV-bi-eBV">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <url key="url" string="file://localhost/Applications/"/>
+                                            <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.97254901960784312" alpha="1" colorSpace="deviceRGB"/>
+                                        </pathCell>
+                                    </pathControl>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-8x-Rci">
+                                        <rect key="frame" x="11" y="429" width="341" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="YPq-zo-gaN">
+                                            <font key="font" metaFont="system" size="17"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="jwp-TC-PI6" name="value" keyPath="selection.title" id="MQz-0a-QSM"/>
+                                        </connections>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPe-hR-ZhA">
+                                        <rect key="frame" x="11" y="399" width="348" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="WuU-oy-P0x">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="jwp-TC-PI6" name="value" keyPath="selection.url.absoluteString" id="Wki-Sd-EbC"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="LeX-I1-MuO" secondAttribute="bottom" id="Dxz-Wl-J0b"/>
+                                    <constraint firstAttribute="trailing" secondItem="LeX-I1-MuO" secondAttribute="trailing" id="TVt-yb-6Yl"/>
+                                    <constraint firstItem="LeX-I1-MuO" firstAttribute="leading" secondItem="LIk-VO-Biw" secondAttribute="leading" id="W1t-0h-1pZ"/>
+                                    <constraint firstItem="LeX-I1-MuO" firstAttribute="top" secondItem="LIk-VO-Biw" secondAttribute="top" constant="100" id="pzQ-y6-cGK"/>
+                                </constraints>
                             </customView>
                         </subviews>
                         <holdingPriorities>
