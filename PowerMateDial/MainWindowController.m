@@ -281,6 +281,8 @@ typedef enum NSUInteger{
 {
     NSLog(@"load finished");
     [self.indicator stopAnimation:self];
+    // web viewにフォーカスがあたるとイベントが効かなくなるため
+    [self.window makeFirstResponder:self.outlineView];
 }
 
 - (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame

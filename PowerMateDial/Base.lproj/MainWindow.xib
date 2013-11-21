@@ -38,29 +38,29 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="678" height="454"/>
+            <rect key="contentRect" x="196" y="240" width="693" height="545"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="678" height="454"/>
+                <rect key="frame" x="0.0" y="0.0" width="693" height="545"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxQ-xd-Fxp">
-                        <rect key="frame" x="0.0" y="0.0" width="678" height="454"/>
+                    <splitView misplaced="YES" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxQ-xd-Fxp">
+                        <rect key="frame" x="0.0" y="0.0" width="695" height="545"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <customView id="wfu-0Z-jqM">
-                                <rect key="frame" x="0.0" y="0.0" width="307" height="454"/>
+                                <rect key="frame" x="0.0" y="0.0" width="315" height="545"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <scrollView misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="tUH-jT-yqd">
-                                        <rect key="frame" x="0.0" y="0.0" width="466" height="454"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="466" height="545"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <clipView key="contentView" misplaced="YES" id="kUC-rq-6tq">
-                                            <rect key="frame" x="0.0" y="0.0" width="466" height="454"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="466" height="545"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" indentationPerLevel="16" outlineTableColumn="yP2-F4-Kwk" id="Kae-bj-wCR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="466" height="454"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="466" height="545"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="0.0"/>
                                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -112,73 +112,99 @@
                                     <constraint firstItem="tUH-jT-yqd" firstAttribute="top" secondItem="wfu-0Z-jqM" secondAttribute="top" id="RLJ-OC-4LE"/>
                                     <constraint firstAttribute="trailing" secondItem="tUH-jT-yqd" secondAttribute="trailing" id="iFU-HG-ZfU"/>
                                     <constraint firstAttribute="bottom" secondItem="tUH-jT-yqd" secondAttribute="bottom" id="nTb-qz-ZV5"/>
+                                    <constraint firstAttribute="width" constant="315" id="plg-FE-wfV"/>
                                 </constraints>
                             </customView>
-                            <customView id="LIk-VO-Biw">
-                                <rect key="frame" x="308" y="0.0" width="370" height="454"/>
+                            <customView misplaced="YES" id="LIk-VO-Biw">
+                                <rect key="frame" x="316" y="0.0" width="379" height="545"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <webView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LeX-I1-MuO">
-                                        <rect key="frame" x="0.0" y="0.0" width="365" height="354"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
-                                        <connections>
-                                            <outlet property="downloadDelegate" destination="-2" id="GPW-G5-9up"/>
-                                            <outlet property="frameLoadDelegate" destination="-2" id="yTK-xy-cwA"/>
-                                        </connections>
-                                    </webView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-sj-0bm">
-                                        <rect key="frame" x="-14" y="5" width="94" height="26"/>
+                                    <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAD-eQ-TlC">
+                                        <rect key="frame" x="0.0" y="0.0" width="379" height="545"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="27v-vx-gFV">
-                                            <font key="font" metaFont="system" size="15"/>
-                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O41-4x-Er0">
-                                        <rect key="frame" x="13" y="367" width="344" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" id="fdV-bi-eBV">
-                                            <font key="font" metaFont="smallSystem"/>
-                                            <url key="url" string="file://localhost/Applications/"/>
-                                            <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.97254901960784312" alpha="1" colorSpace="deviceRGB"/>
-                                        </pathCell>
-                                    </pathControl>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-8x-Rci">
-                                        <rect key="frame" x="11" y="429" width="341" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="YPq-zo-gaN">
-                                            <font key="font" metaFont="system" size="17"/>
-                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                        <connections>
-                                            <binding destination="jwp-TC-PI6" name="value" keyPath="selection.title" id="MQz-0a-QSM"/>
-                                        </connections>
-                                    </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPe-hR-ZhA">
-                                        <rect key="frame" x="11" y="399" width="348" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="WuU-oy-P0x">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                        <connections>
-                                            <binding destination="jwp-TC-PI6" name="value" keyPath="selection.url.absoluteString" id="Wki-Sd-EbC"/>
-                                        </connections>
-                                    </textField>
-                                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="9Xo-mZ-QOI">
-                                        <rect key="frame" x="341" y="429" width="16" height="16"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    </progressIndicator>
+                                        <subviews>
+                                            <webView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LeX-I1-MuO">
+                                                <rect key="frame" x="0.0" y="0.0" width="379" height="442"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                                                    <nil key="identifier"/>
+                                                </webPreferences>
+                                                <connections>
+                                                    <outlet property="downloadDelegate" destination="-2" id="GPW-G5-9up"/>
+                                                    <outlet property="frameLoadDelegate" destination="-2" id="yTK-xy-cwA"/>
+                                                </connections>
+                                            </webView>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-sj-0bm">
+                                                <rect key="frame" x="137" y="83" width="94" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="27v-vx-gFV">
+                                                    <font key="font" metaFont="system" size="15"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <pathControl verticalHuggingPriority="750" misplaced="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O41-4x-Er0">
+                                                <rect key="frame" x="16" y="454" width="347" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="navigationBar" id="fdV-bi-eBV">
+                                                    <font key="font" metaFont="smallSystem"/>
+                                                    <url key="url" string="file://localhost/Applications/"/>
+                                                </pathCell>
+                                            </pathControl>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-8x-Rci">
+                                                <rect key="frame" x="15" y="508" width="327" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="YPq-zo-gaN">
+                                                    <font key="font" metaFont="system" size="17"/>
+                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <connections>
+                                                    <binding destination="jwp-TC-PI6" name="value" keyPath="selection.title" id="MQz-0a-QSM"/>
+                                                </connections>
+                                            </textField>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPe-hR-ZhA">
+                                                <rect key="frame" x="15" y="483" width="346" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="WuU-oy-P0x">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <connections>
+                                                    <binding destination="jwp-TC-PI6" name="value" keyPath="selection.url.absoluteString" id="Wki-Sd-EbC"/>
+                                                </connections>
+                                            </textField>
+                                            <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="9Xo-mZ-QOI">
+                                                <rect key="frame" x="340" y="509" width="16" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            </progressIndicator>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="LeX-I1-MuO" secondAttribute="trailing" id="1ze-I6-I8W"/>
+                                            <constraint firstItem="O41-4x-Er0" firstAttribute="leading" secondItem="TAD-eQ-TlC" secondAttribute="leading" constant="17" id="2yb-NH-6qT"/>
+                                            <constraint firstItem="LeX-I1-MuO" firstAttribute="top" secondItem="O41-4x-Er0" secondAttribute="bottom" constant="13" id="8TF-cL-uPT"/>
+                                            <constraint firstItem="O41-4x-Er0" firstAttribute="top" secondItem="EPe-hR-ZhA" secondAttribute="bottom" constant="8" id="HIO-bE-cyI"/>
+                                            <constraint firstAttribute="trailing" secondItem="O41-4x-Er0" secondAttribute="trailing" constant="17" id="HUs-2S-VrW"/>
+                                            <constraint firstItem="EPe-hR-ZhA" firstAttribute="top" secondItem="Qb6-8x-Rci" secondAttribute="bottom" constant="8" id="Jw6-Ka-ovs"/>
+                                            <constraint firstItem="9Xo-mZ-QOI" firstAttribute="leading" secondItem="Qb6-8x-Rci" secondAttribute="trailing" id="JxC-IO-BOP"/>
+                                            <constraint firstItem="Qb6-8x-Rci" firstAttribute="leading" secondItem="TAD-eQ-TlC" secondAttribute="leading" constant="17" id="MZf-7g-8TW"/>
+                                            <constraint firstItem="LeX-I1-MuO" firstAttribute="leading" secondItem="TAD-eQ-TlC" secondAttribute="leading" id="SaN-8h-Zh8"/>
+                                            <constraint firstItem="EPe-hR-ZhA" firstAttribute="top" secondItem="Qb6-8x-Rci" secondAttribute="bottom" constant="8" id="c24-YV-ItW"/>
+                                            <constraint firstAttribute="trailing" secondItem="EPe-hR-ZhA" secondAttribute="trailing" constant="20" id="eO3-Ph-Ipe"/>
+                                            <constraint firstItem="Qb6-8x-Rci" firstAttribute="top" secondItem="TAD-eQ-TlC" secondAttribute="top" constant="20" id="iGk-ZA-lph"/>
+                                            <constraint firstItem="EPe-hR-ZhA" firstAttribute="leading" secondItem="TAD-eQ-TlC" secondAttribute="leading" constant="17" id="pEF-wd-Djm"/>
+                                            <constraint firstAttribute="bottom" secondItem="LeX-I1-MuO" secondAttribute="bottom" id="tj4-zf-LrE"/>
+                                            <constraint firstItem="LeX-I1-MuO" firstAttribute="top" secondItem="O41-4x-Er0" secondAttribute="bottom" constant="13" id="wUz-gl-YOR"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Xo-mZ-QOI" secondAttribute="trailing" constant="23" id="yaY-nr-Qem"/>
+                                        </constraints>
+                                    </customView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="LeX-I1-MuO" secondAttribute="bottom" id="Dxz-Wl-J0b"/>
-                                    <constraint firstAttribute="trailing" secondItem="LeX-I1-MuO" secondAttribute="trailing" id="TVt-yb-6Yl"/>
-                                    <constraint firstItem="LeX-I1-MuO" firstAttribute="leading" secondItem="LIk-VO-Biw" secondAttribute="leading" id="W1t-0h-1pZ"/>
-                                    <constraint firstItem="LeX-I1-MuO" firstAttribute="top" secondItem="LIk-VO-Biw" secondAttribute="top" constant="100" id="pzQ-y6-cGK"/>
+                                    <constraint firstAttribute="trailing" secondItem="TAD-eQ-TlC" secondAttribute="trailing" id="IMW-vA-fON"/>
+                                    <constraint firstItem="TAD-eQ-TlC" firstAttribute="top" secondItem="LIk-VO-Biw" secondAttribute="top" id="Ubg-vB-OBu"/>
+                                    <constraint firstItem="TAD-eQ-TlC" firstAttribute="leading" secondItem="LIk-VO-Biw" secondAttribute="leading" id="tcC-CP-Jso"/>
+                                    <constraint firstAttribute="bottom" secondItem="TAD-eQ-TlC" secondAttribute="bottom" id="wQd-7H-33h"/>
                                 </constraints>
                             </customView>
                         </subviews>
