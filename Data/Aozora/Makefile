@@ -6,7 +6,14 @@ get:
 	nkf list_person_all.csv > list_person_all.csv.utf
 	/bin/mv list_person_all.csv.utf list_person_all.csv
 
-# yamlに変換する。読みは手作業で追加する...
 list:
 	ruby aozora2yaml > aozora.list
+#
+# yamlに変換する。著者の読みデータが無いので手作業で追加して
+# aozora.yamlを生成する
+#
+
+# yamlをltsvに変換
+ltsv:
+	ruby yaml2ltsv aozora.yaml > aozora.ltsv
 

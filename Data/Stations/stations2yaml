@@ -11,7 +11,7 @@ $KCODE = 'u'
 
 curline = ''
 
-puts '駅データベース'
+puts 'name:駅データベース'
 File.open("stations.csv"){ |f|
   f.each { |line|
     line.chomp!
@@ -22,10 +22,10 @@ File.open("stations.csv"){ |f|
     latitude = a[12]
     longitude = a[11]
     if curline != line then
-      puts " #{line}"
+      puts " name:#{line}"
       curline = line
     end
-    puts "  https://maps.google.co.jp/maps?ll=#{latitude},#{longitude}\t#{station}"
+    puts "  url:https://maps.google.co.jp/maps?ll=#{latitude},#{longitude}\tname:#{station}"
   }
 }
 

@@ -13,6 +13,7 @@
 {
     NSUInteger nodeCount;
     NodeItem *root;
+    NodeItem *jsonRoot;
 }
 
 @end
@@ -24,8 +25,8 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     if (!root) {
-        NSURL *url = [NodeItem contentTreeURL];
-        root = [NodeItem rootNodeWithURL:url];
+//        NSURL *url = [NodeItem homeURL];
+        root = [NodeItem rootNodeWithJSON];
     }
 }
 
@@ -35,26 +36,21 @@
     [super tearDown];
 }
 
-- (void)testTreeUrl
-{
-    NSURL *url = [NodeItem contentTreeURL];
-    XCTAssertNotNil(url, );
-}
-
 - (void)testFileManager
 {
     NSFileManager *fm = [NSFileManager defaultManager];
     NSError *e = nil;
     // pre-fetchするプロパティ一覧
     NSArray *props = @[NSURLIsDirectoryKey,NSURLEffectiveIconKey,NSURLNameKey,NSURLPathKey];
-    NSArray *c = [fm contentsOfDirectoryAtURL:[NodeItem contentTreeURL] includingPropertiesForKeys:props options:NSDirectoryEnumerationSkipsHiddenFiles error:&e];
+    NSArray *c = [fm contentsOfDirectoryAtURL:[NodeItem homeURL] includingPropertiesForKeys:props options:NSDirectoryEnumerationSkipsHiddenFiles error:&e];
     XCTAssertNil(e, );
     XCTAssertNotNil(c, );
-    NSLog(@"%@",c);
+//    NSLog(@"%@",c);
     for (NSURL *url in c) {
         NSDictionary *prop = [url resourceValuesForKeys:props error:&e];
+        XCTAssertNotNil(prop, );
         XCTAssertNil(e, );
-        NSLog(@"%@",prop);
+//        NSLog(@"%@",prop);
     }
 }
 
@@ -69,9 +65,9 @@
         item = [stack lastObject];
         [stack removeLastObject];
         XCTAssertNotNil(item, );
-        XCTAssertNotNil(item.name, );
-        XCTAssertNotNil(item.url, );
-        XCTAssertNotNil(item.iconImage, );
+        XCTAssertNotNil(item.title, );
+//        XCTAssertNotNil(item.url, );
+//        XCTAssertNotNil(item.iconImage, );
         if (item.isLeaf) {
             XCTAssertNil(item.children, );
         }else{
@@ -100,21 +96,41 @@
         }
         _nodeCount++;
     } while (item.nextNode);
-//    XCTAssert(nodeCount == _nodeCount,);
+//    NSUInteger nod = [root numberOfDescendant];
+//    XCTAssert(_nodeCount == nod + 1,);
 }
 
-- (void)testDescendant
-{
-    NodeItem *cdl = [root closestDescendantLeaf];
-    XCTAssert([cdl.name isEqualToString:@"add_file.py"], );
-    NodeItem *fdl = [root farestDescendantLeaf];
-    XCTAssert([fdl.name isEqualToString:@"tree.md"], );
-}
-
+//- (void)testDescendant
+//{
+//    NodeItem *cdl = [root closestDescendantLeaf];
+//    XCTAssert([cdl.title isEqualToString:@"add_file.py"], );
+//    NodeItem *fdl = [root farestDescendantLeaf];
+//    XCTAssert([fdl.title isEqualToString:@"tree.md"], );
+//}
+//
 - (void)testNumberOfDecsendant
 {
     NSUInteger nod = [root numberOfDescendant];
     XCTAssert(nod > 9700, );
+}
+
+- (void)testLoadDataJson
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    NSError *e = nil;
+    id json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&e];
+    XCTAssertNil(e, );
+    XCTAssert([json isKindOfClass:[NSArray class]], );
+    for (NSDictionary *d in json) {
+        XCTAssertNotNil(d[@"title"], );
+        NSLog(@"%@",d[@"title"]);
+    }
+}
+
+- (void)testFronJSON
+{
+    
 }
 
 @end

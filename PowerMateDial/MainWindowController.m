@@ -11,11 +11,15 @@
 
 // 回転が止まってから何秒後に終了検知するか
 #define FINISH_TIMER_VALUE 0.8
+#define SNAP_THRESHOLD 20
+#define SNAP_LENGTH 5
+#define SnapDepthNone NSUIntegerMax
 
 typedef enum NSUInteger{
-    RotationDirectionLeft = 123,
-    RotationDirectionRight = 124
-}RotationDirection;
+    PowerMateActionRotationLeft = 123,
+    PowerMateActionRotationRight = 124
+}PowerMateAction;
+
 
 @interface MainWindowController ()
 {
@@ -26,6 +30,14 @@ typedef enum NSUInteger{
     // ノードの選択がプログラム中で行われたか
     // <=> PowerMate経由での選択かを判別するためのフラグ
     BOOL selectionChangedBySelf;
+    // スナップに用いる配列
+    NSMutableDictionary *snapHash;
+    // 現在の前方向への最大移動値
+    NSInteger maxForwardIndex;
+    // 現在の後ろ方向への最大移動値
+    NSInteger maxBackwordIndex;
+    // 最後のアクション
+    PowerMateAction lastAction;
 }
 
 /* View Outlets */
@@ -35,6 +47,11 @@ typedef enum NSUInteger{
 @property (weak) IBOutlet NSTableColumn *tableColumn;
 @property (weak) IBOutlet NSTextField *label;
 @property (weak) IBOutlet NSImageView *imageView;
+@property (weak) IBOutlet WebView *webView;
+@property (weak) IBOutlet NSPathControl *pathControl;
+@property (weak) IBOutlet NSProgressIndicator *indicator;
+@property (weak) IBOutlet NSClipView *leftClipView;
+@property (weak) IBOutlet NSScrollView *scrollView;
 
 // 現在選択中のノード
 @property (nonatomic) NodeItem *selectedNode;
@@ -47,11 +64,8 @@ typedef enum NSUInteger{
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    // Content Treeを読み込み
-//    NSURL *treeURL = [NodeItem contentTreeURL];
-    self.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-    NSURL *treeURL = [NodeItem homeURL];
-    NodeItem *rootNode = [NodeItem rootNodeWithURL:treeURL];
+    snapHash = [NSMutableDictionary new];
+    NodeItem *rootNode = [NodeItem rootNodeWithJSON];
     [self setRootNode:rootNode];
 }
 
@@ -63,8 +77,74 @@ typedef enum NSUInteger{
 - (void)finishRotation
 {
     NSLog(@"rotation finished direction:times: %li",(long)rotationCount);
+    // 選択されたノードがコンテナだった場合直近の子孫の葉を選択
+    [self setSelectedNode:self.selectedNode.closestDescendantLeaf silent:YES];
+    // 計算
+    [self calculateSnapArray];
+    // リセット
     rotationCount = 0;
+    lastAction = 0;
     [self.label setTextColor:[NSColor redColor]];
+    [self.label setIntegerValue:rotationCount];
+}
+
+- (void)calculateSnapArray
+{
+    // snapHashをリセット
+    [snapHash removeAllObjects];
+    [snapHash setObject:self.selectedNode forKey:@0];
+    maxBackwordIndex = maxForwardIndex = 0;
+    // 前方向への道筋を計算
+    NodeItem *item = self.selectedNode;
+    while (item) {
+        // itemは必ず葉なので一定の回数移動したら移動距離を増やす
+        // 1,2,3,4,5,10,20,30,40,50,100,...........
+        if (item.parent) {
+            NSArray *forwards = [item youngerBrothers];
+            int i ,cnt , snaplength;
+            for (i = 0, cnt = 0, snaplength = 1; i < (int)forwards.count; i+=snaplength, cnt++) {
+                NodeItem *next = [forwards objectAtIndex:i];
+                maxForwardIndex++;
+                [snapHash setObject:next forKey:@(maxForwardIndex)];
+                if (cnt != 0 && cnt%SNAP_THRESHOLD == 0) {
+                    // 1,5,10,15,20
+                    snaplength += SNAP_LENGTH;
+                }
+            }
+            // 同階層フォワードスナップの最後は末弟
+            if (forwards.count > 0 && [snapHash objectForKey:@(maxForwardIndex)] != forwards.lastObject) {
+                maxForwardIndex++;
+                [snapHash setObject:forwards.lastObject forKey:@(maxForwardIndex)];
+            }
+        }
+        item = item.parent;
+    }
+    // 後ろへの道筋を計算
+    item = self.selectedNode;
+    while (item) {
+        // itemは必ず葉なので一定の回数移動したら移動距離を増やす
+        if (item.parent) {
+            NSArray *backwards = [@[item.parent] arrayByAddingObjectsFromArray: [item elderBrothers]];
+            int i ,cnt , snaplength;
+            for (i = (int)backwards.count-1, cnt = 0, snaplength = 1; i >= 0; i-=snaplength, cnt++) {
+                NodeItem *prev = [backwards objectAtIndex:i];
+                maxBackwordIndex--;
+                [snapHash setObject:prev forKey:@(maxBackwordIndex)];
+                if (cnt != 0 && cnt%SNAP_THRESHOLD == 0) {
+                    // 1,5,10,15,20
+                    snaplength += SNAP_LENGTH;
+                }
+            }
+            // 同階層のバックスナップの最後は長兄
+            if(backwards.count > 0 && [snapHash objectForKey:@(maxBackwordIndex)] != backwards.firstObject){
+                maxBackwordIndex--;
+                [snapHash setObject:backwards.firstObject forKey:@(maxBackwordIndex)];
+            }
+        }
+        item = item.parent;
+    }
+    NSLog(@"caluculation finished");
+    NSLog(@"%@",snapHash);
 }
 
 - (void)setRootNode:(NodeItem *)rootNode
@@ -72,35 +152,73 @@ typedef enum NSUInteger{
     if (rootNode != _rootNode) {
         _rootNode = rootNode;
         self.contents = @[rootNode];
-        self.selectedNode = rootNode.children.firstObject;
     }
 }
 
-- (void)setSelectedNode:(NodeItem *)selectedNode
+- (void)setSelectedNode:(NodeItem *)selectedNode silent:(BOOL)silent
 {
     if (selectedNode != _selectedNode) {
-        [self changeSelectionProgramatically:^{
+        void (^block)() = ^{
             _selectedNode = selectedNode;
             [self.treeController setSelectionIndexPath:selectedNode.indexPath];
             self.selectedIndexPaths = @[selectedNode.indexPath];
             // 葉ならファイルを表示
             if (selectedNode.isLeaf) {
                 [self showFile:selectedNode.url];
+//                NSLog(@"%@",selectedNode.url);
             }
-        }];
+            // スクロールビューをセンタリングスナップする
+            NSInteger row = [self.outlineView rowForItem:self.selectedTreeNode];
+            [self.outlineView scrollRowToVisible:row];
+        };
+        if (silent) {
+            block();
+        }else{
+            [self changeSelectionProgramatically:^{
+                block();
+            }];
+        }
+        // PathControlを設定
+        [self.pathControl setPathComponentCells:[self pathComponentArray]];
     }
+}
+
+- (NSArray *)pathComponentArray
+{
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    NodeItem *item = self.selectedNode;
+    while (item.parent) {
+        NSPathComponentCell *cell = [[NSPathComponentCell alloc] init];
+        [cell setTitle:item.title];
+        [cell setURL:item.url];
+        [array insertObject:cell atIndex:0];
+        item = item.parent;
+    }
+    return array;
+}
+
+- (void)setSelectedNode:(NodeItem *)selectedNode
+{
+    [self setSelectedNode:selectedNode silent:NO];
 }
 
 - (void)showFile:(NSURL*)url
 {
-    NSError *e = nil;
-    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"(png|jpg|gif)" options:NSRegularExpressionCaseInsensitive error:&e];
-    NSString *ext = url.pathExtension;
-    NSRange result = [regexp rangeOfFirstMatchInString:ext options:0 range:NSMakeRange(0, ext.length)];
-    if (result.location != NSNotFound){
-        NSImage *image = [[NSImage alloc] initWithContentsOfFile:url.path];
-        self.imageView.image = image;
-    }
+//    NSError *e = nil;
+//    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"(png|jpg|gif)" options:NSRegularExpressionCaseInsensitive error:&e];
+//    NSString *ext = url.pathExtension;
+//    if (ext) {
+//        NSRange result = [regexp rangeOfFirstMatchInString:ext options:0 range:NSMakeRange(0, ext.length)];
+//        if (result.location != NSNotFound){
+//            NSImage *image = [[NSImage alloc] initWithContentsOfFile:url.path];
+//            self.imageView.image = image;
+//        }
+//    }
+    
+    // request
+    NSURLRequest *req = [NSURLRequest requestWithURL:self.selectedNode.url];
+    [self.webView.mainFrame stopLoading];
+    [self.webView.mainFrame loadRequest:req];
 }
 
 - (void)changeSelectionProgramatically:(void (^)())block{
@@ -113,76 +231,41 @@ typedef enum NSUInteger{
 
 -(void)keyDown:(NSEvent *)theEvent
 {
-//    NSLog(@"%@",theEvent);
     // 文字色を戻す
     if (rotationCount == 0) {
-        [self.label setTextColor:[NSColor blackColor]];
+        [self.label setTextColor:[NSColor alternateSelectedControlTextColor]];
     }
     // 回転終了のチェック
     [timer invalidate];
     timer = [NSTimer scheduledTimerWithTimeInterval:FINISH_TIMER_VALUE target:self selector:@selector(finishRotation) userInfo:nil repeats:NO];
     
-    NodeItem *selectedNode = nil;
-    // 方向によって回転数を上げ下げ
-    switch (theEvent.keyCode) {
-        case RotationDirectionLeft:
-            // left
-            if (self.selectedNode.previousNode){
-                rotationCount--;
-                NodeItem *previous = self.selectedNode.previousNode;
-                if (self.selectedNode.parent == previous) {
-                    // 親への移動なら現在のexpandを閉じる
-                    [self changeSelectionProgramatically:^{
-                        [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
-                    }];
-                    selectedNode = previous;
-                }else{
-                    // バックワードの移動なら
-                    if (previous.children) {
-                        //次の要素に子どもが居たら末子
-                        selectedNode = previous.children.lastObject;
-                    }else{
-                        // 居なければ前
-                        selectedNode = previous;
-                    }
-                }
-            }
+    // アクションによって
+    PowerMateAction action = theEvent.keyCode;
+    switch (action) {
+        case PowerMateActionRotationLeft:
+            rotationCount--;
             break;
-        case RotationDirectionRight:
-            // right
-            if (self.selectedNode.nextNode || self.selectedNode.children) {
-                rotationCount++;
-                if (self.selectedNode.children) {
-                    // 現在が内部ノードなら子の最初
-                    selectedNode = self.selectedNode.children.firstObject;
-                }else{
-                    // 次のノードがあれば
-                    if (self.selectedNode.nextNode) {
-                        // 次
-                        NodeItem *next =  self.selectedNode.nextNode;
-                        // 別階層への移動なら現在のexpandを閉じる
-                        if (self.selectedNode.parent != next.parent) {
-                            [self changeSelectionProgramatically:^{
-                                [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
-                            }];
-                        }
-                        selectedNode = next;
-                    }
-                }
-            }
-            break;
-        case 37: {
-            NSLog(@"%@",self.treeController.selectedObjects);
-        }
+        case PowerMateActionRotationRight:
+            rotationCount++;
             break;
         default:
             break;
     }
-    NSLog(@"%@ was selected",selectedNode);
-    if (selectedNode) {
+    // 移動可能なノードがsnapHashに存在する場合のみ
+    if (maxBackwordIndex <= rotationCount && rotationCount <= maxForwardIndex){
+        NodeItem *selectedNode = [snapHash objectForKey:@(rotationCount)];
+        // 階層が上がった場合は閉じる
+        if (selectedNode == self.selectedNode.parent ||
+            selectedNode == self.selectedNode.parent.nextNode) {
+            [self changeSelectionProgramatically:^{
+                [self.outlineView collapseItem:self.selectedTreeNode.parentNode collapseChildren:YES];
+            }];
+        }
+        NSLog(@"%@ was selected",selectedNode);
         [self setSelectedNode:selectedNode];
+        [self.label setIntegerValue:rotationCount];
     }
-    [self.label setIntegerValue:rotationCount];
+    lastAction = action;
 }
 
 #pragma mark - NSOutlineView delegate
@@ -191,14 +274,30 @@ typedef enum NSUInteger{
 {
     NSInteger row = [self.outlineView selectedRow];
     self.selectedTreeNode = [self.outlineView itemAtRow:row];
-    // プログラム上での選択変更でない <=> クリックでの操作変更の場合
+    // プログラム上での選択変更でない <=> クリックでの操作変更の場合にプログラム中に反映
     if (!selectionChangedBySelf) {
         NodeItem *item = self.selectedTreeNode.representedObject;
         if (item) {
-            [self setSelectedNode:item];
+            [self setSelectedNode:item.closestDescendantLeaf];
         }
-        NSLog(@"%@",item);
+        [self finishRotation];
     }
+}
+
+#pragma mark - WebView
+
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
+{
+//    NSLog(@"load finished");
+    [self.indicator stopAnimation:self];
+    // web viewにフォーカスがあたるとイベントが効かなくなるためレスポンダを変える
+    [self.window makeFirstResponder:self.outlineView];
+}
+
+- (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
+{
+//    NSLog(@"start loading frame");
+    [self.indicator startAnimation:self];
 }
 
 @end

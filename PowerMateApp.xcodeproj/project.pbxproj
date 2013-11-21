@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A601A7E5183DEF94003B7480 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63927E7182E17A000C2884C /* WebKit.framework */; };
+		A601A7EE183E13BF003B7480 /* BrowserOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A601A7ED183E13BF003B7480 /* BrowserOutlineView.m */; };
+		A601A7F1183E1695003B7480 /* VerticalAlignCel.m in Sources */ = {isa = PBXBuildFile; fileRef = A601A7F0183E1695003B7480 /* VerticalAlignCel.m */; };
 		A64379D0183A034A005FE37C /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379CF183A034A005FE37C /* MainWindowController.m */; };
 		A64379D3183A0463005FE37C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64379D1183A0463005FE37C /* MainWindow.xib */; };
 		A64379E3183A3E46005FE37C /* NodeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A64379E0183A3E46005FE37C /* NodeItem.m */; };
 		A6437A06183A5D5E005FE37C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC9B9182E128700298C9A /* XCTest.framework */; };
 		A6437A0C183A5D5E005FE37C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6437A0A183A5D5E005FE37C /* InfoPlist.strings */; };
 		A6437A0E183A5D5E005FE37C /* PowerMateDialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6437A0D183A5D5E005FE37C /* PowerMateDialTests.m */; };
-		A6437A18183A60B3005FE37C /* Tree in Resources */ = {isa = PBXBuildFile; fileRef = A6437A17183A60B3005FE37C /* Tree */; };
 		A64659951830C99600634936 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DC99A182E128700298C9A /* Cocoa.framework */; };
 		A646599B1830C99600634936 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A64659991830C99600634936 /* InfoPlist.strings */; };
 		A646599D1830C99600634936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A646599C1830C99600634936 /* main.m */; };
@@ -21,6 +23,7 @@
 		A64659A41830C99600634936 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A64659A31830C99600634936 /* AppDelegate.m */; };
 		A64659A71830C99600634936 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64659A51830C99600634936 /* MainMenu.xib */; };
 		A64659A91830C99600634936 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A64659A81830C99600634936 /* Images.xcassets */; };
+		A6EA7732183CFCD700AA0EBF /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = A6EA7731183CFCD600AA0EBF /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A601A7EC183E13BF003B7480 /* BrowserOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserOutlineView.h; sourceTree = "<group>"; };
+		A601A7ED183E13BF003B7480 /* BrowserOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserOutlineView.m; sourceTree = "<group>"; };
+		A601A7EF183E1695003B7480 /* VerticalAlignCel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalAlignCel.h; sourceTree = "<group>"; };
+		A601A7F0183E1695003B7480 /* VerticalAlignCel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalAlignCel.m; sourceTree = "<group>"; };
 		A63927E7182E17A000C2884C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A63927EF182E2EC400C2884C /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		A63927F1182E2EC400C2884C /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -66,7 +73,6 @@
 		A6437A0B183A5D5E005FE37C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A6437A0D183A5D5E005FE37C /* PowerMateDialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerMateDialTests.m; sourceTree = "<group>"; };
 		A6437A0F183A5D5E005FE37C /* PowerMateDialTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PowerMateDialTests-Prefix.pch"; sourceTree = "<group>"; };
-		A6437A17183A60B3005FE37C /* Tree */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tree; sourceTree = "<group>"; };
 		A64659941830C99600634936 /* PowerMateDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerMateDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64659981830C99600634936 /* PowerMateDial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerMateDial-Info.plist"; sourceTree = "<group>"; };
 		A646599A1830C99600634936 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 		A64659A31830C99600634936 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A64659A61830C99600634936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A64659A81830C99600634936 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A6EA7731183CFCD600AA0EBF /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../Data/data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A601A7E5183DEF94003B7480 /* WebKit.framework in Frameworks */,
 				A64659951830C99600634936 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,7 +173,6 @@
 		A63DC98E182E128700298C9A = {
 			isa = PBXGroup;
 			children = (
-				A6437A17183A60B3005FE37C /* Tree */,
 				A63927ED182E2EC400C2884C /* Configuration */,
 				A64659961830C99600634936 /* PowerMateDial */,
 				A6437A07183A5D5E005FE37C /* PowerMateDialTests */,
@@ -207,9 +214,13 @@
 		A64379DA183A24D3005FE37C /* MainWindow */ = {
 			isa = PBXGroup;
 			children = (
+				A601A7EC183E13BF003B7480 /* BrowserOutlineView.h */,
+				A601A7ED183E13BF003B7480 /* BrowserOutlineView.m */,
 				A64379CE183A034A005FE37C /* MainWindowController.h */,
 				A64379CF183A034A005FE37C /* MainWindowController.m */,
 				A64379D1183A0463005FE37C /* MainWindow.xib */,
+				A601A7EF183E1695003B7480 /* VerticalAlignCel.h */,
+				A601A7F0183E1695003B7480 /* VerticalAlignCel.m */,
 			);
 			name = MainWindow;
 			sourceTree = "<group>";
@@ -245,6 +256,7 @@
 		A6437A08183A5D5E005FE37C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A6EA7731183CFCD600AA0EBF /* data.json */,
 				A6437A09183A5D5E005FE37C /* PowerMateDialTests-Info.plist */,
 				A6437A0A183A5D5E005FE37C /* InfoPlist.strings */,
 				A6437A0F183A5D5E005FE37C /* PowerMateDialTests-Prefix.pch */,
@@ -362,11 +374,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A646599B1830C99600634936 /* InfoPlist.strings in Resources */,
+				A6EA7732183CFCD700AA0EBF /* data.json in Resources */,
 				A64379D3183A0463005FE37C /* MainWindow.xib in Resources */,
 				A64659A91830C99600634936 /* Images.xcassets in Resources */,
 				A64659A11830C99600634936 /* Credits.rtf in Resources */,
 				A64659A71830C99600634936 /* MainMenu.xib in Resources */,
-				A6437A18183A60B3005FE37C /* Tree in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +397,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A601A7F1183E1695003B7480 /* VerticalAlignCel.m in Sources */,
+				A601A7EE183E13BF003B7480 /* BrowserOutlineView.m in Sources */,
 				A64659A41830C99600634936 /* AppDelegate.m in Sources */,
 				A64379E3183A3E46005FE37C /* NodeItem.m in Sources */,
 				A646599D1830C99600634936 /* main.m in Sources */,
