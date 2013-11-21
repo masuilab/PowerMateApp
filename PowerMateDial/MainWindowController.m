@@ -48,6 +48,7 @@ typedef enum NSUInteger{
 @property (weak) IBOutlet NSImageView *imageView;
 @property (weak) IBOutlet WebView *webView;
 @property (weak) IBOutlet NSPathControl *pathControl;
+@property (weak) IBOutlet NSProgressIndicator *indicator;
 
 // 現在選択中のノード
 @property (nonatomic) NodeItem *selectedNode;
@@ -78,10 +79,6 @@ typedef enum NSUInteger{
     // リセット
     rotationCount = 0;
     lastAction = 0;
-    // request
-    NSURLRequest *req = [NSURLRequest requestWithURL:self.selectedNode.url];
-    [self.webView.mainFrame loadRequest:req];
-    NSLog(@"load %@",self.selectedNode.url);
     [self.label setTextColor:[NSColor redColor]];
     [self.label setIntegerValue:rotationCount];
 }
@@ -173,6 +170,10 @@ typedef enum NSUInteger{
                 block();
             }];
         }
+        // request
+        NSURLRequest *req = [NSURLRequest requestWithURL:self.selectedNode.url];
+        [self.webView.mainFrame stopLoading];
+        [self.webView.mainFrame loadRequest:req];
         // PathControlを設定
         [self.pathControl setPathComponentCells:[self pathComponentArray]];
     }
@@ -279,11 +280,13 @@ typedef enum NSUInteger{
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
     NSLog(@"load finished");
+    [self.indicator stopAnimation:self];
 }
 
 - (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
 {
     NSLog(@"start loading frame");
+    [self.indicator startAnimation:self];
 }
 
 @end
