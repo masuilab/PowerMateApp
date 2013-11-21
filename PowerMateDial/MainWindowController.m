@@ -124,7 +124,7 @@ typedef enum NSUInteger{
     while (item) {
         // itemは必ず葉なので一定の回数移動したら移動距離を増やす
         if (item.parent) {
-            NSArray *backwards = [[item elderBrothers] arrayByAddingObject:item];
+            NSArray *backwards = [@[item.parent] arrayByAddingObjectsFromArray: [item elderBrothers]];
             int i ,cnt , snaplength;
             for (i = (int)backwards.count-1, cnt = 0, snaplength = 1; i >= 0; i-=snaplength, cnt++) {
                 NodeItem *prev = [backwards objectAtIndex:i];
