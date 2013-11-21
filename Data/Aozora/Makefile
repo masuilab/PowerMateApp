@@ -15,5 +15,5 @@ list:
 
 # yamlをltsvに変換
 ltsv:
-	ruby yaml2ltsv aozora.yaml > aozora.ltsv
+	ruby yaml2ltsv aozora.yaml | ruby ltsvconv > aozora.ltsv
 
