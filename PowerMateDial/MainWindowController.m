@@ -12,6 +12,7 @@
 // 回転が止まってから何秒後に終了検知するか
 #define FINISH_TIMER_VALUE 0.8
 #define SNAP_THRESHOLD 20
+#define SNAP_LENGTH 5
 #define SnapDepthNone NSUIntegerMax
 
 typedef enum NSUInteger{
@@ -97,15 +98,19 @@ typedef enum NSUInteger{
     NodeItem *item = self.selectedNode;
     while (item) {
         // itemは必ず葉なので一定の回数移動したら移動距離を増やす
-        NodeItem *next = item;
-        for (NSUInteger i = 0; i < SNAP_THRESHOLD; i++) {
-            next = next.nextNode;
-            // 階層の最後に来たら次にとばす
-            if (!next) {
-                break;
+        // 1,2,3,4,5,10,20,30,40,50,100,...........
+        if (item.parent) {
+            NSArray *forwards = [item.parent.children subarrayWithRange:NSMakeRange(item.index+1, item.parent.children.count-item.index-1)];
+            NSUInteger i ,cnt , snaplength;
+            for (i = 0, cnt = 0, snaplength = 1; i < forwards.count; i+=snaplength, cnt++) {
+                NodeItem *next = [forwards objectAtIndex:i];
+                maxForwardIndex++;
+                [snapHash setObject:next forKey:@(maxForwardIndex)];
+                if (cnt != 0 && cnt%SNAP_THRESHOLD == 0) {
+                    // 1,5,10,15,20
+                    snaplength += SNAP_LENGTH;
+                }
             }
-            maxForwardIndex++;
-            [snapHash setObject:next forKey:@(maxForwardIndex)];
         }
         item = item.parent;
     }
@@ -113,19 +118,23 @@ typedef enum NSUInteger{
     item = self.selectedNode;
     while (item) {
         // itemは必ず葉なので一定の回数移動したら移動距離を増やす
-        NodeItem *prev = item;
-        for (NSUInteger i = 0; i < SNAP_THRESHOLD; i++) {
-            prev = prev.previousNode;
-            // 次が親ならば親を追加してbreak
-            if (!prev) {
-                if (item.parent) {
+        if (item.parent) {
+            if (item.index == 0) {
+                maxBackwordIndex--;
+                [snapHash setObject:item.parent forKey:@(maxBackwordIndex)];
+            }else{
+                NSArray *backwards = [item.parent.children subarrayWithRange:NSMakeRange(0,item.index)];
+                NSUInteger i ,cnt , snaplength;
+                for (i = backwards.count-1, cnt = 0, snaplength = 1; i < backwards.count; i-=snaplength, cnt++) {
+                    NodeItem *prev = [backwards objectAtIndex:i];
                     maxBackwordIndex--;
-                    [snapHash setObject:item.parent forKey:@(maxBackwordIndex)];
+                    [snapHash setObject:prev forKey:@(maxBackwordIndex)];
+                    if (cnt != 0 && cnt%SNAP_THRESHOLD == 0) {
+                        // 1,5,10,15,20
+                        snaplength += SNAP_LENGTH;
+                    }
                 }
-                break;
             }
-            maxBackwordIndex--;
-            [snapHash setObject:prev forKey:@(maxBackwordIndex)];
         }
         item = item.parent;
     }
