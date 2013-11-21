@@ -76,6 +76,8 @@ typedef enum NSUInteger{
 - (void)finishRotation
 {
     NSLog(@"rotation finished direction:times: %li",(long)rotationCount);
+    // 選択されたノードがコンテナだった場合直近の子孫の葉を選択
+    [self setSelectedNode:self.selectedNode.closestDescendantLeaf silent:YES];
     // 計算
     [self calculateSnapArray];
     // リセット
@@ -87,19 +89,6 @@ typedef enum NSUInteger{
 
 - (void)calculateSnapArray
 {
-    // ルートに戻った場合でないのみ回転方向によって子孫の葉を選択
-    if (self.selectedNode != self.rootNode) {
-        if (lastAction == PowerMateActionRotationRight) {
-            // 右方向への回転で終わったら直近の子孫の葉を選択
-            [self setSelectedNode:self.selectedNode.closestDescendantLeaf silent:YES];
-        }else if (PowerMateActionRotationLeft) {
-            // 左方向への回転で終わったら最遠の子孫の葉を選択
-            [self setSelectedNode:self.selectedNode.farestDescendantLeaf silent:YES];
-        }
-    }else{
-        [self setSelectedNode:self.rootNode.closestDescendantLeaf silent:YES];
-    }
-    
     // snapHashをリセット
     [snapHash removeAllObjects];
     [snapHash setObject:self.selectedNode forKey:@0];
@@ -162,14 +151,9 @@ typedef enum NSUInteger{
             // 葉ならファイルを表示
             if (selectedNode.isLeaf) {
                 [self showFile:selectedNode.url];
-                NSLog(@"%@",selectedNode.url);
+//                NSLog(@"%@",selectedNode.url);
             }
-            // スクロールビューを移動する
-//            NSView *contentView = self.scrollView.contentView;
-//            NSPoint p = contentView.bounds.origin;
-//            NSLog(@"%@",NSStringFromPoint(p));
-////            p.y = CGRectGetHeight(contentView.bounds)/2 - self.leftClipView.documentVisibleRect.size.height/2;
-//            [self.leftClipView scrollToPoint:p];
+            // スクロールビューをセンタリングスナップする
             NSInteger row = [self.outlineView rowForItem:self.selectedTreeNode];
             [self.outlineView scrollRowToVisible:row];
         };
@@ -276,7 +260,7 @@ typedef enum NSUInteger{
 {
     NSInteger row = [self.outlineView selectedRow];
     self.selectedTreeNode = [self.outlineView itemAtRow:row];
-    // プログラム上での選択変更でない <=> クリックでの操作変更の場合
+    // プログラム上での選択変更でない <=> クリックでの操作変更の場合にプログラム中に反映
     if (!selectionChangedBySelf) {
         NodeItem *item = self.selectedTreeNode.representedObject;
         if (item) {
@@ -290,15 +274,15 @@ typedef enum NSUInteger{
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
-    NSLog(@"load finished");
+//    NSLog(@"load finished");
     [self.indicator stopAnimation:self];
-    // web viewにフォーカスがあたるとイベントが効かなくなるため
+    // web viewにフォーカスがあたるとイベントが効かなくなるためレスポンダを変える
     [self.window makeFirstResponder:self.outlineView];
 }
 
 - (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
 {
-    NSLog(@"start loading frame");
+//    NSLog(@"start loading frame");
     [self.indicator startAnimation:self];
 }
 
