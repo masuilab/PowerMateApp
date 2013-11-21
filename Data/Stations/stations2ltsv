@@ -12,21 +12,19 @@ $KCODE = 'u'
 curline = ''
 
 puts 'title:駅データベース'
-File.open("stations.csv"){ |f|
-  f.each { |line|
-    line.chomp!
-    a = line.split(/,/)
-    next if a[0] !~ /^\d/
-    station = a[9]
-    line = a[8]
-    latitude = a[12]
-    longitude = a[11]
-    if curline != line then
-      puts " title:#{line}"
-      curline = line
-    end
-    puts "  url:https://maps.google.co.jp/maps?ll=#{latitude},#{longitude}\ttitle:#{station}"
-  }
+ARGF.each { |line|
+  line.chomp!
+  a = line.split(/,/)
+  next if a[0] !~ /^\d/
+  station = a[9]
+  line = a[8]
+  latitude = a[12]
+  longitude = a[11]
+  if curline != line then
+    puts " title:#{line}"
+    curline = line
+  end
+  puts "  url:https://maps.google.co.jp/maps?ll=#{latitude},#{longitude}\ttitle:#{station}"
 }
 
 
