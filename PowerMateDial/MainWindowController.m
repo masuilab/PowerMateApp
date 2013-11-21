@@ -233,7 +233,7 @@ typedef enum NSUInteger{
 {
     // 文字色を戻す
     if (rotationCount == 0) {
-        [self.label setTextColor:[NSColor blackColor]];
+        [self.label setTextColor:[NSColor alternateSelectedControlTextColor]];
     }
     // 回転終了のチェック
     [timer invalidate];

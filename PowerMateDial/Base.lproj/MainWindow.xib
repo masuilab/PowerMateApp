@@ -136,17 +136,8 @@
                                                     <outlet property="frameLoadDelegate" destination="-2" id="yTK-xy-cwA"/>
                                                 </connections>
                                             </webView>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-sj-0bm">
-                                                <rect key="frame" x="137" y="83" width="94" height="26"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="27v-vx-gFV">
-                                                    <font key="font" metaFont="system" size="15"/>
-                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
                                             <pathControl verticalHuggingPriority="750" misplaced="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O41-4x-Er0">
-                                                <rect key="frame" x="17" y="455" width="345" height="18"/>
+                                                <rect key="frame" x="17" y="455" width="345" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" id="fdV-bi-eBV">
                                                     <font key="font" metaFont="smallSystem"/>
@@ -232,6 +223,69 @@
             <connections>
                 <binding destination="jwp-TC-PI6" name="title" keyPath="selection.path" id="1Vt-YZ-xmA"/>
             </connections>
+        </window>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="adb-J3-Wye" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" utility="YES" HUD="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="136" y="163" width="218" height="97"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <view key="contentView" id="P0f-Fc-B3J">
+                <rect key="frame" x="0.0" y="0.0" width="218" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-sj-0bm">
+                        <rect key="frame" x="75" y="51" width="94" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Label" id="27v-vx-gFV">
+                            <font key="font" metaFont="system" size="15"/>
+                            <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="79c-nK-OQi">
+                        <rect key="frame" x="91" y="20" width="78" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="74" id="aEV-0T-eL3"/>
+                            <constraint firstAttribute="height" constant="17" id="nGE-fn-JMm"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Label" id="kZR-v9-skk">
+                            <font key="font" metaFont="system" size="15"/>
+                            <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="jwp-TC-PI6" name="value" keyPath="selection.index" id="haa-dP-Ksm"/>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VbK-Ox-H0g">
+                        <rect key="frame" x="20" y="60" width="56" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="移動距離" id="ZHh-SO-zSr">
+                            <font key="font" size="13" name="AquaKana"/>
+                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U1U-iJ-fTk">
+                        <rect key="frame" x="20" y="19" width="69" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="現在の番号" id="jzP-I3-8hs">
+                            <font key="font" size="13" name="AquaKana"/>
+                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="79c-nK-OQi" firstAttribute="leading" secondItem="U1U-iJ-fTk" secondAttribute="trailing" constant="6" id="1TB-Jy-FBR"/>
+                    <constraint firstItem="79c-nK-OQi" firstAttribute="trailing" secondItem="23Z-sj-0bm" secondAttribute="trailing" id="6WN-aM-aWr"/>
+                    <constraint firstAttribute="trailing" secondItem="79c-nK-OQi" secondAttribute="trailing" constant="51" id="B8y-tm-r38"/>
+                    <constraint firstItem="79c-nK-OQi" firstAttribute="baseline" secondItem="U1U-iJ-fTk" secondAttribute="baseline" id="bqG-0q-1xm"/>
+                    <constraint firstItem="79c-nK-OQi" firstAttribute="top" secondItem="23Z-sj-0bm" secondAttribute="bottom" constant="14" id="tkl-gX-dwu"/>
+                    <constraint firstAttribute="bottom" secondItem="79c-nK-OQi" secondAttribute="bottom" constant="20" symbolic="YES" id="tw9-qF-msU"/>
+                </constraints>
+            </view>
         </window>
     </objects>
 </document>
