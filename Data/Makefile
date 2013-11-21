@@ -7,7 +7,7 @@ default: clean jsonall jq
 
 clean:
 	echo "### Removing data.json... ###"
-	rm data.json
+	-rm -f data.json
 
 recipejson:
 	ruby ltsv2json Recipe/allrecipe.ltsv > Recipe/allrecipe.result.json
