@@ -226,6 +226,7 @@ static NSMutableDictionary *iconImageCache;
 - (NodeItem*)_decsendantLeaf:(BOOL)closest
 {
     NodeItem *item = self;
+// warning ここで無限ループしてることがある
     while (!item.isLeaf) {
         item = (closest) ? item.children.firstObject : item.children.lastObject;
     }

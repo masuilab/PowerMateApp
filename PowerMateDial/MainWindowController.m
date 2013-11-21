@@ -46,12 +46,12 @@ typedef enum NSUInteger{
 @property (strong) IBOutlet NSTreeController *treeController;
 @property (weak) IBOutlet NSTableColumn *tableColumn;
 @property (weak) IBOutlet NSTextField *label;
-@property (weak) IBOutlet NSImageView *imageView;
 @property (weak) IBOutlet WebView *webView;
 @property (weak) IBOutlet NSPathControl *pathControl;
 @property (weak) IBOutlet NSProgressIndicator *indicator;
 @property (weak) IBOutlet NSClipView *leftClipView;
 @property (weak) IBOutlet NSScrollView *scrollView;
+@property (weak) IBOutlet NSImageView *imageView;
 
 // 現在選択中のノード
 @property (nonatomic) NodeItem *selectedNode;
@@ -152,6 +152,9 @@ typedef enum NSUInteger{
     if (rootNode != _rootNode) {
         _rootNode = rootNode;
         self.contents = @[rootNode];
+        [self.outlineView reloadData];
+        [self setSelectedNode:rootNode.closestDescendantLeaf silent:YES];
+        [self finishRotation];
     }
 }
 
@@ -204,17 +207,6 @@ typedef enum NSUInteger{
 
 - (void)showFile:(NSURL*)url
 {
-//    NSError *e = nil;
-//    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"(png|jpg|gif)" options:NSRegularExpressionCaseInsensitive error:&e];
-//    NSString *ext = url.pathExtension;
-//    if (ext) {
-//        NSRange result = [regexp rangeOfFirstMatchInString:ext options:0 range:NSMakeRange(0, ext.length)];
-//        if (result.location != NSNotFound){
-//            NSImage *image = [[NSImage alloc] initWithContentsOfFile:url.path];
-//            self.imageView.image = image;
-//        }
-//    }
-    
     // request
     NSURLRequest *req = [NSURLRequest requestWithURL:self.selectedNode.url];
     [self.webView.mainFrame stopLoading];
