@@ -100,9 +100,9 @@ typedef enum NSUInteger{
         // itemは必ず葉なので一定の回数移動したら移動距離を増やす
         // 1,2,3,4,5,10,20,30,40,50,100,...........
         if (item.parent) {
-            NSArray *forwards = [item.parent.children subarrayWithRange:NSMakeRange(item.index+1, item.parent.children.count-item.index-1)];
-            NSUInteger i ,cnt , snaplength;
-            for (i = 0, cnt = 0, snaplength = 1; i < forwards.count; i+=snaplength, cnt++) {
+            NSArray *forwards = [item youngerBrothers];
+            int i ,cnt , snaplength;
+            for (i = 0, cnt = 0, snaplength = 1; i < (int)forwards.count; i+=snaplength, cnt++) {
                 NodeItem *next = [forwards objectAtIndex:i];
                 maxForwardIndex++;
                 [snapHash setObject:next forKey:@(maxForwardIndex)];
@@ -110,6 +110,11 @@ typedef enum NSUInteger{
                     // 1,5,10,15,20
                     snaplength += SNAP_LENGTH;
                 }
+            }
+            // 同階層フォワードスナップの最後は末弟
+            if (forwards.count > 0 && [snapHash objectForKey:@(maxForwardIndex)] != forwards.lastObject) {
+                maxForwardIndex++;
+                [snapHash setObject:forwards.lastObject forKey:@(maxForwardIndex)];
             }
         }
         item = item.parent;
@@ -119,21 +124,21 @@ typedef enum NSUInteger{
     while (item) {
         // itemは必ず葉なので一定の回数移動したら移動距離を増やす
         if (item.parent) {
-            if (item.index == 0) {
+            NSArray *backwards = [[item elderBrothers] arrayByAddingObject:item];
+            int i ,cnt , snaplength;
+            for (i = (int)backwards.count-1, cnt = 0, snaplength = 1; i >= 0; i-=snaplength, cnt++) {
+                NodeItem *prev = [backwards objectAtIndex:i];
                 maxBackwordIndex--;
-                [snapHash setObject:item.parent forKey:@(maxBackwordIndex)];
-            }else{
-                NSArray *backwards = [item.parent.children subarrayWithRange:NSMakeRange(0,item.index)];
-                NSUInteger i ,cnt , snaplength;
-                for (i = backwards.count-1, cnt = 0, snaplength = 1; i < backwards.count; i-=snaplength, cnt++) {
-                    NodeItem *prev = [backwards objectAtIndex:i];
-                    maxBackwordIndex--;
-                    [snapHash setObject:prev forKey:@(maxBackwordIndex)];
-                    if (cnt != 0 && cnt%SNAP_THRESHOLD == 0) {
-                        // 1,5,10,15,20
-                        snaplength += SNAP_LENGTH;
-                    }
+                [snapHash setObject:prev forKey:@(maxBackwordIndex)];
+                if (cnt != 0 && cnt%SNAP_THRESHOLD == 0) {
+                    // 1,5,10,15,20
+                    snaplength += SNAP_LENGTH;
                 }
+            }
+            // 同階層のバックスナップの最後は長兄
+            if(backwards.count > 0 && [snapHash objectForKey:@(maxBackwordIndex)] != backwards.firstObject){
+                maxBackwordIndex--;
+                [snapHash setObject:backwards.firstObject forKey:@(maxBackwordIndex)];
             }
         }
         item = item.parent;

@@ -232,6 +232,24 @@ static NSMutableDictionary *iconImageCache;
     return item;
 }
 
+- (NSArray *)elderBrothers
+{
+    if (self.parent) {
+        NSRange range = NSMakeRange(0,self.index);
+        return [self.parent.children subarrayWithRange:range];
+    }
+    return nil;
+}
+
+- (NSArray *)youngerBrothers
+{
+    if (self.parent) {
+        NSRange range = NSMakeRange(self.index+1, self.parent.children.count-self.index-1);
+        return [self.parent.children subarrayWithRange:range];
+    }
+    return nil;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"%@",self.title];

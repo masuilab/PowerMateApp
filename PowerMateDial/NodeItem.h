@@ -42,6 +42,10 @@
 - (NodeItem*)closestDescendantLeaf;
 // 最も遠い子孫の葉
 - (NodeItem*)farestDescendantLeaf;
+// 兄たち
+- (NSArray*)elderBrothers;
+// 弟たち
+- (NSArray*)youngerBrothers;
 // KVO用の子要素のカウントプロパティ
 - (NSUInteger)numberOfChildren;
 // 子孫の数
