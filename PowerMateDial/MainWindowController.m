@@ -14,6 +14,7 @@
 #define SNAP_THRESHOLD 20
 #define SNAP_LENGTH 5
 #define SnapDepthNone NSUIntegerMax
+#define DEPTH_FOR_SNAP 5
 
 typedef enum NSUInteger{
     PowerMateActionRotationLeft = 123,
@@ -113,7 +114,8 @@ typedef enum NSUInteger{
             for (i = 0, cnt = 0, snaplength = 1; i < (int)forwards.count; i+=snaplength, cnt++) {
                 NodeItem *next = [forwards objectAtIndex:i];
                 // 階層によって回転の精度を下げる
-                for (NSUInteger j = 0; j < snapUnitInCurrentDepth; j++) {
+                NSInteger max = MAX(1, (NSInteger)(DEPTH_FOR_SNAP-item.indexPath.length));
+                for (NSUInteger j = 0; j < (NSUInteger)max; j++) {
                     maxForwardIndex++;
                     [snapHash setObject:next forKey:@(maxForwardIndex)];
                 }
@@ -145,7 +147,8 @@ typedef enum NSUInteger{
             int i ,cnt , snaplength;
             for (i = (int)backwards.count-1, cnt = 0, snaplength = 1; i >= 0; i-=snaplength, cnt++) {
                 NodeItem *prev = [backwards objectAtIndex:i];
-                for (NSUInteger j = 0; j < snapUnitInCurrentDepth; j++) {
+                NSInteger max = MAX(1, (NSInteger)(DEPTH_FOR_SNAP-item.indexPath.length));
+                for (NSUInteger j = 0; j < (NSUInteger)max; j++) {
                     maxBackwordIndex--;
                     [snapHash setObject:prev forKey:@(maxBackwordIndex)];
                 }
