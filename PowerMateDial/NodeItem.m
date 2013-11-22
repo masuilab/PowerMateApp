@@ -81,7 +81,17 @@ static NSMutableDictionary *iconImageCache;
     if (self = [super init]) {
         _title = dictionary[@"title"];
         if (dictionary[@"url"]) {
-            _url = [NSURL URLWithString:dictionary[@"url"]];            
+            _url = [NSURL URLWithString:dictionary[@"url"]];
+            NSError *e = nil;
+            NSString *pat = @"http:\\/\\/masui\\.sfc\\.keio\\.ac\\.jp\\/Photos\\/(.+?)\\.(jpg|png)";
+            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pat options:NSRegularExpressionCaseInsensitive error:&e];
+            NSString *url = dictionary[@"url"];
+            NSTextCheckingResult *result = [regex firstMatchInString:url options:0 range:NSMakeRange(0, url.length)];
+            if (result) {
+                url = [url stringByReplacingOccurrencesOfString:@".jpg" withString:@"l.jpg"];
+                url = [url stringByReplacingOccurrencesOfString:@".png" withString:@"l.png"];
+            }
+            _url = [NSURL URLWithString:url];
         }
         _parent = parent;
         _index = index;
