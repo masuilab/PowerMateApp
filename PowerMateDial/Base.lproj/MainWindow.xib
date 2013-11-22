@@ -8,6 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
             <connections>
+                <outlet property="debugWindow" destination="adb-J3-Wye" id="PGv-sW-oG7"/>
+                <outlet property="imageView" destination="rEV-2b-jYt" id="ugs-Xu-2U9"/>
                 <outlet property="indicator" destination="9Xo-mZ-QOI" id="Vc6-Ge-w3B"/>
                 <outlet property="label" destination="23Z-sj-0bm" id="Uj4-kI-jgH"/>
                 <outlet property="leftClipView" destination="kUC-rq-6tq" id="KMC-mf-3oj"/>
@@ -44,7 +46,7 @@
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="697" height="545"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <splitView misplaced="YES" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxQ-xd-Fxp">
                         <rect key="frame" x="0.0" y="0.0" width="695" height="545"/>
@@ -136,6 +138,11 @@
                                                     <outlet property="frameLoadDelegate" destination="-2" id="yTK-xy-cwA"/>
                                                 </connections>
                                             </webView>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rEV-2b-jYt">
+                                                <rect key="frame" x="0.0" y="0.0" width="379" height="442"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="top" imageScaling="proportionallyUpOrDown" id="J6R-EP-d1p"/>
+                                            </imageView>
                                             <pathControl verticalHuggingPriority="750" misplaced="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O41-4x-Er0">
                                                 <rect key="frame" x="17" y="455" width="345" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -186,12 +193,16 @@
                                             <constraint firstItem="EPe-hR-ZhA" firstAttribute="top" secondItem="Qb6-8x-Rci" secondAttribute="bottom" constant="8" id="Jw6-Ka-ovs"/>
                                             <constraint firstItem="9Xo-mZ-QOI" firstAttribute="leading" secondItem="Qb6-8x-Rci" secondAttribute="trailing" id="JxC-IO-BOP"/>
                                             <constraint firstItem="Qb6-8x-Rci" firstAttribute="leading" secondItem="TAD-eQ-TlC" secondAttribute="leading" constant="17" id="MZf-7g-8TW"/>
+                                            <constraint firstItem="rEV-2b-jYt" firstAttribute="top" secondItem="O41-4x-Er0" secondAttribute="bottom" constant="103" id="SMa-H5-A1s"/>
                                             <constraint firstItem="LeX-I1-MuO" firstAttribute="leading" secondItem="TAD-eQ-TlC" secondAttribute="leading" id="SaN-8h-Zh8"/>
                                             <constraint firstItem="EPe-hR-ZhA" firstAttribute="top" secondItem="9Xo-mZ-QOI" secondAttribute="bottom" constant="9" id="UKc-nW-vTN"/>
                                             <constraint firstItem="EPe-hR-ZhA" firstAttribute="top" secondItem="Qb6-8x-Rci" secondAttribute="bottom" constant="8" id="c24-YV-ItW"/>
                                             <constraint firstAttribute="trailing" secondItem="EPe-hR-ZhA" secondAttribute="trailing" constant="20" id="eO3-Ph-Ipe"/>
                                             <constraint firstItem="Qb6-8x-Rci" firstAttribute="top" secondItem="TAD-eQ-TlC" secondAttribute="top" constant="20" id="iGk-ZA-lph"/>
+                                            <constraint firstAttribute="trailing" secondItem="rEV-2b-jYt" secondAttribute="trailing" id="oXu-yO-3M0"/>
                                             <constraint firstItem="EPe-hR-ZhA" firstAttribute="leading" secondItem="TAD-eQ-TlC" secondAttribute="leading" constant="17" id="pEF-wd-Djm"/>
+                                            <constraint firstAttribute="bottom" secondItem="rEV-2b-jYt" secondAttribute="bottom" id="qXz-md-cIp"/>
+                                            <constraint firstItem="rEV-2b-jYt" firstAttribute="leading" secondItem="TAD-eQ-TlC" secondAttribute="leading" id="sZj-bu-l7g"/>
                                             <constraint firstItem="9Xo-mZ-QOI" firstAttribute="top" secondItem="Qb6-8x-Rci" secondAttribute="top" id="so4-Lf-DZn"/>
                                             <constraint firstAttribute="bottom" secondItem="LeX-I1-MuO" secondAttribute="bottom" id="tj4-zf-LrE"/>
                                             <constraint firstItem="LeX-I1-MuO" firstAttribute="top" secondItem="O41-4x-Er0" secondAttribute="bottom" constant="13" id="wUz-gl-YOR"/>

@@ -38,6 +38,8 @@ typedef enum NSUInteger{
     NSInteger maxBackwordIndex;
     // 最後のアクション
     PowerMateAction lastAction;
+    //
+    NSOperationQueue *imageloadQueue;
 }
 
 /* View Outlets */
@@ -52,6 +54,7 @@ typedef enum NSUInteger{
 @property (weak) IBOutlet NSProgressIndicator *indicator;
 @property (weak) IBOutlet NSClipView *leftClipView;
 @property (weak) IBOutlet NSScrollView *scrollView;
+@property (strong) IBOutlet NSPanel *debugWindow;
 
 // 現在選択中のノード
 @property (nonatomic) NodeItem *selectedNode;
@@ -66,12 +69,16 @@ typedef enum NSUInteger{
     [super awakeFromNib];
     snapHash = [NSMutableDictionary new];
     NodeItem *rootNode = [NodeItem rootNodeWithJSON];
+    imageloadQueue = [[NSOperationQueue alloc] init];
     [self setRootNode:rootNode];
 }
 
 - (void)windowDidLoad
 {
     [super windowDidLoad];
+#ifdef Release
+    [self.debugWindow close];
+#endif
 }
 
 - (void)finishRotation
@@ -177,7 +184,7 @@ typedef enum NSUInteger{
             self.selectedIndexPaths = @[selectedNode.indexPath];
             // 葉ならファイルを表示
             if (selectedNode.isLeaf) {
-                [self showFile:selectedNode.url];
+                [self showFile:self.selectedNode.url];
 //                NSLog(@"%@",selectedNode.url);
             }
             // スクロールビューをセンタリングスナップする
@@ -215,23 +222,59 @@ typedef enum NSUInteger{
     [self setSelectedNode:selectedNode silent:NO];
 }
 
+- (BOOL)isImageResource:(NSURL*)URL
+{
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(jpg|png)" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSString *str = URL.pathExtension;
+    NSRange range = [regex rangeOfFirstMatchInString:str options:0 range:NSMakeRange(0, str.length)];
+    return (range.location != NSNotFound);
+}
+
+//- (NSURL*)imageURLWithLargeSize:(NSURL*)URL
+//{
+//    NSError *e = nil;
+//    NSString *pat = @"http:\\/\\/masui\\.sfc\\.keio\\.ac\\.jp\\/Photos\\/(.+?)\\.(jpg|png)";
+//    NSString *urlstr = URL.absoluteString;
+//    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pat
+//                                                                           options:NSRegularExpressionCaseInsensitive
+//                                                                             error:&e];
+//    NSTextCheckingResult *result = [regex firstMatchInString:urlstr
+//                                                     options:0
+//                                                       range:NSMakeRange(0, urlstr.length)];
+//    if (result) {
+//        urlstr = [urlstr stringByReplacingOccurrencesOfString:@".jpg" withString:@"l.jpg"];
+//        urlstr = [urlstr stringByReplacingOccurrencesOfString:@".png" withString:@"l.png"];
+//        return [NSURL URLWithString:urlstr];
+//    }
+//    return URL;
+//}
+
 - (void)showFile:(NSURL*)url
 {
-//    NSError *e = nil;
-//    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"(png|jpg|gif)" options:NSRegularExpressionCaseInsensitive error:&e];
-//    NSString *ext = url.pathExtension;
-//    if (ext) {
-//        NSRange result = [regexp rangeOfFirstMatchInString:ext options:0 range:NSMakeRange(0, ext.length)];
-//        if (result.location != NSNotFound){
-//            NSImage *image = [[NSImage alloc] initWithContentsOfFile:url.path];
-//            self.imageView.image = image;
-//        }
-//    }
-    
-    // request
-    NSURLRequest *req = [NSURLRequest requestWithURL:self.selectedNode.url];
-    [self.webView.mainFrame stopLoading];
-    [self.webView.mainFrame loadRequest:req];
+    if ([self isImageResource:url]) {
+        [self.webView setHidden:YES];
+        [self.imageView setHidden:NO];
+        NSURLRequest *req = [NSURLRequest requestWithURL:url];
+        __block __weak typeof (self) __self = self;
+        [NSURLConnection sendAsynchronousRequest:req queue:imageloadQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            if (!connectionError) {
+                NSURL *curentURL = [[__self selectedNode] url];
+                if ([curentURL.absoluteString isEqualToString:url.absoluteString]) {
+                    NSImage *iamge = [[NSImage alloc] initWithData:data];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.imageView setImage:iamge];
+                    });
+                }
+            }
+        }];
+    }else{
+        [self.imageView setHidden:YES];
+        [self.webView setHidden:NO];
+        // request
+        NSURLRequest *req = [NSURLRequest requestWithURL:url];
+        [self.webView.mainFrame stopLoading];
+        [self.webView.mainFrame loadRequest:req];
+    }    
 }
 
 - (void)changeSelectionProgramatically:(void (^)())block{
