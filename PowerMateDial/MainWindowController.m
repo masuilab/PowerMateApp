@@ -10,7 +10,7 @@
 #import "NodeItem.h"
 
 // 回転が止まってから何秒後に終了検知するか
-#define FINISH_TIMER_VALUE 0.8
+#define FINISH_TIMER_VALUE 1.3
 #define SNAP_THRESHOLD 20
 #define SNAP_LENGTH 5
 #define SnapDepthNone NSUIntegerMax
@@ -124,7 +124,11 @@ typedef enum NSUInteger{
     while (item) {
         // itemは必ず葉なので一定の回数移動したら移動距離を増やす
         if (item.parent) {
-            NSArray *backwards = [@[item.parent] arrayByAddingObjectsFromArray: [item elderBrothers]];
+            NSArray *backwards = [item elderBrothers];
+            // ルートまでは戻らない
+            if (item.parent != self.rootNode) {
+                backwards  = [@[item.parent] arrayByAddingObjectsFromArray:backwards];
+            }
             int i ,cnt , snaplength;
             for (i = (int)backwards.count-1, cnt = 0, snaplength = 1; i >= 0; i-=snaplength, cnt++) {
                 NodeItem *prev = [backwards objectAtIndex:i];
@@ -243,10 +247,14 @@ typedef enum NSUInteger{
     PowerMateAction action = theEvent.keyCode;
     switch (action) {
         case PowerMateActionRotationLeft:
-            rotationCount--;
+            if(maxBackwordIndex < rotationCount){
+                rotationCount--;
+            }
             break;
         case PowerMateActionRotationRight:
-            rotationCount++;
+            if (rotationCount < maxForwardIndex) {
+                rotationCount++;
+            }
             break;
         default:
             break;
