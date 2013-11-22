@@ -96,6 +96,7 @@ typedef enum NSUInteger{
     maxBackwordIndex = maxForwardIndex = 0;
     // 前方向への道筋を計算
     NodeItem *item = self.selectedNode;
+    NSUInteger snapUnitInCurrentDepth = 1;
     while (item) {
         // itemは必ず葉なので一定の回数移動したら移動距離を増やす
         // 1,2,3,4,5,10,20,30,40,50,100,...........
@@ -104,8 +105,11 @@ typedef enum NSUInteger{
             int i ,cnt , snaplength;
             for (i = 0, cnt = 0, snaplength = 1; i < (int)forwards.count; i+=snaplength, cnt++) {
                 NodeItem *next = [forwards objectAtIndex:i];
-                maxForwardIndex++;
-                [snapHash setObject:next forKey:@(maxForwardIndex)];
+                // 階層によって回転の精度を下げる
+                for (NSUInteger j = 0; j < snapUnitInCurrentDepth; j++) {
+                    maxForwardIndex++;
+                    [snapHash setObject:next forKey:@(maxForwardIndex)];
+                }
                 if (cnt != 0 && cnt%SNAP_THRESHOLD == 0) {
                     // 1,5,10,15,20
                     snaplength += SNAP_LENGTH;
@@ -117,10 +121,12 @@ typedef enum NSUInteger{
                 [snapHash setObject:forwards.lastObject forKey:@(maxForwardIndex)];
             }
         }
+        snapUnitInCurrentDepth++;
         item = item.parent;
     }
     // 後ろへの道筋を計算
     item = self.selectedNode;
+    snapUnitInCurrentDepth = 1;
     while (item) {
         // itemは必ず葉なので一定の回数移動したら移動距離を増やす
         if (item.parent) {
@@ -132,8 +138,10 @@ typedef enum NSUInteger{
             int i ,cnt , snaplength;
             for (i = (int)backwards.count-1, cnt = 0, snaplength = 1; i >= 0; i-=snaplength, cnt++) {
                 NodeItem *prev = [backwards objectAtIndex:i];
-                maxBackwordIndex--;
-                [snapHash setObject:prev forKey:@(maxBackwordIndex)];
+                for (NSUInteger j = 0; j < snapUnitInCurrentDepth; j++) {
+                    maxBackwordIndex--;
+                    [snapHash setObject:prev forKey:@(maxBackwordIndex)];
+                }
                 if (cnt != 0 && cnt%SNAP_THRESHOLD == 0) {
                     // 1,5,10,15,20
                     snaplength += SNAP_LENGTH;
@@ -145,6 +153,7 @@ typedef enum NSUInteger{
                 [snapHash setObject:backwards.firstObject forKey:@(maxBackwordIndex)];
             }
         }
+        snapUnitInCurrentDepth++;
         item = item.parent;
     }
     NSLog(@"caluculation finished");
