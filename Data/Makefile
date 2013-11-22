@@ -3,7 +3,7 @@
 #
 #
 
-default: clean jsonall jq
+default: jsonall jq
 
 clean:
 	echo "### Removing data.json... ###"
