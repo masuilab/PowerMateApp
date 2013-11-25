@@ -1,5 +1,7 @@
 title:ニュース
  title:朝日新聞	url:http://www.asahi.com/
+  url:http://www.asahi.com/articles/OSK201311260005.html?ref=rss	title:エビ偽装、見破れる？　和歌山の水族館が企画展
+  url:http://www.asahi.com/articles/OSK201311260008.html?ref=rss	title:１０代の少年？マンション敷地内で死亡　堺、転落死か
   url:http://www.asahi.com/articles/TKY201311250021.html?ref=rss	title:あんぽ柿づくり、３年ぶり再開　福島特産、モデル地区で
   url:http://www.asahi.com/articles/TKY201311250462.html?ref=rss	title:重文・大日如来像の胎内仏が不明　元住職「所在話せない」
   url:http://www.asahi.com/articles/OSK201311250112.html?ref=rss	title:不正入札防げ　市役所に警官常駐へ　岡山・総社市
@@ -8,21 +10,19 @@ title:ニュース
   url:http://www.asahi.com/articles/SEB201311250011.html?ref=rss	title:おもちゃかと…中学で拳銃暴発　所持容疑、生徒の父逮捕
   url:http://www.asahi.com/articles/TKY201311250406.html?ref=rss	title:ＪＲ東海道線、一時運転見合わせ　東京―熱海、強風で
   url:http://www.asahi.com/articles/TKY201311250291.html?ref=rss	title:クリスマスにピンクの彩り　プリンセチア、出荷最盛期
-  url:http://www.asahi.com/articles/TKY201311250491.html?ref=rss	title:ダライ・ラマが両国国技館で講演「私の心は平和」
-  url:http://www.asahi.com/articles/TKY201311250449.html?ref=rss	title:５６歳同僚蹴って死なせた疑い　１９歳少年逮捕　千葉
-  url:http://japan.cnet.com/news/service/35040453/?tag=as.rss	title:＜CNET Japan＞シャープ、スケジュール帳にもなる電子ノート発売へ--あのシャープペンもお披露目
+  url:http://japan.cnet.com/news/commentary/35040405/?tag=as.rss	title:＜CNET Japan＞ソニー「PlayStation 4」レビュー（後編）--使用感、「PS3」「Xbox One」との比較など
   url:http://www.asahi.com/articles/JJT201311250006.html?ref=rss	title:藤本が日本ヘビー級王座初防衛　プロボクシング
   url:http://www.asahi.com/articles/TKY201311250412.html?ref=rss	title:稀勢の綱とり条件「１３勝以上での優勝」　横審委員長
   url:http://www.asahi.com/articles/JJT201311250003.html?ref=rss	title:ペイトリオッツ、延長の末８勝目　ＮＦＬ
   url:http://www.asahi.com/articles/JJT201311250004.html?ref=rss	title:３連覇めざすヒート、６連勝　ＮＢＡ
   url:http://www.asahi.com/articles/JJT201311250005.html?ref=rss	title:ブルーインズが首位浮上　ＮＨＬ
-  url:http://japan.zdnet.com/mobile/analysis/35040426/?tag=as.rss	title:＜ZDNet Japan＞2013年、スマートデバイスの拡大でビジネスモバイル通信市場は6500億円に
+  url:http://japan.zdnet.com/business-application/case-study/35040440/?tag=as.rss	title:＜ZDNet Japan＞日本政策金融公庫、バックオフィスを一本化--事務の合理化や効率化へ
+  url:http://www.asahi.com/articles/SEB201311260003.html?ref=rss	title:「新電力」の参入促し電気代節約　北九州市が新入札制度
   url:http://www.asahi.com/articles/OSK201311250042.html?ref=rss	title:ビジョンメガネ、再生法適用申請　価格破壊の加速、打撃
   url:http://www.asahi.com/articles/TKY201311250502.html?ref=rss	title:海外で１日定額パケ通信　ドコモ、１２月から
   url:http://www.asahi.com/articles/TKY201311250463.html?ref=rss	title:日産、高速道で自動運転の初実験　２０２０年市販に向け
   url:http://www.asahi.com/articles/TKY201311250388.html?ref=rss	title:ＬＩＮＥ利用者数、世界で３億人突破　４カ月で１億人増
-  url:http://www.asahi.com/articles/SEB201311250006.html?ref=rss	title:ソフトバンク、業務用燃料電池の運転開始　福岡で国内初
-  url:http://japan.cnet.com/news/service/35040441/?tag=as.rss	title:＜CNET Japan＞ドコモ、1日980円からの海外パケット定額サービス
+  url:http://japan.cnet.com/news/service/35040453/?tag=as.rss	title:＜CNET Japan＞シャープ、スケジュール帳にもなる電子ノート発売へ--あのシャープペンもお披露目
   url:http://www.asahi.com/suumo/	title:［PR］：新築・賃貸マンションの情報満載！SUUMO[無料]
   url:http://www.asahi.com/articles/TKY201311250512.html?ref=rss	title:秘密保護法案きょう採決強行　与党、衆院で
   url:http://www.asahi.com/articles/TKY201311250501.html?ref=rss	title:「福島県民の疑念、払拭されてない」民主・海江田代表
@@ -51,19 +51,19 @@ title:ニュース
   url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/543778243b61e75a1e4d9b47f82a9f7b?ul=dhEzhXyK.ljleEkQw8ReAspT7IaLgmsdZ6yxeak5lf_o3h9C1sy_RY8MpVRearn.lunTVD6mYXXGdF8Q7QLjow2HU9E.lQ0WkijgK0OIooKnPaWNz	記事15
   url:http://rss.rssad.jp/rss/ad/z0r9SvPmQy3H/F2vw.YLlVXgl?type=2&amp;ent=543778243b61e75a1e4d9b47f82a9f7b	記事23
   url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/12ea952587260bcfc2abfe218a6566d7?ul=h_uhzv16.TMTCuSRcfAFADuyp1wxgdH13e4uUxN4ovh8EYzQog4T1r9pBed4xyXPvOxxXYm3xqsB3WZUNlMeIjAL.ucgGhfz2onECdEsu88VuRtyt	記事29
-  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/1e539af2bb256f4b3b4b6ebf8845168d?ul=PjvX8rCM.Q.S0W19g5d37pL8RJ3hEzZlnJjxgVwtnOkzQ8uEkdLd9aPkUnWkJR12pbxbfGzeJHDHFAGSgLjz.oyX5.Ru3U.fkq4CrMN9lvkUet31UoAURS3k1unta0p0hgQLEPg	記事37
-  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/4afec06d3b1a8b8b0a88517d45395a8b?ul=eWVqWewRWvaw.XBEKOABfCzAHkrqxvr9tEgD.PVosqGtuuGBjPY0G5JYU.TJxVG5nxl6S.CCVVlzd_XWcHyL9z7ZqKWJ5WKGzQ1Xz7BjEIkTvQzJLgOxY2txv4Y6z1Tfctr0go5	記事45
-  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/1de1ca4249dac1b7d42bab8946e3c7af?ul=iMdSGMBPBPVwdh2rSY3A7IMUvqlU5ZTJmxA_XjztUaEzaaJPsWKd8avIQmq_5sMFa2Z7.yywMsa1H1b9DCeHasMQ0coAOjYFBSj3jvPAtlwBodgGbta5a2.gr8i95xlcA5ReMi_	記事53
-  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/3756a71303fb121c0763ee6745e98717?ul=wyvk2ImrIXo4KJkTgJjVLZBm9HyRZzQuFZYwW2ROjEko1MVWJksMkljUmiHp7UrHQMIXNQnx0yHKhUPnsLhzeIBxlbiVhQLBeuN71xFA1GpUNi6xMgZPPiHM39nZZPXYqQ8vnzp	記事61
+  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/4afec06d3b1a8b8b0a88517d45395a8b?ul=eWVqWewRWvaw.XBEKOABfCzAHkrqxvr9tEgD.PVosqGtuuGBjPY0G5JYU.TJxVG5nxl6S.CCVVlzd_XWcHyL9z7ZqKWJ5WKGzQ1Xz7BjEIkTvQzJLgOxY2txv4Y6z1Tfctr0go5	記事37
+  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/1de1ca4249dac1b7d42bab8946e3c7af?ul=iMdSGMBPBPVwdh2rSY3A7IMUvqlU5ZTJmxA_XjztUaEzaaJPsWKd8avIQmq_5sMFa2Z7.yywMsa1H1b9DCeHasMQ0coAOjYFBSj3jvPAtlwBodgGbta5a2.gr8i95xlcA5ReMi_	記事45
+  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/651ee4ca1480a10ab498f39b8c2af082?ul=uU4xwp7Qg4RJkoQEhTpwm.3jEPr8cqby.Zlvi9cDaNf2D1zeEEcuf2fmoxCQVtg8UQTbh0tXCuRTtZG4YhsMWskGmizk4PxANVQVjFdo1XlHRBkFYSf3Vs9UJgeWcN8YlfXgeuN	記事53
+  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/a74c6ea51dbfbfc6a4011800278b4dbc?ul=NUGvCOX8S.MQ7XqN9Oa10hghXutaps_MtVn8npxjoOOzKLGOPKby276rd7ePSiP_q6rmvV36YW5y5e8l8bjv05IlluIEHjQ3J82RXuFR3p3rDRULf1sw9CJcKVVbpBFauhjGdoV	記事61
  title:毎日新聞	url:http://mainichi.jp/
  title:産経新聞	url:http://sankei.jp.msn.com
   url:http://sankei.jp.msn.com/rss/news/points.xml	記事4
-  url:http://sankei.jp.msn.com/politics/news/131126/plc13112600250000-n1.htm	記事11
+  url:http://sankei.jp.msn.com/life/news/131126/bdy13112607430001-n1.htm	記事11
   url:http://sankei.jp.msn.com/economy/news/131126/biz13112600500000-n1.htm	記事18
   url:http://sankei.jp.msn.com/politics/news/131125/stt13112523320004-n1.htm	記事25
-  url:http://sankei.jp.msn.com/politics/news/131126/plc13112601040002-n1.htm	記事32
-  url:http://sankei.jp.msn.com/affairs/news/131126/crm13112601020000-n1.htm	記事39
-  url:http://sankei.jp.msn.com/world/news/131126/erp13112600580000-n1.htm	記事46
+  url:http://sankei.jp.msn.com/sports/news/131126/oth13112607520001-n1.htm	記事32
+  url:http://sankei.jp.msn.com/world/news/131126/erp13112603100001-n1.htm	記事42
+  url:http://sankei.jp.msn.com/entertainments/news/131126/ent13112606520000-n1.htm	記事52
  title:ITmedia	url:http://www.itmedia.co.jp
   url:http://rss.rssad.jp/rss/artclk/yd3DyH_6aPig/a2796453fda9cd93c1f74382b9be5828?ul=SrGjKlogKnUpnRr0DA3GIKCMoK98_IXuqCbMLVHakRaJCFZfEwtllqTmrA1uoi4Oyt6J3mQPHs.spPBJDw700TT9.SzScBprhQjZxHuNuK4Q.xQy9AmkxKmNeOg5zZUjUZaef5P	title:Info: ITmedia エンタープライズ：スマホにくっつける“レンズだけカメラ”プレゼント
   url:http://rss.rssad.jp/rss/artclk/yd3DyH_6aPig/06d21a5455730c3a41b908d594267369?ul=1_AK96RLX4C.Xzh1jiMQPBhOOyvms5GlERIwTVSEvsSjAZcaYK5bFmbhoJiINxz8Gca.Fq2gNVCwp6Jtd9y6Ta.sSpH_9_56fJqPvn_ccy.lsjKdecPdtDueKoOY6Q.88kNfmEP	title:省電力で二冠を達成したスパコン「TSUBAME」、鍵は“油に浸して冷却する”
