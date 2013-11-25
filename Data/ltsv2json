@@ -1,45 +1,61 @@
 #!/usr/bin/env ruby
 # -*- coding: utf-8 -*-
+# -*- ruby -*-
 #
 # ltsvデータをJSONに変換
 # issue #21 対応
 #
-curindent = -1
-sp = "    "
-ret_required = false
-ARGF.each { |line|
-  line.chomp!
-  next if line == ''
-  line.sub!(/^(\s*)/,'')
-  indent = $&.length
-  if indent > curindent then
-    puts "," if ret_required
-    print indent == 0 ? "" : (sp * indent + "\"children\": ")
-    puts "[\n" + sp * indent + "{"
-    curindent = indent
-  elsif indent < curindent then
-    puts if ret_required
-    while indent < curindent do
-      puts sp * (indent+1) + "}]\n" + sp * indent + "},\n" + sp * indent + "{"
-      curindent -= 1
-    end
-  else
-    puts if ret_required
-    puts sp * indent + "},\n" + sp * indent + "{"
+
+class Node
+  def initialize
+    @attr = {}
+    @children = []
   end
-  out = line.split(/\t/).collect { |entry|
-    entry =~ /^([a-zA-Z_]+):(\s*)(.*)$/
-    key = $1
-    value = $3
-    "\"#{key}\": \"#{value}\""
-  }
-  print sp * (curindent+1) + out.join(",\n" + sp * (curindent+1))
-  ret_required = true
-}
-puts if ret_required
-while 0 <= curindent do
-  puts sp * curindent + "}]\n"
-  curindent -= 1
+
+  attr :attr, true
+  attr :children, true
 end
 
+root = Node.new
+parents = []
+parents[0] = root
 
+ARGF.each { |line|
+  line.chomp!
+  next if line =~ /^\s*$/
+  next if line =~ /^#/
+
+  line.sub!(/^(\s*)/,'')
+  indent = $&.length
+
+  node = Node.new
+  parents[indent+1] = node
+  parents[indent].children << node
+  line.split(/\t/).each { |entry|
+    entry =~ /^([a-zA-Z_]+):(\s*)(.*)$/
+    node.attr[$1] = $3
+  }
+}
+
+def out(node,indent)
+  s = ''
+  s += "    " * indent + "{\n"
+  s += node.attr.collect { |key,val|
+    "    " * (indent+1) + "\"#{key}\": \"#{val}\""
+  }.join(",\n")
+  s += "\n"
+  if node.children.length > 0 then
+    s += "    " * (indent+1) + ",\n" if node.attr.keys.length > 0
+    s += "    " * (indent+1) + "\"children\": [\n"
+    s += node.children.collect { |child|
+      out(child,indent+1)
+    }.join("    " * (indent+1) + ",\n")
+    s += "    " * (indent+1) + "]\n"
+  end
+  s += "    " * indent + "}\n"
+  s
+end
+
+puts "["
+print out(root,0)
+puts "]"
