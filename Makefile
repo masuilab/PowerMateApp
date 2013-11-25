@@ -1,7 +1,7 @@
 PROJECT = PowerMateApp.xcodeproj
 BUILD_SCHEME = PowerMateDial
 
-default: clean setup app
+default: clean setup app json
 
 clean:
 	xcodebuild clean \
@@ -13,11 +13,12 @@ setup:
 	git submodule update --init
 	git submodule foreach --recursive --quiet "git submodule sync --quiet && git submodule update --init"
 
-data:
-	cd Data
-data:
+json:
 	cd Data && make && cd ../
 app:
 	xcodebuild \
 		-target ${BUILD_SCHEME} \
 		-configuration Release
+
+run:
+	open build/Release/${BUILD_SCHEME}.app
