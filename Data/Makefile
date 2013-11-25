@@ -1,28 +1,18 @@
+# -*- coding: utf-8 -*-
 #
-# */*.ltsv からjson生成
+# news.ltsv, aozora.ltsvなどからjson生成
 #
-#
 
-default: jsonall jq
+CONTENTS = \
+	News/news.ltsv \
+	Photos/photos.ltsv \
+	Aozora/aozora.ltsv \
+	Stations/stations.ltsv \
+	YouTube/youtube.ltsv
 
-clean:
-	echo "### Removing data.json... ###"
-	-rm -f data.json
+json: getnews
+	ruby ltsv2json ${CONTENTS} | jq . > data.json
 
-recipejson:
-	ruby ltsv2json Recipe/allrecipe.ltsv > Recipe/allrecipe.result.json
-	cat Recipe/allrecipe.result.json | jq '.'
+getnews:
+	cd News; make
 
-json:
-	echo "### Merge all ltsv files into data.json..."
-	ruby ltsv2json Photos/photos.ltsv Aozora/aozora.ltsv Stations/stations.ltsv > data.json
-
-jsonall:
-	ruby ltsv2json */*.ltsv > .data.json
-	cat .data.json | jq '.' > data.json
-	rm .data.json
-
-jq:
-	echo "### Validating data.json..."
-	cat data.json | jq '.'
-	echo "### Sweet! data.json is VALID!"
