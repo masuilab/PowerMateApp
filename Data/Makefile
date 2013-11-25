@@ -8,7 +8,8 @@ CONTENTS = \
 	Photos/photos.ltsv \
 	Aozora/aozora.ltsv \
 	Stations/stations.ltsv \
-	YouTube/youtube.ltsv
+	YouTube/youtube.ltsv \
+	GIF/gif.ltsv
 
 json: getnews
 	ruby ltsv2json ${CONTENTS} | jq . > data.json
