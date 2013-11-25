@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+# -*- ruby -*-
+#
+
+require './rss'
+
+puts "title:ニュース"
+
+list = feeds('http://www.asahi.com/')
+puts " title:朝日新聞"
+list.each { |entry|
+  puts "  #{entry}"
+}
+
+puts " title:日本経済新聞\turl:http://www.nikkei.com/"
+
+puts " title:読売新聞\turl:http://www.yomiuri.co.jp/"
+
+puts " title:毎日新聞\turl:http://mainichi.jp/"
+
+list = feeds('http://sankei.jp.msn.com')
+puts " title:産経新聞"
+list.each { |entry|
+  puts "  #{entry}"
+}
+
