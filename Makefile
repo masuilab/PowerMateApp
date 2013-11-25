@@ -1,7 +1,10 @@
 PROJECT = PowerMateApp.xcodeproj
 BUILD_SCHEME = PowerMateDial
 
-default: clean setup app json
+default: check clean setup app json
+
+check:
+	if [ -z `which jq` ]; then echo 'Require jq (e.g. brew install jq)'; exit 1; fi;
 
 clean:
 	xcodebuild clean \
