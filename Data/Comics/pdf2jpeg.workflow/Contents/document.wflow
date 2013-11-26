@@ -164,7 +164,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>283.000000:915.000000</string>
+				<string>283.000000:695.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Ask for Finder Items.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -203,7 +203,7 @@
 					<dict>
 						<key>tokenizedValue</key>
 						<array>
-							<string>70</string>
+							<string>50</string>
 						</array>
 					</dict>
 				</dict>
@@ -229,7 +229,7 @@
 					<key>imageFormat</key>
 					<string>public.jpeg</string>
 					<key>resolution</key>
-					<string>70</string>
+					<string>50</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.action.imagepdf</string>
@@ -320,7 +320,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>283.000000:760.000000</string>
+				<string>283.000000:540.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Render PDF Pages as Images.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>

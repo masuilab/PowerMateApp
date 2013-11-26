@@ -1,5 +1,7 @@
 title:ニュース
  title:朝日新聞	url:http://www.asahi.com/
+  url:http://www.asahi.com/articles/TKY201311260071.html?ref=rss	title:ＨＩＶ感染者の血液、２人に輸血　献血時の検査すり抜け
+  url:http://www.asahi.com/articles/TKY201311260053.html?ref=rss	title:使用済み核燃料の移動開始　福島第一原発で初めて
   url:http://www.asahi.com/articles/TKY201311260017.html?ref=rss	title:海中トンネル内で車炎上、２人死傷　東京湾アクアライン
   url:http://www.asahi.com/articles/OSK201311260015.html?ref=rss	title:警察車両が赤信号で突入…バイクと衝突、女性死亡　姫路
   url:http://www.asahi.com/articles/TKY201311260079.html?ref=rss	title:「強行採決するな」国会周辺で抗議の声　秘密保護法案
@@ -8,9 +10,7 @@ title:ニュース
   url:http://www.asahi.com/articles/NGY201311240020.html?ref=rss	title:もぎたてトマトでイタリアン　農園直営レストランが人気
   url:http://www.asahi.com/articles/NGY201311250003.html?ref=rss	title:銭湯女子、ブログで発信　レトロ度を５段階評価　名古屋
   url:http://www.asahi.com/articles/SEB201311260004.html?ref=rss	title:「モデルガンかと…」　福岡の中学、銃持ち込んだ生徒
-  url:http://www.asahi.com/articles/TKY201311260016.html?ref=rss	title:「神田○×町」復活させる？　千代田区で住所表示論争
-  url:http://www.asahi.com/articles/TKY201311250484.html?ref=rss	title:認可保育所、月４８時間就労で利用ＯＫ　政府の新制度案
-  url:http://japan.cnet.com/news/business/35040465/?tag=as.rss	title:＜CNET Japan＞遺伝子検査キットを手がける23andMe、販売停止命令に従わず
+  url:http://japan.cnet.com/news/business/35040475/?tag=as.rss	title:＜CNET Japan＞インテル、ネットTVサービス事業を5億ドルで売却の意向か
   url:http://www.asahi.com/articles/TKY201311260064.html?ref=rss	title:巨人ＦＡの小笠原、中日が獲得　午後に正式発表
   url:http://www.asahi.com/articles/JJT201311250006.html?ref=rss	title:藤本が日本ヘビー級王座初防衛　プロボクシング
   url:http://www.asahi.com/articles/TKY201311250412.html?ref=rss	title:稀勢の綱とり条件「１３勝以上での優勝」　横審委員長
@@ -22,13 +22,13 @@ title:ニュース
   url:http://www.asahi.com/articles/TKY201311260029.html?ref=rss	title:企業サービス指数、６カ月連続上昇　１０月
   url:http://www.asahi.com/articles/SEB201311260003.html?ref=rss	title:「新電力」の参入促し電気代節約　北九州市が新入札制度
   url:http://www.asahi.com/articles/OSK201311250042.html?ref=rss	title:ビジョンメガネ、再生法適用申請　価格破壊の加速、打撃
-  url:http://japan.cnet.com/news/service/35040461/?tag=as.rss	title:＜CNET Japan＞マイクロソフト、「Skype」機能改善対応中か
+  url:http://japan.cnet.com/news/service/35040462/?tag=as.rss	title:＜CNET Japan＞産業革新機構、グローバル・ブレイン5号投資事業有限責任組合に戦略的LP投資
   url:http://www.asahi.com/suumo/	title:［PR］：新築・賃貸マンションの情報満載！SUUMO[無料]
+  url:http://www.asahi.com/articles/TKY201311260131.html?ref=rss	title:安倍首相の主な答弁　特定秘密保護法案・衆院特別委
+  url:http://www.asahi.com/articles/TKY201311260090.html?ref=rss	title:特定秘密保護法案、強行採決で衆院委通過　維新は退席
   url:http://www.asahi.com/articles/TKY201311260043.html?ref=rss	title:猪瀬知事、５千万円の「借用書」公開　辞任は否定
-  url:http://www.asahi.com/articles/TKY201311260090.html?ref=rss	title:特定秘密保護法案、衆院委を通過　維新は退席
   url:http://www.asahi.com/articles/TKY201311260087.html?ref=rss	title:秘密指定検証の第３者機関「設置すべきだ」　安倍首相
   url:http://www.asahi.com/articles/TKY201311250028.html?ref=rss	title:ニコチン依存治療、若者も保険対象に　厚労省方針
-  url:http://www.asahi.com/articles/OSK201311250120.html?ref=rss	title:公立中統一テスト、内申書に反映要請　大阪府教委
   url:?tag=as.rss	title:
   url:http://www.asahi.com/articles/TKY201311260035.html?ref=rss	title:イスラエル首相補佐官ら米国へ　イラン核合意で働きかけ
   url:http://www.asahi.com/articles/TKY201311260030.html?ref=rss	title:中国の防空圏設定「いたずらに挑発的」　米、改めて警告
@@ -50,12 +50,12 @@ title:ニュース
   url:http://www.yomiuri.co.jp/?from=rsstop	記事6
   url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/785091cc98f4b118eb3673b1e4b9454f?ul=131_qOiJYHJ2bRbXOry0tVkCTToNOBMubUX9wvaY38GCz.5fJaE2dycodh0uOE4N_Axk_M5DRpushnyI.mLmgxvDxZQqAfRNqYQsOE_KQkj4enabAiDzeGDWS7g0OFKjINIgvS1	記事15
   url:http://rss.rssad.jp/rss/ad/z0r9SvPmQy3H/Q.hneZnDk5c.?type=2&amp;ent=785091cc98f4b118eb3673b1e4b9454f	記事23
-  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/a72f5f6c232fd03f8ee3ae61e6d6e4fd?ul=5uDIU0ljdLikz_fi6w7Yo.hJhYnKHUG4muaQgSRt_rCX24kuvs85DxkB6Oy8AffIWeRqaKbWDvKakJO1bSCs9Ti4f85BIBUAv5xAY3r4vcC5QgVpncffF_nBzp5VckYoLU2Ph6u	記事29
-  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/da90f1d6a23aed47cf6ba8d722ba6dbf?ul=imJNbLiVPgC5koSF.ITBvDxSUAzhTHzIHEAtPW3H.q1fliBqqobrteUhGrhqF1mSNWGYQb01ymVlsx5dl.DDriUz5RaF5rcHnvrZjNpPanDDFSoz6	記事37
-  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/b763f7f9c9fda279fb29f458e21e3047?ul=k.F.q8HVzDI9Vn6WoP9FF_UWcbLIXPMjs.Kscc1nZM5kY.ZAlUOIh9NsH.db1764S2Ape30auqOIdDaYpoc8YqgJEaUdAJn2lYnf7TIDGL5_hMOqrm2b1dxs5HufHoLidpTk_1P	記事45
-  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/543778243b61e75a1e4d9b47f82a9f7b?ul=dhEzhXyK.ljleEkQw8ReAspT7IaLgmsdZ6yxeak5lf_o3h9C1sy_RY8MpVRearn.lunTVD6mYXXGdF8Q7QLjow2HU9E.lQ0WkijgK0OIooKnPaWNz	記事53
-  url:http://rss.rssad.jp/rss/ad/z0r9SvPmQy3H/F2vw.YLlVXgl?type=2&amp;ent=543778243b61e75a1e4d9b47f82a9f7b	記事61
-  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/fe138b552704fe3b1e9fecf758654f4f?ul=FtLofYcISIitj846zsJJqpedBjTWCB16UkpQD6CDykNrZR66az3tjqT5te0qT7EgRdtgqthnI2iouJUe04vom_HiIj_ef5EoDC6ZxS3Yt0G4KpEYRWMjY2N_NQW2BisxIy0BOes	記事67
+  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/da90f1d6a23aed47cf6ba8d722ba6dbf?ul=imJNbLiVPgC5koSF.ITBvDxSUAzhTHzIHEAtPW3H.q1fliBqqobrteUhGrhqF1mSNWGYQb01ymVlsx5dl.DDriUz5RaF5rcHnvrZjNpPanDDFSoz6	記事29
+  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/b763f7f9c9fda279fb29f458e21e3047?ul=k.F.q8HVzDI9Vn6WoP9FF_UWcbLIXPMjs.Kscc1nZM5kY.ZAlUOIh9NsH.db1764S2Ape30auqOIdDaYpoc8YqgJEaUdAJn2lYnf7TIDGL5_hMOqrm2b1dxs5HufHoLidpTk_1P	記事37
+  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/543778243b61e75a1e4d9b47f82a9f7b?ul=dhEzhXyK.ljleEkQw8ReAspT7IaLgmsdZ6yxeak5lf_o3h9C1sy_RY8MpVRearn.lunTVD6mYXXGdF8Q7QLjow2HU9E.lQ0WkijgK0OIooKnPaWNz	記事45
+  url:http://rss.rssad.jp/rss/ad/z0r9SvPmQy3H/F2vw.YLlVXgl?type=2&amp;ent=543778243b61e75a1e4d9b47f82a9f7b	記事53
+  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/fe138b552704fe3b1e9fecf758654f4f?ul=FtLofYcISIitj846zsJJqpedBjTWCB16UkpQD6CDykNrZR66az3tjqT5te0qT7EgRdtgqthnI2iouJUe04vom_HiIj_ef5EoDC6ZxS3Yt0G4KpEYRWMjY2N_NQW2BisxIy0BOes	記事59
+  url:http://rss.rssad.jp/rss/artclk/z0r9SvPmQy3H/a74c6ea51dbfbfc6a4011800278b4dbc?ul=NUGvCOX8S.MQ7XqN9Oa10hghXutaps_MtVn8npxjoOOzKLGOPKby276rd7ePSiP_q6rmvV36YW5y5e8l8bjv05IlluIEHjQ3J82RXuFR3p3rDRULf1sw9CJcKVVbpBFauhjGdoV	記事67
  title:毎日新聞	url:http://mainichi.jp/
  title:産経新聞	url:http://sankei.jp.msn.com
   url:http://sankei.jp.msn.com/rss/news/points.xml	記事4
