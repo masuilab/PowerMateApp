@@ -26,3 +26,6 @@ run:
 dmg:
 	/bin/rm -f /tmp/PowerMateDial.dmg
 	hdiutil create -srcfolder build/Release/PowerMateDial.app -volname PowerMateDial /tmp/PowerMateDial.dmg
+
+publish: dmg
+	scp /tmp/PowerMateDial.dmg pitecan.com:/www/www.pitecan.com/tmp
