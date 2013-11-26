@@ -1,7 +1,7 @@
 PROJECT = PowerMateApp.xcodeproj
 BUILD_SCHEME = PowerMateDial
 
-default: clean setup json app
+default: bundle clean setup json app
 
 clean:
 	xcodebuild clean \
@@ -29,3 +29,6 @@ dmg:
 
 publish: dmg
 	scp /tmp/PowerMateDial.dmg pitecan.com:/www/www.pitecan.com/tmp
+
+bundle: Gemfile.lock
+	bundle install
