@@ -14,7 +14,7 @@ CONTENTS = \
 	Stations/stations.ltsv
 
 json: getnews
-	ruby ltsv2json ${CONTENTS} | jq . > data.json
+	bundle exec ruby ltsv2json ${CONTENTS} | jq . > data.json
 
 getnews:
 	cd News; make
