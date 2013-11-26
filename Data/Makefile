@@ -5,6 +5,7 @@
 
 CONTENTS = \
 	News/news.ltsv \
+	Music/music.ltsv \
 	YouTube/youtube.ltsv \
 	GIF/gif.ltsv \
 	Comics/comics.ltsv \

@@ -159,8 +159,6 @@
 						<string>3</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
@@ -203,7 +201,7 @@
 					<dict>
 						<key>tokenizedValue</key>
 						<array>
-							<string>50</string>
+							<string>30</string>
 						</array>
 					</dict>
 				</dict>
@@ -229,7 +227,7 @@
 					<key>imageFormat</key>
 					<string>public.jpeg</string>
 					<key>resolution</key>
-					<string>50</string>
+					<string>40</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.action.imagepdf</string>
@@ -315,8 +313,6 @@
 						<string>3</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
@@ -791,8 +787,6 @@
 						<string>9</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
@@ -913,8 +907,6 @@
 						<string>1</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
@@ -928,26 +920,26 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>4073D0E7-4337-4FB1-84AB-DB3D13A9014A</key>
-		<dict>
-			<key>from</key>
-			<string>8CDF4AF7-2EAF-4CDA-8D7E-59F2D2147A89 - 8CDF4AF7-2EAF-4CDA-8D7E-59F2D2147A89</string>
-			<key>to</key>
-			<string>FB67E829-FC43-4ABA-ADCD-5D827958A6EC - FB67E829-FC43-4ABA-ADCD-5D827958A6EC</string>
-		</dict>
-		<key>520056ED-5776-4631-B027-15CC2E05FDB6</key>
+		<key>383D425C-B4A8-4346-8A81-2B0AAFB923E6</key>
 		<dict>
 			<key>from</key>
 			<string>B26F29D9-9E41-49BD-8961-E77E60A6FFC6 - B26F29D9-9E41-49BD-8961-E77E60A6FFC6</string>
 			<key>to</key>
 			<string>8CDF4AF7-2EAF-4CDA-8D7E-59F2D2147A89 - 8CDF4AF7-2EAF-4CDA-8D7E-59F2D2147A89</string>
 		</dict>
-		<key>D37B4AA8-05D1-4B19-B23F-F29F92A5C144</key>
+		<key>7723470D-C4D3-4CE4-851E-84F827044356</key>
 		<dict>
 			<key>from</key>
 			<string>2A8D06BE-B9CF-4D83-B699-7D86CD5C1515 - 2A8D06BE-B9CF-4D83-B699-7D86CD5C1515</string>
 			<key>to</key>
 			<string>B26F29D9-9E41-49BD-8961-E77E60A6FFC6 - B26F29D9-9E41-49BD-8961-E77E60A6FFC6</string>
+		</dict>
+		<key>B58E0F20-793D-4E9D-997A-5F8C650AF2FD</key>
+		<dict>
+			<key>from</key>
+			<string>8CDF4AF7-2EAF-4CDA-8D7E-59F2D2147A89 - 8CDF4AF7-2EAF-4CDA-8D7E-59F2D2147A89</string>
+			<key>to</key>
+			<string>FB67E829-FC43-4ABA-ADCD-5D827958A6EC - FB67E829-FC43-4ABA-ADCD-5D827958A6EC</string>
 		</dict>
 	</dict>
 	<key>workflowMetaData</key>
