@@ -77,9 +77,9 @@ typedef enum NSUInteger{
 - (void)windowDidLoad
 {
     [super windowDidLoad];
-#ifdef Release
+    //#ifdef Release
     [self.debugWindow close];
-#endif
+    //#endif
 }
 
 - (void)finishRotation

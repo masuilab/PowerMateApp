@@ -22,3 +22,7 @@ app:
 
 run:
 	open build/Release/${BUILD_SCHEME}.app
+
+dmg:
+	/bin/rm -f /tmp/PowerMateDial.dmg
+	hdiutil create -srcfolder build/Release/PowerMateDial.app -volname PowerMateDial /tmp/PowerMateDial.dmg
