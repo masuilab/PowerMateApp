@@ -11,6 +11,7 @@ CONTENTS = \
 	Comics/comics.ltsv \
 	Photos/photos.ltsv \
 	Aozora/aozora.ltsv \
+	Recipe/allrecipe.ltsv \
 	Stations/stations.ltsv
 
 json: getnews
